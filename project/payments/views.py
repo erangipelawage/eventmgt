@@ -20,7 +20,7 @@ def charge(request): #new
     if request.method == 'POST':
         charge = stripe.Charge.create(
             amount=500,
-            currency='inr',
+            currency='lkr',
             description='Payment gateway',
             source=request.POST['stripeToken']
         )

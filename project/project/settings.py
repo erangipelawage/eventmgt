@@ -14,8 +14,8 @@ from pathlib import Path
 # from django.conf import settings
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
-BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
-
+# BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
+BASE_DIR = Path(__file__).resolve().parent.parent
 
 # Quick-start development settings - unsuitable for production
 # See https://docs.djangoproject.com/en/4.2/howto/deployment/checklist/
@@ -39,7 +39,7 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
 
-    # 'payments.apps.paymentsConfig',
+    'payments.apps.PaymentsConfig',
 ]
 
 MIDDLEWARE = [
@@ -118,10 +118,11 @@ USE_TZ = True
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/4.2/howto/static-files/
 
-STATIC_URL = 'static/'
+STATIC_URL = '/static/'
 
-STRIPE_SECRET_KEY = 'sk_test_51NKmX5Cn2RHbPGap2rFzB5J0rXVYecxFSRH8uSLwewfhzasO1Chh7Re2cqVfxIMyTkbkmbhZXiexz3lqq3TuQxjq008lkd0dvG'
-STRIPE_PUBLISHABLE_KEY = 'pk_test_51NKmX5Cn2RHbPGapnKihSsVsornWgQcB1AKFXukOLrg7kOqs9i6ceKICubiA5LDHZx2dOhVmT8SSPsqlXCAqMzc400D0LcKfOw'
+
+STRIPE_SECRET_KEY = "sk_test_51NKmX5Cn2RHbPGap2rFzB5J0rXVYecxFSRH8uSLwewfhzasO1Chh7Re2cqVfxIMyTkbkmbhZXiexz3lqq3TuQxjq008lkd0dvG"
+STRIPE_PUBLISHABLE_KEY = "sk_test_51NKmX5Cn2RHbPGap2rFzB5J0rXVYecxFSRH8uSLwewfhzasO1Chh7Re2cqVfxIMyTkbkmbhZXiexz3lqq3TuQxjq008lkd0dvG"
 
 # Default primary key field type
 # https://docs.djangoproject.com/en/4.2/ref/settings/#default-auto-field
