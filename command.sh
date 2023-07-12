@@ -14,5 +14,17 @@ python manage.py runserver
 python manage.py makemigrations
 python manage.py migrate
 
+# stripe install
+pip install --upgrade stripe
+
+# create new app in django
+python manage.py startapp payments
+
+# rest framework install
+pip install djangorestframework
+
+hostname - eventmgt.cfvufltihmhv.us-east-2.rds.amazonaws.com
+username - admin
+password - Pa$$w0rd
 
 

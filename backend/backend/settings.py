@@ -84,9 +84,9 @@ DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.mysql',
         'NAME': 'eventmgt',
-        'USER': 'root',
-        'PASSWORD': '',
-        'HOST':'localhost',
+        'USER': 'admin',
+        'PASSWORD': 'Pa$$w0rd',
+        'HOST':'eventmgt.cfvufltihmhv.us-east-2.rds.amazonaws.com',
         'PORT':'3306',
     }
 }
