@@ -1,4 +1,5 @@
-# payments/urls.pyfrom django.conf.urls import url
+# payments/urls.py
+from django.urls import re_path as url
 from payments import views
 from django.conf.urls import url
 
