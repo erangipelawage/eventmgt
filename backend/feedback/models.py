@@ -1,11 +1,6 @@
 from django.db import models
 
-class YourModelName(models.Model):
-    feedbackid = models.CharField(max_length=100)
-    name = models.IntegerField()
-    # Add other fields as needed
-
-    feedbackid
-    name
-    rating
-    description
+class feedback(models.Model):
+    name= models.CharField(max_length=100)
+    rating= models.CharField(max_length=200)
+    description= models.CharField(max_length=300)
