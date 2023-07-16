@@ -30,8 +30,8 @@ password - Pa$$w0rd
 # vitual enviromen start
 pip install virtualenv
 python -m venv venv
-env/Scripts/activate.bat //In CMD
-env/Scripts/Activate.ps1 //In Powershel
+venv/Scripts/activate.bat //In CMD
+venv/Scripts/Activate.ps1 //In Powershel
 
 # reauiremnts txt make
 pip freeze > requirements.txt
@@ -56,3 +56,8 @@ https://www.userlike.com/en/
 lasanthasanjeewa21@gmail.com
 BulzerSanju9671@#
 
+# creates the database tables for all apps in INSTALLED_APPS whose tables have not already been created
+python manage.py syncdb
+
+# Articles 
+https://betterprogramming.pub/how-to-integrate-django-react-app-with-stripe-payments-95709b3f23e5
