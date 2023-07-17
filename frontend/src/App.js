@@ -1,14 +1,22 @@
-// App.js
+import Home from "./pages/Home";
+import AboutUs from "./pages/AboutUs";
+import Facilities from "./pages/Facilities";
+import Outdoor from "./pages/Outdoor";
+import {Routes, Route} from "react-router-dom";
 
-import React from 'react';
-import './App.css';
-import {Elements} from '@stripe/react-stripe-js';
-import {loadStripe} from "@stripe/stripe-js/pure";
-import CheckoutForm from "./components/CheckoutForm";
-const stripePromise = loadStripe('pk_test_51NKmX5Cn2RHbPGapnKihSsVsornWgQcB1AKFXukOLrg7kOqs9i6ceKICubiA5LDHZx2dOhVmT8SSPsqlXCAqMzc400D0LcKfOw');
-const App = () => (
-  <Elements stripe={stripePromise}>
-    <CheckoutForm />
-  </Elements>
-);
+
+function App() {
+  return (
+    <div className="App">
+      <Routes>
+        <Route path="/" element={<Home />}/>
+        <Route path="/AboutUs" element={<AboutUs />}/>
+        <Route path="/Facilities" element={<Facilities />}/>
+        <Route path="/Outdoor" element={<Outdoor />}/>
+      </Routes>
+      
+    </div>
+  );
+}
+
 export default App;
