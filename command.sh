@@ -61,3 +61,5 @@ python manage.py syncdb
 
 # Articles 
 https://betterprogramming.pub/how-to-integrate-django-react-app-with-stripe-payments-95709b3f23e5
+
+npm install --save react-router-dom
