@@ -9,17 +9,17 @@ main {
 }
 
 body {
-	font-size: 18px;
+	font-size: 8px;
 }
 
 h2 {
 	font-weight: bold;
-	font-size: 30px;
+	font-size: 40px;
 	margin-bottom: 0;
 }
 
 h3 {
-	font-size: 30px;
+	font-size: 40px;
 }
 
 i {
@@ -39,8 +39,8 @@ form {
 /* ****************** */
 .header {
 	text-align: center;
-	width: 50%;
-	margin: 0 auto 4rem auto;
+	width: 80%;
+	margin: 4 auto 4rem auto;
 }
 
 .header p {
@@ -48,13 +48,21 @@ form {
 	max-width: 500px;
 }
 
-/* main div with div for form and contactus with background image */
+.header {
+	background: linear-gradient(rgba(54, 56, 183, 0.68), rgba(64, 62, 79, 0.68)),
+		url('../img/Rectangle\ 75.webp');
+	background-size: cover;
+	background-repeat: no-repeat;
+	height: 400px;
+	width: 100%;
+}
+
 .main {
 	background: linear-gradient(rgba(0, 0, 0, 0.68), rgba(0, 0, 0, 0.68)),
 		url('../img/Rectangle\ 75.webp');
 	background-size: cover;
 	background-repeat: no-repeat;
-	height: 959px;
+	height: 600px;
 	display: flex;
 	align-items: center;
 	width: 100%;
@@ -63,26 +71,26 @@ form {
 /* Contact div contain form and contact us */
 .contact {
 	background: #ffffff;
-	border-radius: 5px;
+	border-radius: 15px;
 	display: flex;
 	align-items: center;
 	justify-content: space-around;
 	max-width: 931px;
-	height: 719px;
+	height: 490px;
 	margin: auto;
 	padding: 0 1.5rem;
 }
 
 .contact-form {
-	width: 53%;
+	width: 80%;
 }
 
 .form-control {
-	border: 1px solid #333333;
+	border: 3px solid #333333;
 	box-sizing: border-box;
-	border-radius: 4px;
+	border-radius: 14px;
 	margin: 1rem 0;
-	padding: 16px 20px;
+	padding: 26px 20px;
 }
 
 .form-control::placeholder {
@@ -93,14 +101,13 @@ form {
 	border: 1px solid #d4af37;
 }
 
-#email,
 #name {
-	width: 45%;
-	height: 58px;
+	width: 100%;
+	height: 55px;
 }
 
 #comment {
-	height: 363px;
+	height: 163px;
 }
 
 /* the input mail and name from form */
@@ -110,28 +117,10 @@ form {
 	justify-content: space-between;
 }
 
-.contact-us {
-	width: 37%;
-	height: 320px;
-	background: linear-gradient(rgba(0, 0, 0, 0.68), rgba(0, 0, 0, 0.68)),
-		url('../img/Rectangle\ 57.webp');
-	background-position: center top;
-	color: white;
-	display: flex;
-	flex-direction: column;
-	justify-content: space-around;
-	padding: 2rem 0;
-}
-
-.contact-us > span,
-.contact-us h3 {
-	margin-left: 1.7rem;
-}
-
 .btn {
-	font-size: 16px;
+	font-size: 13px;
 	padding: 0.8rem 1.8rem;
-	background-color: #d4af37;
+	background-color: #d0a412;
 	color: white;
 	border-radius: 5px;
 	border: none;
@@ -141,11 +130,6 @@ form {
 @media only screen and (max-width: 1000px) {
 	.contact {
 		width: 80%;
-	}
-
-	.contact-us > span {
-		margin-left: 1rem;
-		font-size: 16px;
 	}
 
 	.header {
@@ -165,24 +149,8 @@ form {
 		width: 85%;
 	}
 
-	.contact-us {
-		width: 85%;
-		height: 25%;
-		color: white;
-		padding: 2rem 0;
-	}
-
 	.contact-detail {
 		flex-direction: column;
-	}
-
-	#email,
-	#name {
-		width: 100%;
-	}
-
-	textarea {
-		height: 60%;
 	}
 }
 @media only screen and (max-width: 500px) {
@@ -201,11 +169,26 @@ form {
 	.contact-form {
 		width: 95%;
 	}
+	
+}
+.star-rating {
+  display: inline-block;
+}
 
-	.contact-us {
-		width: 95%;
-		height: 25%;
-		color: white;
-		padding: 2rem 0;
-	}
+.star-rating input[type="radio"] {
+  display: none;
+}
+
+.star-rating label {
+  font-size: 30px;
+  color: #FFBB00;
+  cursor: pointer;
+}
+
+.star-rating label:before {
+  content: '\2606'; /* Empty star */
+}
+
+.star-rating input[type="radio"]:checked ~ label:before {
+  content: '\2605'; /* Filled star */
 }
