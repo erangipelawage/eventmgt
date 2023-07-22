@@ -63,3 +63,6 @@ python manage.py syncdb
 https://betterprogramming.pub/how-to-integrate-django-react-app-with-stripe-payments-95709b3f23e5
 
 npm install --save react-router-dom
+
+## admin user create
+python manage.py createsuperuser
