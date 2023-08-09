@@ -1,5 +1,5 @@
 import React from 'react';
-// import { Link } from "react-router-dom";
+import { Link } from "react-router-dom";
 
 const Ratings = () => {
     return(
@@ -11,6 +11,10 @@ const Ratings = () => {
         <link href="https://fonts.googleapis.com/css2?family=Source+Sans+Pro:wght@400;600;700&display=swap" rel="stylesheet" />
         <link rel="stylesheet" href="assets/css/contact-page.css" />
         <link rel="shortcut icon" href="./assets/img/favicon.webp" type="image/x-icon" />
+        <link href="https://fonts.googleapis.com/css2?family=Source+Sans+Pro:wght@400;700&display=swap" rel="stylesheet" />
+        <link rel="stylesheet" href="./assets/css/global-header.css" />
+        <link rel="shortcut icon" href="./assets/img/favicon.webp" type="image/x-icon" />
+        
         
         <div className="main">
           <div className="contact">

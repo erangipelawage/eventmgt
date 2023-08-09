@@ -1,5 +1,5 @@
 import React from 'react';
-// import { Link } from 'react-router-dom';
+import { Link } from 'react-router-dom';
 
 const Home = () => {
     return(
@@ -13,14 +13,35 @@ const Home = () => {
         <link rel="stylesheet" href="./assets/css/accesibility.css" />
         <link rel="stylesheet" href="./assets/css/index.css" />
         <link rel="shortcut icon" href="./assets/img/favicon.webp" type="image/x-icon" />
-        {/* <div id="loader">
-          <svg version="1.1" id="L9" xmlns="http://www.w3.org/2000/svg" xmlnsXlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 100 100" enableBackground="new 0 0 0 0" xmlSpace="preserve">
-            <path fill="#d4af37" d="M73,50c0-12.7-10.3-23-23-23S27,37.3,27,50 M30.9,50c0-10.5,8.5-19.1,19.1-19.1S69.1,39.5,69.1,50">
-              <animateTransform attributeName="transform" attributeType="XML" type="rotate" dur="1s" from="0 50 50" to="360 50 50" repeatCount="indefinite" />
-            </path>
-          </svg>
-        </div> */}
-        
+        <link href="https://fonts.googleapis.com/css2?family=Source+Sans+Pro:wght@400;700&display=swap" rel="stylesheet" />
+        <link rel="stylesheet" href="./assets/css/global-header.css" />
+        <link rel="shortcut icon" href="./assets/img/favicon.webp" type="image/x-icon" />
+        <header>
+          <div className="header-container">
+            <nav className="header-nav-bar">
+              <div className="header-nav-logo">
+                <Link to="/">
+                  <img src="assets/img/logo.png" alt="SEABREEZE hotel logo" width="100px" height="100px" />
+                </Link>
+              </div>
+              <ul className="header-nav-lists">
+                <li className="header-nav-list"><Link className="header-nav-link header-active" to="/">HOME</Link></li>
+                <li className="header-nav-list"><Link className="header-nav-link" to="/AboutUs">ABOUT US</Link></li>
+                <li className="header-nav-list"><Link className="header-nav-link" to="/Rooms">ROOMS</Link></li>
+                <li className="header-nav-list"><Link className="header-nav-link" to="/Eventpackages">EVENT PACKAGES</Link></li>
+                <li className="header-nav-list"><Link className="header-nav-link" to="/Outdoor">OUTDOOR PACKAGES</Link></li>
+                <li className="header-nav-list"><Link className="header-nav-link" to="/Facilities">FACILITIES</Link></li>
+                <li className="header-nav-list"><Link className="header-btn header-btn-custom" to="/login">LOG IN</Link>
+                </li>
+              </ul>
+              <div className="header-hamburger-icon">
+                <div className="header-hamburger-line-1" />
+                <div className="header-hamburger-line-2" />
+                <div className="header-hamburger-line-3" />
+              </div>
+            </nav>
+          </div>
+        </header>
         <div className="jumbotron-container">
           <div className="jumbotron-left">
             <h2 className="jumbotron-header">Discover the perfect balance <br /> of hospitality, luxury and <br />comfort.</h2>
