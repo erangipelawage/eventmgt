@@ -12,7 +12,7 @@ const Login = () => {
           href="https://fonts.googleapis.com/css2?family=Source+Sans+Pro:wght@400;600;700&display=swap"
           rel="stylesheet"
         />
-        {/* <link rel="stylesheet" href="assets/css/login.css" /> */}
+        <link rel="stylesheet" href="./assets/css/login.css" />
         <link
           rel="stylesheet"
           href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/css/bootstrap.min.css"
@@ -25,17 +25,18 @@ const Login = () => {
             <input
               type="text"
               className="form-control"
+              id="email"
               name="username"
               placeholder="Email Address"
-              required=" "
-              autofocus
+              required
             />
             <input
               type="password"
               className="form-control"
               name="password"
+              id="password"
               placeholder="Password"
-              required=" "
+              required
             />
             <label className="checkbox">
               <input

@@ -23,7 +23,7 @@ const Register = () => {
             <input type="text" name="name" id="name" placeholder="Name" required />
             <label id="icon" htmlFor="name"><i className="icon-shield" /></label>
             <input type="password" name="name" id="name" placeholder="Password" required />
-            <p>By clicking Register, you agree on our terms and condition</p>
+            <p><b>By clicking Register, you agree on our terms and condition</b></p>
             <a href="/" className="button">REGISTER</a>
           </form>
         </div>

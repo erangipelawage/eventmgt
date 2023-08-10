@@ -43,8 +43,91 @@ const Eventpackages = () => {
           </div>
         </header>
 
-        <h1>Event Packages</h1>
-        <br />
+      <main>
+        <div className="container">
+          {/* Top Text */}
+          <div className="page-header-container">
+            <h2 className="page-header">Sea Bruu8u8u89i9es</h2>
+            <hr />
+            <p className="page-sub-header">
+              Get the most of our hotel specials. Enjoy the modern <br />
+              comfort and panoramic view
+            </p>
+          </div>
+        </div>
+        {/* Wedding Event Package */}
+        <div className="container">
+          <div className="card">
+            <img src="C:\Users\Tharushi\Documents\Reservation\img\hall 1a.jpg" alt="" /> 
+            <div className="intro">
+              <h3>Silver Package</h3>
+              <p>🧑50 participants</p>
+              <p>🏠Royal Banquet Hall</p>
+              <p>🕛In 9 p.m </p>
+              <p>🕛Out 3 p.m</p>
+              <p><b>LKR 250,000</b><span style={{textAlign: 'left'}}><a href="silverPackage.html">See More</a></span></p>
+            </div>   
+          </div>
+          <div className="card">
+            <img src="C:\Users\Tharushi\Documents\Reservation\img\hall 2.jpg" alt="" /> 
+            <div className="intro">
+              <h3>Gold Package</h3>
+              <p>🧑100 participants</p>
+              <p>🏠Rose Banquet Hall</p>
+              <p>🕛In 9 p.m </p>
+              <p>🕛Out 3 p.m</p>
+              <p><b>LKR 500,000</b><span style={{textAlign: 'left'}}><a href="GoldPackage.html">See more</a></span></p>
+            </div>   
+          </div>
+          <div className="card">
+            <img src="C:\Users\Tharushi\Documents\Reservation\img\hall 3.jpg" alt="" /> 
+            <div className="intro">
+              <h3>Platinum Package</h3>
+              <p>🧑150 participants</p>
+              <p>🏠Deween Banquet Hall</p>
+              <p>🕛In 9 p.m </p>
+              <p>🕛Out 3 p.m</p>
+              <p><b>LKR 750,000</b><span style={{textAlign: 'left'}}><a href="PlatinumPackage.html">See more</a></span></p>
+            </div>   
+          </div>
+        </div>
+        {/* Night & other Event Package */}
+        <div className="container">
+          <div className="card">
+            <img src="C:\Users\Tharushi\Documents\Reservation\img\D couple.jpg" alt="" />
+            <div className="intro">
+              <h3>Dinner Out Package <span>(Couple)</span></h3>
+              <p>🧑2 participants</p>
+              <p>🍽️Restauran</p>
+              <p>🕛In 7 p.m </p>
+              <p>🕛Out 12 p.m</p>
+              <p><b>LKR 10,000</b><span style={{textAlign: 'left'}}><a href="DinnerC.html">See more</a></span></p>
+            </div>   
+          </div>
+          <div className="card">
+            <img src="C:\Users\Tharushi\Documents\Reservation\img\D dinner 2.jpg" alt="" />
+            <div className="intro">
+              <h3>Dinner Out Package<span>Family</span></h3>
+              <p>🧑6 participants</p>
+              <p>🍽️Restauran</p>
+              <p>🕛In 7 p.m </p>
+              <p>🕛Out 12 p.m</p>
+              <p><b>LKR 25,000</b><span style={{textAlign: 'left'}}><a href="DinnerF.html">See more</a></span></p>
+            </div>   
+          </div>
+          <div className="card">
+            <img src="C:\Users\Tharushi\Documents\Reservation\img\jumbo.jpeg" alt="" />
+            <div className="intro">
+              <h3>Jumbo Package</h3>
+              <p>🧑30 participants</p>
+              <p>🏠Royal Banquet Hall</p>
+              <p>🕛In 6 p.m </p>
+              <p>🕛Out 12 p.m</p>
+              <p><b>LKR 100,000</b><span style={{textAlign: 'left'}}><a href="JumboP.html">See more</a></span></p>
+            </div>   
+          </div>
+        </div>
+      </main>
         
       </div>
         </>
