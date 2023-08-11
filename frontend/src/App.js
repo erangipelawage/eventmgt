@@ -11,6 +11,8 @@ import Ratings from "./pages/Ratings";
 import Eventpackages from "./pages/Eventpackages";
 import BookNow from "./pages/BookNow";
 import Rooms from "./pages/Rooms";
+import RegistrationForm from "./pages/RegistrationForm";
+
 
 function App() {
   return (
@@ -27,6 +29,7 @@ function App() {
         <Route path="/Eventpackages" element={<Eventpackages />}/>
         <Route path="/BookNow" element={<BookNow />}/>
         <Route path="/Rooms" element={<Rooms />}/>
+        <Route path="/RegistrationForm" element={<RegistrationForm />}/>
       </Routes>
       <Footer />
       

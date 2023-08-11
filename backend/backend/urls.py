@@ -5,5 +5,5 @@ urlpatterns = [
     path('admin', admin.site.urls),
     
     # add this line
-    path('payments', include('payments.urls'))
+    path('payments', include('payments.urls')),
 ]
