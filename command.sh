@@ -23,6 +23,7 @@ python manage.py startapp payments
 # rest framework install
 pip install djangorestframework
 
+# Database AWS- RDS-MySQL
 hostname - eventmgt.cfvufltihmhv.us-east-2.rds.amazonaws.com
 username - admin
 password - Pa$$w0rd
@@ -39,7 +40,7 @@ pip install -r requirements.txt
 
 # Generate the initial migration for your model
 python manage.py makemigrations
-
+postman
 # Apply the migrations to create the database table
 python manage.py migrate
 
@@ -66,3 +67,19 @@ npm install --save react-router-dom
 
 ## admin user create
 python manage.py createsuperuser
+
+pip install djangorestframework django-cors-headers
+
+npm install bootstrap@4.6.0 reactstrap@8.9.0 --legacy-peer-deps
+
+index.js -> import 'bootstrap/dist/css/bootstrap.css';
+
+npm install axios
+npm install semantic-ui-react semantic-ui-css
+
+http://localhost:8000/api/bookings
+http://localhost:8000/api/ratings/
+http://localhost:8000/api/customers/
+
+http://localhost:8000/payments/test-payment/
+email https://3uw72gnx24337cskea2mqcyorq0upjlj.lambda-url.us-east-2.on.aws/

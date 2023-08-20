@@ -3,16 +3,16 @@ from rest_framework import status
 from rest_framework.decorators import api_view
 from rest_framework.response import Response
 
-stripe.api_key = 'sk_test_...'
+stripe.api_key = 'sk_test_51NKmX5Cn2RHbPGapux8siW6x1dyQoGt1JdYUBB5PueMHokiDZBg3PkoC3KnSbkMN4ViEPw0UznYIiZcc57rTKihO00He98lQfe'
 
 
 @api_view(['POST'])
 def test_payment(request):
     test_payment_intent = stripe.PaymentIntent.create(
         amount=1000,
-        currency='pln',
+        currency='usd',
         payment_method_types=['card'],
-        receipt_email='test@example.com',
+        receipt_email='hansikaerangi4@gmail.com',
     )
 
     return Response(status=status.HTTP_200_OK, data=test_payment_intent)

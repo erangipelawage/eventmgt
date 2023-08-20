@@ -124,7 +124,7 @@ const Rooms = () => {
               <div className="row center-lg">
                 <div className="rooms col col-2">
                   <img
-                    src="assets/img/Single.jpg"
+                    src="./assets/img/Single.jpg"
                     alt=""
                     className="rooms-img"
                   />
@@ -138,7 +138,7 @@ const Rooms = () => {
                       <p>
                         <img
                           className="gallery-image"
-                          src="assets/img/bed.png"
+                          src="./assets/img/bed.png"
                           width={20}
                           height={20}
                         />{" "}
@@ -147,7 +147,7 @@ const Rooms = () => {
                       <p>
                         <img
                           className="gallery-image"
-                          src="assets/img/wifi.jpeg"
+                          src="./assets/img/wifi.jpeg"
                           width={20}
                           height={20}
                         />{" "}
@@ -156,7 +156,7 @@ const Rooms = () => {
                       <p>
                         <img
                           className="gallery-image"
-                          src="assets/img/parking.png"
+                          src="./assets/img/parking.png"
                           width={16}
                           height={16}
                         />{" "}
@@ -165,7 +165,7 @@ const Rooms = () => {
                       <p>
                         <img
                           className="gallery-image"
-                          src="assets/img/sleeprs.png"
+                          src="./assets/img/sleeprs.png"
                           width={18}
                           height={20}
                         />{" "}
@@ -182,7 +182,7 @@ const Rooms = () => {
                 </div>
                 <div className="rooms col col-2">
                   <img
-                    src="assets/img/double.jpg"
+                    src="./assets/img/double.jpg"
                     alt=""
                     className="rooms-img"
                   />
@@ -196,7 +196,7 @@ const Rooms = () => {
                       <p>
                         <img
                           className="gallery-image"
-                          src="assets/img/bed.png"
+                          src="./assets/img/bed.png"
                           width={20}
                           height={20}
                         />{" "}
@@ -205,7 +205,7 @@ const Rooms = () => {
                       <p>
                         <img
                           className="gallery-image"
-                          src="assets/img/wifi.jpeg"
+                          src="./assets/img/wifi.jpeg"
                           width={20}
                           height={20}
                         />{" "}
@@ -214,7 +214,7 @@ const Rooms = () => {
                       <p>
                         <img
                           className="gallery-image"
-                          src="assets/img/parking.png"
+                          src="./assets/img/parking.png"
                           width={16}
                           height={16}
                         />{" "}
@@ -223,7 +223,7 @@ const Rooms = () => {
                       <p>
                         <img
                           className="gallery-image"
-                          src="assets/img/sleeprs.png"
+                          src="./assets/img/sleeprs.png"
                           width={18}
                           height={20}
                         />{" "}
@@ -240,7 +240,7 @@ const Rooms = () => {
                 </div>
                 <div className="rooms col col-2">
                   <img
-                    src="assets/img/trible.jpg"
+                    src="./assets/img/trible.jpg"
                     alt=""
                     className="rooms-img"
                   />
@@ -254,7 +254,7 @@ const Rooms = () => {
                       <p>
                         <img
                           className="gallery-image"
-                          src="assets/img/bed.png"
+                          src="./assets/img/bed.png"
                           width={20}
                           height={20}
                         />{" "}
@@ -263,7 +263,7 @@ const Rooms = () => {
                       <p>
                         <img
                           className="gallery-image"
-                          src="assets/img/wifi.jpeg"
+                          src="./assets/img/wifi.jpeg"
                           width={20}
                           height={20}
                         />{" "}
@@ -272,7 +272,7 @@ const Rooms = () => {
                       <p>
                         <img
                           className="gallery-image"
-                          src="assets/img/parking.png"
+                          src="./assets/img/parking.png"
                           width={16}
                           height={16}
                         />{" "}
@@ -281,7 +281,7 @@ const Rooms = () => {
                       <p>
                         <img
                           className="gallery-image"
-                          src="assets/img/sleeprs.png"
+                          src="./assets/img/sleeprs.png"
                           width={18}
                           height={20}
                         />{" "}
@@ -298,7 +298,7 @@ const Rooms = () => {
                 </div>
                 <div className="rooms col col-2">
                   <img
-                    src="assets/img/cottage 3.jpg"
+                    src="./assets/img/cottage 3.jpg"
                     alt=""
                     className="rooms-img"
                   />
@@ -312,7 +312,7 @@ const Rooms = () => {
                       <p>
                         <img
                           className="gallery-image"
-                          src="assets/img/bed.png"
+                          src="./assets/img/bed.png"
                           width={20}
                           height={20}
                         />{" "}
@@ -321,7 +321,7 @@ const Rooms = () => {
                       <p>
                         <img
                           className="gallery-image"
-                          src="assets/img/wifi.jpeg"
+                          src="./assets/img/wifi.jpeg"
                           width={20}
                           height={20}
                         />{" "}
@@ -330,7 +330,7 @@ const Rooms = () => {
                       <p>
                         <img
                           className="gallery-image"
-                          src="assets/img/parking.png"
+                          src="./assets/img/parking.png"
                           width={16}
                           height={16}
                         />{" "}
@@ -339,7 +339,7 @@ const Rooms = () => {
                       <p>
                         <img
                           className="gallery-image"
-                          src="assets/img/sleeprs.png"
+                          src="./assets/img/sleeprs.png"
                           width={18}
                           height={20}
                         />{" "}
@@ -348,7 +348,7 @@ const Rooms = () => {
                       <p>
                         <img
                           className="gallery-image"
-                          src="assets/img/resturnt.png"
+                          src="./assets/img/resturnt.png"
                           width={18}
                           height={20}
                         />{" "}
@@ -365,7 +365,7 @@ const Rooms = () => {
                 </div>
                 <div className="rooms col col-2">
                   <img
-                    src="assets/img/cottage 1.jpg"
+                    src="./assets/img/cottage 1.jpg"
                     alt=""
                     className="rooms-img"
                   />
@@ -379,7 +379,7 @@ const Rooms = () => {
                       <p>
                         <img
                           className="gallery-image"
-                          src="assets/img/bed.png"
+                          src="./assets/img/bed.png"
                           width={20}
                           height={20}
                         />{" "}
@@ -388,7 +388,7 @@ const Rooms = () => {
                       <p>
                         <img
                           className="gallery-image"
-                          src="assets/img/wifi.jpeg"
+                          src="./assets/img/wifi.jpeg"
                           width={20}
                           height={20}
                         />{" "}
@@ -397,7 +397,7 @@ const Rooms = () => {
                       <p>
                         <img
                           className="gallery-image"
-                          src="assets/img/parking.png"
+                          src="./assets/img/parking.png"
                           width={16}
                           height={16}
                         />{" "}
@@ -406,16 +406,16 @@ const Rooms = () => {
                       <p>
                         <img
                           className="gallery-image"
-                          src="assets/img/sleeprs.png"
+                          src="./assets/img/sleeprs.png"
                           width={18}
                           height={20}
                         />{" "}
-                        Two Sleeps
+                        Five Sleeps
                       </p>
                       <p>
                         <img
                           className="gallery-image"
-                          src="assets/img/resturnt.png"
+                          src="./assets/img/resturnt.png"
                           width={18}
                           height={20}
                         />{" "}
@@ -432,7 +432,7 @@ const Rooms = () => {
                 </div>
                 <div className="rooms col col-2">
                   <img
-                    src="assets/img/cottage 2.jpg"
+                    src="./assets/img/cottage 2.jpg"
                     alt=""
                     className="rooms-img"
                   />
@@ -446,7 +446,7 @@ const Rooms = () => {
                       <p>
                         <img
                           className="gallery-image"
-                          src="assets/img/bed.png"
+                          src="./assets/img/bed.png"
                           width={20}
                           height={20}
                         />{" "}
@@ -455,7 +455,7 @@ const Rooms = () => {
                       <p>
                         <img
                           className="gallery-image"
-                          src="assets/img/wifi.jpeg"
+                          src="./assets/img/wifi.jpeg"
                           width={20}
                           height={20}
                         />{" "}
@@ -464,7 +464,7 @@ const Rooms = () => {
                       <p>
                         <img
                           className="gallery-image"
-                          src="assets/img/parking.png"
+                          src="./assets/img/parking.png"
                           width={16}
                           height={16}
                         />{" "}
@@ -473,7 +473,7 @@ const Rooms = () => {
                       <p>
                         <img
                           className="gallery-image"
-                          src="assets/img/sleeprs.png"
+                          src="./assets/img/sleeprs.png"
                           width={18}
                           height={20}
                         />{" "}
@@ -482,7 +482,7 @@ const Rooms = () => {
                       <p>
                         <img
                           className="gallery-image"
-                          src="assets/img/resturnt.png"
+                          src="./assets/img/resturnt.png"
                           width={18}
                           height={20}
                         />{" "}

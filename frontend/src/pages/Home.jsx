@@ -1,7 +1,22 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
+import { useEffect } from 'react';
+
 
 const Home = () => {
+  useEffect(() => {
+    const script = document.createElement('script');
+    script.src = 'https://userlike-cdn-widgets.s3-eu-west-1.amazonaws.com/4b09989a69254ac1a2bd21133f8c7eeb2c8aa64d6972487490ce08bf5c498422.js';
+    script.async = true;
+
+    document.body.appendChild(script);
+
+    return () => {
+      // Clean up by removing the script when the component unmounts
+      document.body.removeChild(script);
+    };
+  }, []);
+  
     return(
         <>
        <div>
@@ -16,6 +31,7 @@ const Home = () => {
         <link href="https://fonts.googleapis.com/css2?family=Source+Sans+Pro:wght@400;700&display=swap" rel="stylesheet" />
         <link rel="stylesheet" href="./assets/css/global-header.css" />
         <link rel="shortcut icon" href="./assets/img/favicon.webp" type="image/x-icon" />
+        
         <header>
           <div className="header-container">
             <nav className="header-nav-bar">
@@ -59,6 +75,7 @@ const Home = () => {
           </div>
           <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3940.63296123671!2d79.88390687493377!3d9.005880091054541!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3afdd90468e6f87f%3A0x16024eb146963485!2sSea%20Breeze!5e0!3m2!1sen!2slk!4v1689504259810!5m2!1sen!2slk" style={{border: 0}} allowFullScreen loading="lazy" referrerPolicy="no-referrer-when-downgrade" width={1465} height={400} />
         </div></div>
+        
         </>
     )
 }

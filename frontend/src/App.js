@@ -11,8 +11,15 @@ import Ratings from "./pages/Ratings";
 import Eventpackages from "./pages/Eventpackages";
 import BookNow from "./pages/BookNow";
 import Rooms from "./pages/Rooms";
-import RegistrationForm from "./pages/RegistrationForm";
-
+import GoldPackage from "./pages/GoldPackage";
+import DinnerOutC from "./pages/DinnerOutC";
+import DinnerOutF from "./pages/DinnerOutF";
+import SilverPackags from "./pages/SilverPackags";
+import JumboPackage from "./pages/JumboPackage";
+import PlatinumPackage from "./pages/PlatinumPackage";
+import Pay from "./Pay";
+import LoginPage from './LoginPage';
+import Validation from './Validation';  
 
 function App() {
   return (
@@ -29,9 +36,17 @@ function App() {
         <Route path="/Eventpackages" element={<Eventpackages />}/>
         <Route path="/BookNow" element={<BookNow />}/>
         <Route path="/Rooms" element={<Rooms />}/>
-        <Route path="/RegistrationForm" element={<RegistrationForm />}/>
+        <Route path="/GoldPackage" element={<GoldPackage />}/>
+        <Route path="/DinnerOutF" element={<DinnerOutF />}/>
+        <Route path="/DinnerOutC" element={<DinnerOutC />}/>
+        <Route path="/SilverPackags" element={<SilverPackags />}/>
+        <Route path="/JumboPackage" element={<JumboPackage />}/>
+        <Route path="/PlatinumPackage" element={<PlatinumPackage />}/>
+        <Route path="/Pay" element={<Pay />}/>   
+        <Route path="/LoginPage" element={<LoginPage />}/>
+        <Route path="/Validation" element={<Validation />}/>     
       </Routes>
-      <Footer />
+      {/* <Footer /> */}
       
     </div>
   );

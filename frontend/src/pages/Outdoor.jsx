@@ -47,7 +47,7 @@ const Outdoor = () => {
         
         <main>
           <div className="container">
-            {/* Top Text */}
+           
             <div className="page-header-container">
               <h2 className="page-header">SEABREEZE OUTDOOR LOCATION PACKAGES</h2>
               <hr />
@@ -56,7 +56,7 @@ const Outdoor = () => {
                 comfort and panoramic view
               </p>
             </div>
-            {/* Rooms */}
+            
             <section className="rooms-section">
               <div className="row room-section-header-container">
                 <div className="col col-3">
