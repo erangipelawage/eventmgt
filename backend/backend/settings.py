@@ -123,3 +123,9 @@ DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 CORS_ORIGIN_WHITELIST = [
      'http://localhost:3000'
 ]
+
+# Send Email
+EMAIL_BACKEND = 'django_ses.SESBackend'
+
+AWS_ACCESS_KEY_ID = 'AKIA5SLAWDH3FXS6TZQP'
+AWS_SECRET_ACCESS_KEY = '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'

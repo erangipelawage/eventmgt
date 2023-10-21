@@ -48,11 +48,11 @@ handleSubmit = (event) => {
       });
     })
     .catch(error => {
-      console.error('Error rating:', error);
+      
+      });console.error('Error rating:', error);
       this.setState({
         // errorMessage: 'An error occurred. Please try again.', // Set the error message in the state
         successMessage: '', // Clear any previous success message
-      });
     });
 };
 

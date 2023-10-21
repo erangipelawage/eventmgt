@@ -34,6 +34,8 @@ python -m venv venv
 venv/Scripts/activate.bat //In CMD
 venv/Scripts/Activate.ps1 //In Powershel
 
+venv\Scripts\activate 
+
 # reauiremnts txt make
 pip freeze > requirements.txt
 pip install -r requirements.txt
@@ -83,3 +85,20 @@ http://localhost:8000/api/customers/
 
 http://localhost:8000/payments/test-payment/
 email https://3uw72gnx24337cskea2mqcyorq0upjlj.lambda-url.us-east-2.on.aws/
+
+# Email Function
+https://medium.com/hackernoon/the-easiest-way-to-send-emails-with-django-using-ses-from-aws-62f3d3d33efd
+pip install django-ses
+
+###
+Email
+seabreezehotelproject@gmail.com
+Test1234@#
+
+Sample Repo 
+https://github.com/MoinulHossainNabil/Hotel-Reservation-Django-React
+
+package.json change
+start": "react-scripts --openssl-legacy-provider start",
+
+pip install python-decouple
