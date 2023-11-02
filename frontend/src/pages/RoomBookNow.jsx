@@ -4,7 +4,7 @@ import axios from "axios";
 // import { useEffect } from "react";
 import { Link } from "react-router-dom";
 
-export default class BookNow extends React.Component {
+export default class RoomBookNow extends React.Component {
   constructor(props) {
     super(props);
 
@@ -133,7 +133,7 @@ export default class BookNow extends React.Component {
         <div className="container">
           <form onSubmit={this.handleSubmit}>
             <div>
-              <h2 className="title">Online Booking</h2>
+              <h2 className="title">Room Online Booking</h2>
             </div>
             <div className="raw">
               <div className="col">

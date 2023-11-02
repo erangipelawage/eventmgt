@@ -175,7 +175,7 @@ const Rooms = () => {
                   </div>
                   <p className="amount-text">LKR 10,000 Per Night</p>
                   <div className="buttons-container">
-                    <Link to="/BookNow" className="btn btn-fill btn-large">
+                    <Link to="/RoomBookNow" className="btn btn-fill btn-large">
                       BOOK NOW
                     </Link>
                   </div>
@@ -233,7 +233,7 @@ const Rooms = () => {
                   </div>
                   <p className="amount-text">LKR 15,000 Per Night</p>
                   <div className="buttons-container">
-                    <Link to="/BookNow" className="btn btn-fill btn-large">
+                    <Link to="/RoomBookNow" className="btn btn-fill btn-large">
                       BOOK NOW
                     </Link>
                   </div>
@@ -291,7 +291,7 @@ const Rooms = () => {
                   </div>
                   <p className="amount-text">LKR 20,000 Per Night</p>
                   <div className="buttons-container">
-                    <Link to="/BookNow" className="btn btn-fill btn-large">
+                    <Link to="/RoomBookNow" className="btn btn-fill btn-large">
                       BOOK NOW
                     </Link>
                   </div>
@@ -425,7 +425,7 @@ const Rooms = () => {
                   </div>
                   <p className="amount-text">LKR 45,000 Per Night</p>
                   <div className="buttons-container">
-                    <Link to="/BookNow" className="btn btn-fill btn-large">
+                    <Link to="/RoomBookNow" className="btn btn-fill btn-large">
                       BOOK NOW
                     </Link>
                   </div>
@@ -492,7 +492,7 @@ const Rooms = () => {
                   </div>
                   <p className="amount-text">LKR 60,000 Per Night</p>
                   <div className="buttons-container">
-                    <Link to="/BookNow" className="btn btn-fill btn-large">
+                    <Link to="/RoomBookNow" className="btn btn-fill btn-large">
                       BOOK NOW
                     </Link>
                   </div>

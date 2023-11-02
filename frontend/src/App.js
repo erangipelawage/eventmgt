@@ -9,7 +9,7 @@ import Login from "./pages/Login";
 import Register from "./pages/Register";
 import Ratings from "./pages/Ratings";
 import Eventpackages from "./pages/Eventpackages";
-import BookNow from "./pages/BookNow";
+import RoomBookNow from "./pages/RoomBookNow";
 import Rooms from "./pages/Rooms";
 import GoldPackage from "./pages/GoldPackage";
 import DinnerOutC from "./pages/DinnerOutC";
@@ -34,7 +34,7 @@ function App() {
         <Route path="/Outdoor" element={<Outdoor />}/>
         <Route path="/Ratings" element={<Ratings />}/>
         <Route path="/Eventpackages" element={<Eventpackages />}/>
-        <Route path="/BookNow" element={<BookNow />}/>
+        <Route path="/RoomBookNow" element={<RoomBookNow />}/>
         <Route path="/Rooms" element={<Rooms />}/>
         <Route path="/GoldPackage" element={<GoldPackage />}/>
         <Route path="/DinnerOutF" element={<DinnerOutF />}/>

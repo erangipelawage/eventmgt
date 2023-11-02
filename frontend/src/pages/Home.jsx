@@ -43,7 +43,7 @@ const Home = () => {
               <ul className="header-nav-lists">
                 <li className="header-nav-list"><Link className="header-nav-link header-active" to="/">HOME</Link></li>
                 <li className="header-nav-list"><Link className="header-nav-link" to="/AboutUs">ABOUT US</Link></li>
-                <li className="header-nav-list"><Link className="header-nav-link" to="/Rooms">ROOMS</Link></li>
+                <li className="header-nav-list"><Link className="header-nav-link" to="http://localhost:3001/roombooking">ROOMS</Link></li>
                 <li className="header-nav-list"><Link className="header-nav-link" to="/Eventpackages">EVENT PACKAGES</Link></li>
                 <li className="header-nav-list"><Link className="header-nav-link" to="/Outdoor">OUTDOOR PACKAGES</Link></li>
                 <li className="header-nav-list"><Link className="header-nav-link" to="/Facilities">FACILITIES</Link></li>
