@@ -65,7 +65,7 @@ const Eventpackages = () => {
                     width={18}
                     height={20}
                   />{" "}
-                  In 9 p.m{" "}
+                  In 9 a.m{" "}
                 </p>
                 <p>
                   <img

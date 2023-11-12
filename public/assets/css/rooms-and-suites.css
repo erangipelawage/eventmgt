@@ -1,4 +1,4 @@
-* {
+*{
     font-size: 20px;
     font-weight: 400;
 }
@@ -8,7 +8,7 @@ body {
 }
 
 main {
-    color: #241E09;
+    color: #454133;
 }
 
 .row {
@@ -31,6 +31,11 @@ main {
 
 .small-image {
     height: 105px;
+}
+
+.rooms-img {
+    height: 250px;
+    
 }
 
 .large-image {
@@ -66,6 +71,7 @@ main {
 
 .page-header-container {
     margin-bottom: 50px;
+
 }
 
 .page-header {
@@ -103,7 +109,7 @@ hr {
 }
 
 .room-title {
-    font-size: 90%;
+    font-size: 100%;
     font-weight: 900;
     margin: 15px 0 12px;
 }
@@ -116,7 +122,7 @@ hr {
 }
 
 .details-container {
-    font-size: 40px;
+    font-size: 25px;
     
 }
 .details-container p {
@@ -137,7 +143,7 @@ hr {
         margin-top: 20px;
         padding: 0px 8px;
         font-weight: 300;
-        transition: all 1s;
+        transition: all 2s;
         margin-right: 10px;
     }
     
@@ -148,7 +154,7 @@ hr {
     
     .btn-fill:hover,
     .btn-fill:active {
-        background-color: #2e2918;
+        background-color: #9c8436;
         transform: translateY(-3px);
         border: 1px solid #9c6e1a;
     }
