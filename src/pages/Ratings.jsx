@@ -84,7 +84,7 @@ render() {
                   <br />
                   <input type="text" className="form-control" name="rating" onChange={this.handleChange} placeholder="Rating" id="rating" style={{resize: 'none', width: '115%'}} />
           
-                  <a href="/" className="btn btn-warning"> Home</a>
+                  <a href="/home" className="btn btn-warning"> Home</a>
                 <button type="submit" id="popupButton" className='btn btn-primary'>SUBMIT</button>
           
                   

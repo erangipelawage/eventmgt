@@ -62,7 +62,7 @@ export default function RoomsFilter() {
         </div>
         <div className="form-group">
           <label htmlFor="customRange3">
-            Room Cost Max ${price_per_night}
+            Room Cost Max Rs.{price_per_night}
           </label>
           <input
             name="price_per_night"

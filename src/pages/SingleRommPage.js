@@ -32,7 +32,7 @@ export default function SingleRommPage({ match }) {
             </div>
             <div className="col-md-6 m-auto">
               <h6>Information</h6>
-              <p>Price ${room.price_per_night}</p>
+              <p>Price Rs.{room.price_per_night}</p>
               <p>Size {room.room_size} Sqr Feet</p>
               <p>Capacity Maxium {room.capacity} People</p>
               <p>Meals Included</p>
