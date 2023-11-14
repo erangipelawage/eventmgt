@@ -27,8 +27,7 @@ const BookNow = () => {
                 <li className="header-nav-list"><Link className="header-nav-link" to="/Eventpackages">EVENT PACKAGES</Link></li>
                 <li className="header-nav-list"><Link className="header-nav-link" to="/Outdoor">OUTDOOR PACKAGES</Link></li>
                 <li className="header-nav-list"><Link className="header-nav-link" to="/Facilities">FACILITIES</Link></li>
-                <li className="header-nav-list"><Link className="header-btn header-btn-custom" to="/login">LOG IN</Link>
-                </li>
+                <li className="header-nav-list"><Link className="header-btn header-btn-custom" to="/login">LOG IN</Link></li>
               </ul>
               <div className="header-hamburger-icon">
                 <div className="header-hamburger-line-1" />

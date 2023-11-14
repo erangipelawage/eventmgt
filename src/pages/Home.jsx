@@ -31,6 +31,7 @@ const Home = () => {
         <link rel="stylesheet" href="./assets/css/global-header.css" />
         <link rel="shortcut icon" href="./assets/img/favicon.webp" type="image/x-icon" />
         
+        
 
         <div className="jumbotron-container">
           <div className="jumbotron-left">
