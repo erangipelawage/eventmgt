@@ -77,9 +77,10 @@ const Eventpackages = () => {
                   Out 3 p.m
                 </p>
                 <p>
-                  <b>LKR 250,000</b>
+                  <b>LKR 250,000</b> &nbsp;
                   <span style={{ textAlign: "left" }}>
-                    <a href="/SilverPackags" className="btn btn-warning"> SEE MORE</a></span>
+                    <a href="/SilverPackags" className="btn btn-warning"> SEE MORE</a> &nbsp;
+                    <a href="/Outdoocheckout" className="btn btn-success"> Book Now</a></span>
                 </p>
               </div>
             </div>

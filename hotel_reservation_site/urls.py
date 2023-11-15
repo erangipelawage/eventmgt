@@ -3,6 +3,7 @@ from django.conf.urls.static import static
 from django.contrib import admin
 from django.urls import path, include
 from feedback.views import feedbackView
+from eventbooking.views import eventbookingView
 from outdoor.views import outdoorView
 from eventpackage.views import eventpackageView
 from rest_framework import routers
@@ -11,6 +12,7 @@ router = routers.DefaultRouter()
 router.register(r'feedbacks', feedbackView, 'feedback'),
 router.register(r'outdoors',outdoorView, 'outdoor'),
 router.register(r'eventpackages',eventpackageView, 'eventpackage'),
+router.register(r'eventbookings',eventbookingView, 'eventbooking'),
 
 urlpatterns = [
     path('admin/', admin.site.urls),

@@ -46,7 +46,7 @@ const SilverPackags = () => {
                       from the venue to the catering
                     </p>
                     <div className="buttons-container">
-                      <a href="/bookoutdoor" className="btn btn-warning">BOOK NOW</a>
+                      <a href="/Outdoocheckout" className="btn btn-success">BOOK NOW</a>
                       <div className="Menu">
                       <br />
                         <h3>MENU</h3>

@@ -24,6 +24,7 @@ INSTALLED_APPS = [
     'feedback',
     'outdoor',
     'eventpackage',
+    'eventbooking',
 ]
 
 REST_FRAMEWORK = {

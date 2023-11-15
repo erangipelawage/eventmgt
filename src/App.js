@@ -13,7 +13,7 @@ import LoginPage from "./pages/LoginPage";
 import RegisterPage from "./pages/RegisterPage";
 import ErrorPage from "./pages/ErrorPage";
 import Dashboard from './pages/Dashboard';
-import bookoutdoor from './pages/bookoutdoor';
+import Outdoocheckout from './pages/Outdoocheckout';
 
 import Home from "./pages/Home";
 import AboutUs from "./pages/AboutUs";
@@ -103,14 +103,9 @@ function App() {
           render={(props) => <JumboPackage {...props} />}
         />
 
-<Route
-          path="/JumboPackage"
-          render={(props) => <JumboPackage {...props} />}
-        />
-
         <Route
-          path="/bookoutdoor"
-          render={(props) => <bookoutdoor {...props} />}
+          path="/Outdoocheckout"
+          render={(props) => <Outdoocheckout {...props} />}
         />
 
          {/* eND NO NEED CAN REMOVE */}

@@ -2,9 +2,8 @@ import React from "react";
 import axios from "axios";
 // import { useState } from "react";
 // import { useEffect } from "react";
-import { Link } from "react-router-dom";
 
-export default class bookoutdoor extends React.Component {
+export default class Outdoocheckout extends React.Component {
   constructor(props) {
     super(props);
 
@@ -12,6 +11,7 @@ export default class bookoutdoor extends React.Component {
       FullName: "",
       Email: "",
       ContactNo: "",
+      Package: "",
       ArrivalDate: "",
       DepartureDate: "",
       Price: "",
@@ -27,34 +27,39 @@ export default class bookoutdoor extends React.Component {
 
   handleSubmit = (event) => {
     event.preventDefault();
-    const { FullName, Email, ContactNo, ArrivalDate, DepartureDate, Price } =
+    const { FullName, Email, ContactNo, Package, ArrivalDate, DepartureDate, Price } =
       this.state;
 
     const formData = new FormData();
     formData.append("FullName", FullName);
     formData.append("Email", Email);
     formData.append("ContactNo", ContactNo);
+    formData.append("Package", Package);
     formData.append("ArrivalDate", ArrivalDate);
     formData.append("DepartureDate", DepartureDate);
     formData.append("Price", Price);
-    const apiEndpoint = "http://127.0.0.1:8000/api/bookings/";
+    const apiEndpoint = "http://127.0.0.1:8000/api/eventbookings/";
 
     axios
       .post(apiEndpoint, formData)
       .then((response) => {
-        console.log("Booking successful:", response.data);
+        console.log("Event Booking successful!:", response.data);
         this.setState({
           FullName: "",
           Email: "",
           ContactNo: "",
+          Package: "",
           ArrivalDate: "",
           DepartureDate: "",
           Price: "",
+          successMessage: "Event Booking successful!",
         });
       })
-      .catch((error) => {
-        console.error("Error booking:", error);
-      });
+      .catch((error) => {});
+    console.error("Error booking:");
+    this.setState({
+      successMessage: "",
+    });
   };
 
   render() {
@@ -62,7 +67,7 @@ export default class bookoutdoor extends React.Component {
       <div>
         <meta charSet="UTF-8" />
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-        <title>SEABREEZE Hotel - Payment Page</title>
+        <title>SEABREEZE Hotel - Event Booking Page</title>
         <link
           rel="shortcut icon"
           href="./assets/img/favicon.webp"
@@ -71,69 +76,10 @@ export default class bookoutdoor extends React.Component {
         <link rel="stylesheet" href="./assets/css/style1.css" />
         <link rel="stylesheet" href="./assets/css/global-header.css" />
 
-        <header>
-          <div className="header-container">
-            <nav className="header-nav-bar">
-              <div className="header-nav-logo">
-                <Link to="/">
-                  <img
-                    src="assets/img/logo.png"
-                    alt="SEABREEZE hotel logo"
-                    width="100px"
-                    height="100px"
-                  />
-                </Link>
-              </div>
-              <ul className="header-nav-lists">
-                <li className="header-nav-list">
-                  <Link className="header-nav-link" to="/">
-                    HOME
-                  </Link>
-                </li>
-                <li className="header-nav-list">
-                  <Link className="header-nav-link" to="/AboutUs">
-                    ABOUT US
-                  </Link>
-                </li>
-                <li className="header-nav-list">
-                  <Link className="header-nav-link" to="/Rooms">
-                    ROOMS
-                  </Link>
-                </li>
-                <li className="header-nav-list">
-                  <Link className="header-nav-link" to="/Eventpackages">
-                    EVENT PACKAGES
-                  </Link>
-                </li>
-                <li className="header-nav-list">
-                  <Link className="header-nav-link" to="/Outdoor">
-                    OUTDOOR PACKAGES
-                  </Link>
-                </li>
-                <li className="header-nav-list">
-                  <Link className="header-nav-link" to="/Facilities">
-                    FACILITIES
-                  </Link>
-                </li>
-                <li className="header-nav-list">
-                  <Link className="header-btn header-btn-custom" to="/login">
-                    LOG IN
-                  </Link>
-                </li>
-              </ul>
-              <div className="header-hamburger-icon">
-                <div className="header-hamburger-line-1" />
-                <div className="header-hamburger-line-2" />
-                <div className="header-hamburger-line-3" />
-              </div>
-            </nav>
-          </div>
-        </header>
-
         <div className="container">
           <form onSubmit={this.handleSubmit}>
             <div>
-              <h2 className="title">Room Online Booking</h2>
+              <h2 className="title">Event Online Booking</h2>
             </div>
             <div className="raw">
               <div className="col">
@@ -161,6 +107,15 @@ export default class bookoutdoor extends React.Component {
                     type="number"
                     placeholder="Enter Your ConNo"
                     name="ContactNo"
+                    onChange={this.handleChange}
+                  />
+                </div>
+                <div className="inputbox">
+                  <span> Package:</span>
+                  <input
+                    type="text"
+                    placeholder="Package"
+                    name="Package"
                     onChange={this.handleChange}
                   />
                 </div>
@@ -206,6 +161,13 @@ export default class bookoutdoor extends React.Component {
                 </center>
               </div>
             </div>
+
+            {this.state.successMessage && (
+                    <div className="success-message">
+                      <p>{this.state.successMessage}</p>
+                    </div>
+                  )}
+
           </form>
         </div>
       </div>
