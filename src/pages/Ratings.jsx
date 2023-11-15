@@ -45,7 +45,7 @@ export default class Ratings extends React.Component {
       .catch((error) => {});
     console.error("Error rating:");
     this.setState({
-      successMessage: "", // Clear any previous success message
+      successMessage: "",
     });
   };
 
@@ -133,13 +133,12 @@ export default class Ratings extends React.Component {
                   >
                     SUBMIT
                   </button>
+                  {this.state.successMessage && (
+                    <div className="success-message">
+                      <p>{this.state.successMessage}</p>
+                    </div>
+                  )}
                 </form>
-
-                {this.state.successMessage && (
-                  <div className="success-message">
-                    <p>{this.state.successMessage}</p>
-                  </div>
-                )}
               </div>
             </h2>
           </div>

@@ -4,7 +4,7 @@ import axios from "axios";
 // import { useEffect } from "react";
 import { Link } from "react-router-dom";
 
-export default class RoomBookNow extends React.Component {
+export default class bookoutdoor extends React.Component {
   constructor(props) {
     super(props);
 

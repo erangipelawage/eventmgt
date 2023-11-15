@@ -13,6 +13,7 @@ import LoginPage from "./pages/LoginPage";
 import RegisterPage from "./pages/RegisterPage";
 import ErrorPage from "./pages/ErrorPage";
 import Dashboard from './pages/Dashboard';
+import bookoutdoor from './pages/bookoutdoor';
 
 import Home from "./pages/Home";
 import AboutUs from "./pages/AboutUs";
@@ -102,9 +103,14 @@ function App() {
           render={(props) => <JumboPackage {...props} />}
         />
 
+<Route
+          path="/JumboPackage"
+          render={(props) => <JumboPackage {...props} />}
+        />
+
         <Route
-          path="/PlatinumPackage"
-          render={(props) => <PlatinumPackage {...props} />}
+          path="/bookoutdoor"
+          render={(props) => <bookoutdoor {...props} />}
         />
 
          {/* eND NO NEED CAN REMOVE */}
