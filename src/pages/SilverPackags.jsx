@@ -31,7 +31,7 @@ const SilverPackags = () => {
                   <div className="col-md-6">
                     <img
                       className="card-img-top mb-5 mb-md-0"
-                      src="assets/img/d dinner 2.jpg"/>
+                      src="assets/img/Hall1.jpg"/>
                   </div>
                   <div className="col-md-6">
                     <h3>Silver Package</h3>

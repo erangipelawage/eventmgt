@@ -3,8 +3,8 @@
 	justify-content: center;
 	align-items: center;
 	padding: 25px;
-	min-height: 100vh;
-	background: linear-gradient(90deg, #16A085 60%, #16A085 40.1%) ;
+	min-height: 10vh;
+	background: linear-gradient(90deg, #16A085 50%, #16A085 40.1%) ;
 	
 }
 .container h2{
@@ -12,14 +12,14 @@
     font-family: 'Great Vibes',cursive;
 	font-size: 50px;
 	color: black;
-	padding-top: 7%;
-	margin: 30px;
+	padding-top: 1%;
+	margin: 20px;
 	font-weight: bold;
 }
 .container form{
 padding: 20px;
 
-width: 700px;
+width: 800px;
 background:#fff;
 box-shadow: 0 5px 10px rgba(0,0,0,.1) ;
 }
@@ -74,7 +74,7 @@ box-shadow: 0 5px 10px rgba(0,0,0,.1) ;
 	font-size: 17px;
 	background:#F39C12;
 	color:#fff;
-	margin-top: 5px;
+	margin-top: 50px;
 	cursor: pointer;
 
 

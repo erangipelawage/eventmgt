@@ -23,7 +23,7 @@ const GoldPackage = () => {
                 <div className="container px-4 px-lg-5 my-5">
                   <div className="row gx-4 gx-lg-5 align-items-center">
                     <div className="col-md-6">
-                      <img className="card-img-top mb-5 mb-md-0" src="assets/img/Hall 2.jpg" alt="" />
+                      <img className="card-img-top mb-5 mb-md-0" src="assets/img/Hall2.jpg" alt="" />
                     </div>
                     <div className="col-md-6">
                       <h3>GOLD PACKAGE</h3>

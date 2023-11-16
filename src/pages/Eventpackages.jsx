@@ -80,7 +80,7 @@ const Eventpackages = () => {
                   <b>LKR 250,000</b> &nbsp;
                   <span style={{ textAlign: "left" }}>
                     <a href="/SilverPackags" className="btn btn-warning"> SEE MORE</a> &nbsp;
-                    <a href="/Outdoocheckout" className="btn btn-success"> Book Now</a></span>
+                    <a href="/Outdoocheckout" className="btn btn-success"> BOOK NOW</a></span>
                 </p>
               </div>
             </div>
@@ -125,9 +125,10 @@ const Eventpackages = () => {
                   Out 3 p.m
                 </p>
                 <p>
-                  <b>LKR 500,000</b>
+                  <b>LKR 500,000</b> &nbsp;
                   <span style={{ textAlign: "left" }}>
-                    <a href="GoldPackage" className="btn btn-warning"> SEE MORE</a>
+                    <a href="GoldPackage" className="btn btn-warning"> SEE MORE</a> &nbsp;
+                    <a href="/Outdoocheckout" className="btn btn-success"> BOOK NOW</a>
                   </span>
                 </p>
               </div>
@@ -174,9 +175,10 @@ const Eventpackages = () => {
                   Out 3 p.m
                 </p>
                 <p>
-                  <b>LKR 750,000</b>
+                  <b>LKR 750,000</b> &nbsp; 
                   <span style={{ textAlign: "left" }}>
-                    <a href="PlatinumPackage" className="btn btn-warning"> SEE MORE</a>
+                    <a href="PlatinumPackage" className="btn btn-warning"> SEE MORE</a> &nbsp;
+                    <a href="/Outdoocheckout" className="btn btn-success"> BOOK NOW</a>
                   </span>
                 </p>
               </div>
@@ -226,9 +228,10 @@ const Eventpackages = () => {
                   Out 12 p.m
                 </p>
                 <p>
-                  <b>LKR 10,000</b>
+                  <b>LKR 10,000</b> &nbsp;
                   <span style={{ textAlign: "left" }}>
-                    <a href="DinnerOutC" className="btn btn-warning"> SEE MORE</a>
+                    <a href="DinnerOutC" className="btn btn-warning"> SEE MORE</a> &nbsp;
+                    <a href="/Outdoocheckout" className="btn btn-success"> BOOK NOW</a>
                   </span>
                 </p>
               </div>
@@ -277,9 +280,10 @@ const Eventpackages = () => {
                   Out 12 p.m
                 </p>
                 <p>
-                  <b>LKR 25,000</b>
+                  <b>LKR 25,000</b> &nbsp;
                   <span style={{ textAlign: "left" }}>
-                    <a href="DinnerOutF" className="btn btn-warning"> SEE MORE</a>
+                    <a href="DinnerOutF" className="btn btn-warning"> SEE MORE</a> &nbsp;
+                    <a href="/Outdoocheckout" className="btn btn-success"> BOOK NOW</a>
                   </span>
                 </p>
               </div>
@@ -325,9 +329,10 @@ const Eventpackages = () => {
                   Out 12 p.m
                 </p>
                 <p>
-                  <b>LKR 100,000</b>
+                  <b>LKR 100,000</b> &nbsp;
                   <span style={{ textAlign: "left" }}>
-                    <a href="JumboPackage" className="btn btn-warning"> SEE MORE</a>
+                    <a href="JumboPackage" className="btn btn-warning"> SEE MORE</a> &nbsp;
+                    <a href="/Outdoocheckout" className="btn btn-success"> BOOK NOW</a>
                   </span>
                 </p>
               </div>
