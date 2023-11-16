@@ -21,6 +21,7 @@ import Facilities from "./pages/Facilities";
 import Outdoor from "./pages/Outdoor";
 import Ratings from "./pages/Ratings";
 import Eventpackages from "./pages/Eventpackages";
+import Blog from "./pages/Blog";
 
 import Footer from "./components/Footer";
 
@@ -75,6 +76,11 @@ function App() {
         <Route
           path="/Outdoor"
           render={(props) => <Outdoor {...props} />}
+        />
+
+        <Route
+          path="/Blog"
+          render={(props) => <Blog {...props} />}
         />
 
 

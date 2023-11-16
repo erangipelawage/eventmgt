@@ -38,6 +38,9 @@ export default function NavbarComponent() {
             <Link to="/Aboutus" className="nav-link">
             <li className="nav-item">AboutUS</li>
           </Link>
+          <Link to="/Blog" className="nav-link">
+            <li className="nav-item">Blogs</li>
+          </Link>
             <Link to="/Ratings" className="nav-link">
             <li className="nav-item">Ratings</li>
           </Link>
