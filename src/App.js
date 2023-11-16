@@ -13,7 +13,6 @@ import LoginPage from "./pages/LoginPage";
 import RegisterPage from "./pages/RegisterPage";
 import ErrorPage from "./pages/ErrorPage";
 import Dashboard from './pages/Dashboard';
-import api from './pages/api';
 import Outdoocheckout from './pages/Outdoocheckout';
 
 import Home from "./pages/Home";
@@ -22,8 +21,6 @@ import Facilities from "./pages/Facilities";
 import Outdoor from "./pages/Outdoor";
 import Ratings from "./pages/Ratings";
 import Eventpackages from "./pages/Eventpackages";
-import Pay from "./pages/Pay";
-import CheckoutForm from "./components/CheckoutForm";
 
 import Footer from "./components/Footer";
 
@@ -78,21 +75,6 @@ function App() {
         <Route
           path="/Outdoor"
           render={(props) => <Outdoor {...props} />}
-        />
-
-        <Route
-          path="/Pay"
-          render={(props) => <Pay {...props} />}
-        />
-
-        <Route
-          path="/CheckoutForm"
-          render={(props) => <CheckoutForm {...props} />}
-        />
-
-        <Route
-          path="/api"
-          render={(props) => <api {...props} />}
         />
 
 
