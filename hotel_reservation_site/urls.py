@@ -19,8 +19,7 @@ urlpatterns = [
     path('api/', include(router.urls)),
     path('hotel/', include("hotel_app.urls")),
     path('api/', include("rest_framework.urls")),
-    path('accounts/', include('accounts.urls')),
-    path('payments/', include('payments.urls'))
+    path('accounts/', include('accounts.urls'))
 
 ]
 
