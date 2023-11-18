@@ -31,6 +31,8 @@ export default class Ratings extends React.Component {
     formData.append('rating', rating);
     const apiEndpoint = 'http://127.0.0.1:8000/api/feedbacks/';
 
+    document.getElementById('myForm').reset();
+
     axios
       .post(apiEndpoint, formData)
       .then((response) => {
@@ -45,7 +47,10 @@ export default class Ratings extends React.Component {
       .catch((error) => {
         console.error('Error rating:');
         this.setState({
-          successMessage: '',
+          name: '',
+          message: '',
+          rating: '',
+          successMessage: 'Rating Success',
         });
       });
   };
@@ -89,7 +94,7 @@ export default class Ratings extends React.Component {
             <h2>
               FEEDBACK <h2 />
               <div className='contact-form'>
-                <form onSubmit={this.handleSubmit}>
+                <form onSubmit={this.handleSubmit} id="myForm">
                   <div className='contact-detail'>
                     <input
                       type='text'
@@ -122,11 +127,6 @@ export default class Ratings extends React.Component {
                     id='rating'
                     style={{ resize: 'none', width: '115%' }}
                   />
-
-                  <a href='/home' className='btn btn-warning'>
-                    {' '}
-                    Home
-                  </a>
                   <button
                     type='submit'
                     id='popupButton'
@@ -134,11 +134,13 @@ export default class Ratings extends React.Component {
                   >
                     SUBMIT
                   </button>
+                  
                   {this.state.successMessage && (
                     <div className='success-message'>
                       <p>{this.state.successMessage}</p>
                     </div>
                   )}
+                  
                 </form>
               </div>
             </h2>

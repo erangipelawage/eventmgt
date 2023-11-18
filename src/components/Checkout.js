@@ -53,7 +53,7 @@ const Checkout = () => {
       <p className="checkout-description">
         Learn how to build a website with React Hooks
       </p>
-      <h1 className="checkout-price">$19</h1>
+      <h1 className="checkout-price">LKR 19,000</h1>
       <img
         className="checkout-product-image"
         src={ProductImage}

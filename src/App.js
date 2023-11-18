@@ -48,7 +48,7 @@ function App() {
       <NavbarComponent />
       <Switch>
         <Route
-          path="/"
+          path="/home"
           render={(props) => <Home {...props} />}
         />
         <Route path="/Roombooking" render={(props) => <Roombooking {...props} />} />
@@ -107,8 +107,6 @@ function App() {
           render={(props) => <Cancel {...props} />}
         />
 
-
-
         {/* keep for ref after delete */}
 
         <Route
@@ -154,9 +152,6 @@ function App() {
       </Switch>
       <Footer />
     </div>
-
-
-
 
   );
 }
