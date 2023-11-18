@@ -1,9 +1,18 @@
+import "@stripe/stripe-js";
+import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
+
+import Checkout from "./components/Checkout";
+import Success from "./components/Success";
+import Cancel from "./components/Cancel";
+
+import "./stylep.css";
+
 import React from "react";
 import "./App.css";
 import "./assets/main.css";
 import "bootstrap/dist/css/bootstrap.min.css";
 import "bootstrap/dist/js/bootstrap.js";
-import { Route, Switch } from "react-router-dom";
+import { Switch } from "react-router-dom";
 import NavbarComponent from "./components/NavbarComponent";
 import Roombooking from "./pages/roombooking";
 import RoomPage from "./pages/RoomPage";
@@ -21,7 +30,9 @@ import Facilities from "./pages/Facilities";
 import Outdoor from "./pages/Outdoor";
 import Ratings from "./pages/Ratings";
 import Eventpackages from "./pages/Eventpackages";
+import Blog from "./pages/Blog";
 
+import Footer from "./components/Footer";
 
 import GoldPackage from "./pages/GoldPackage";
 import DinnerOutC from "./pages/DinnerOutC";
@@ -37,7 +48,7 @@ function App() {
       <NavbarComponent />
       <Switch>
         <Route
-          path="/home"
+          path="/"
           render={(props) => <Home {...props} />}
         />
         <Route path="/Roombooking" render={(props) => <Roombooking {...props} />} />
@@ -76,7 +87,34 @@ function App() {
           render={(props) => <Outdoor {...props} />}
         />
 
+        <Route
+          path="/Blog"
+          render={(props) => <Blog {...props} />}
+        />
+
+        <Route
+          path="/Checkout"
+          render={(props) => <Checkout {...props} />}
+        />
+
+        <Route
+          path="success"
+          render={(props) => <Success {...props} />}
+        />
+
+        <Route
+          path="/cancel"
+          render={(props) => <Cancel {...props} />}
+        />
+
+
+
         {/* keep for ref after delete */}
+
+        <Route
+          path="/ErrorPage"
+          render={(props) => <ErrorPage {...props} />}
+        />
 
         <Route
           path="/GoldPackage"
@@ -111,10 +149,10 @@ function App() {
          {/* eND NO NEED CAN REMOVE */}
 
         <Route path="/dashboard" render={(props) => <Dashboard {...props}/>}/>
-        <Route render={(props) => <ErrorPage {...props} />} />
+        {/*<Route render={(props) => <ErrorPage {...props} />} />*/}
 
       </Switch>
-
+      <Footer />
     </div>
 
 
