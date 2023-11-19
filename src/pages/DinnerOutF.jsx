@@ -33,7 +33,7 @@ const DinnerOutF = () => {
                         perfect way to show your loved ones how much you care. So book your reservation today
                         and experience a truly unforgettable night out. </p>
                       <div className="buttons-container">
-                        <a href="BookNow" className="btn btn-warning">BOOK NOW</a>
+                        <a href="/Outdoocheckout" className="btn btn-warning">BOOK NOW</a>
                         
                         <div className="Menu">
                         <br />

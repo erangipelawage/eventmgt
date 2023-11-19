@@ -46,7 +46,7 @@ const Outdoor = () => {
                   </div>
                   <p className="amount-text">LKR 10,000 Per Hour</p>
                   <div className="buttons-container">
-                    <Link to="/BookNow" className="btn btn-fill btn-large">BOOK NOW</Link>
+                    <Link to="/Hourcheck" className="btn btn-fill btn-large">BOOK NOW</Link>
                   </div>
                 </div>
               </div>
@@ -63,7 +63,7 @@ const Outdoor = () => {
                 </div>
                 <p className="amount-text">LKR 12,000 Per Hour</p>
                 <div className="buttons-container">
-                  <Link to="/BookNow" className="btn btn-fill btn-large">BOOK NOW</Link>
+                  <Link to="/Hourcheck" className="btn btn-fill btn-large">BOOK NOW</Link>
                 </div>
               </div>
               <div className="rooms col col-2">
@@ -78,7 +78,7 @@ const Outdoor = () => {
                 </div>
                 <p className="amount-text">LKR 15,000 Per Hour</p>
                 <div className="buttons-container">
-                  <Link to="/BookNow" className="btn btn-fill btn-large">BOOK NOW</Link>
+                  <Link to="/Hourcheck" className="btn btn-fill btn-large">BOOK NOW</Link>
                 </div>
               </div>
             {/* </section> */}

@@ -40,6 +40,7 @@ import DinnerOutF from "./pages/DinnerOutF";
 import SilverPackags from "./pages/SilverPackags";
 import JumboPackage from "./pages/JumboPackage";
 import PlatinumPackage from "./pages/PlatinumPackage";
+import Hourcheck from "./pages/Hourcheck";
   
 
 function App() {
@@ -98,7 +99,12 @@ function App() {
         />
 
         <Route
-          path="success"
+          path="/Hourcheck"
+          render={(props) => <Hourcheck {...props} />}
+        />
+
+        <Route
+          path="/success"
           render={(props) => <Success {...props} />}
         />
 
@@ -137,6 +143,11 @@ function App() {
         <Route
           path="/JumboPackage"
           render={(props) => <JumboPackage {...props} />}
+        />
+
+        <Route
+          path="/PlatinumPackage"
+          render={(props) => <PlatinumPackage {...props} />}
         />
 
         <Route

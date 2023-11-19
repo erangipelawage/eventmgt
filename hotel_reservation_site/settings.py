@@ -23,6 +23,7 @@ INSTALLED_APPS = [
     'accounts',
     'feedback',
     'outdoor',
+    'outdoorbooking',
     'eventpackage',
     'eventbooking',
 ]
