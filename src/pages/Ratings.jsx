@@ -92,7 +92,7 @@ export default class Ratings extends React.Component {
         <div className='main'>
           <div className='contact'>
             <h2>
-              FEEDBACK <h2 />
+              FEEDBACK <h2/>
               <div className='contact-form'>
                 <form onSubmit={this.handleSubmit} id="myForm">
                   <div className='contact-detail'>
@@ -149,6 +149,7 @@ export default class Ratings extends React.Component {
         <div className='review-container' style={{ textAlignLast: 'center' }}>
           <div className='review-header'>
             <h2>Client Reviews and Feedback</h2>
+            &nbsp;
             <p>
               We are very proud of the services we offer to our customers. Read
               every word from our happy customers.

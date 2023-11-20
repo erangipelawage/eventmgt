@@ -1,4 +1,5 @@
-import React from "react";
+import React, { useRef } from 'react'
+import emailjs from '@emailjs/browser';
 import axios from "axios";
 // import { useState } from "react";
 // import { useEffect } from "react";
@@ -25,6 +26,26 @@ export default class Outdoocheckout extends React.Component {
     });
   };
 
+  sendEmail = (e) => {
+    e.preventDefault();
+
+    emailjs
+      .sendForm(
+        "service_f81inr1",
+        "template_lnbkryk",
+        this.form,
+        "Mb2vbzM7IvtcsNyP0"
+      )
+      .then(
+        (result) => {
+          console.log(result.text);
+        },
+        (error) => {
+          console.log(error.text);
+        }
+      );
+  };
+
   handleSubmit = (event) => {
     event.preventDefault();
     const { FullName, Email, ContactNo, Package, ArrivalDate, DepartureDate, Price } =
@@ -39,6 +60,7 @@ export default class Outdoocheckout extends React.Component {
     formData.append("DepartureDate", DepartureDate);
     formData.append("Price", Price);
     const apiEndpoint = "http://127.0.0.1:8000/api/eventbookings/";
+    this.sendEmail(event);
 
     axios
       .post(apiEndpoint, formData)
@@ -54,8 +76,9 @@ export default class Outdoocheckout extends React.Component {
           Price: "",
           successMessage: "Event Booking successful!",
         });
+
       })
-      .catch((error) => {});
+      .catch((error) => { });
     console.error("Error booking:");
     this.setState({
       successMessage: "",
@@ -76,8 +99,9 @@ export default class Outdoocheckout extends React.Component {
         <link rel="stylesheet" href="./assets/css/style1.css" />
         <link rel="stylesheet" href="./assets/css/global-header.css" />
 
+
         <div className="container">
-          <form onSubmit={this.handleSubmit}>
+          <form ref={(form) => (this.form = form)} onSubmit={this.handleSubmit}>
             <div>
               <h2 className="title">Event Online Booking</h2>
             </div>
@@ -152,21 +176,45 @@ export default class Outdoocheckout extends React.Component {
                     <option value="p4">Rs.10000.00</option>
                   </select> */}
                 </div>
-                <center>
+                {/* <center>
+                <a href="/Checkout" className="submit-btn">SUBMIT</a>
+                </center> */}
+
+                {/* <center>
                   <input
                     type="submit"
                     defaultValue="RESERVE"
                     className="submit-btn"
                   />
-                </center>
+                </center> */}
+
+                {/* @@@@@@@ chatgpt */}
+
+                <div>
+                  <center>
+                    <input
+                      type="submit"
+                      defaultValue="PAY NOW"
+                      className="submit-btn"
+                      onClick={this.handlePayment} // Assuming you have a function to handle the payment
+                    />
+                  </center>
+                </div>
+
+                {this.state.successMessage && (
+                  <div className="success-message">
+                    <p>{this.state.successMessage}</p>
+                  </div>
+                )}
+
               </div>
             </div>
-
+{/* 
             {this.state.successMessage && (
-                    <div className="success-message">
-                      <p>{this.state.successMessage}</p>
-                    </div>
-                  )}
+              <div className="success-message">
+                <p>{this.state.successMessage}</p>
+              </div>
+            )} */}
 
           </form>
         </div>

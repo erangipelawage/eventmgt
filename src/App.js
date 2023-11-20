@@ -41,6 +41,9 @@ import SilverPackags from "./pages/SilverPackags";
 import JumboPackage from "./pages/JumboPackage";
 import PlatinumPackage from "./pages/PlatinumPackage";
 import Hourcheck from "./pages/Hourcheck";
+import Contact from "./components/Contact";
+// import Forgot from "./pages/Forgot";
+// import Payments from "./pages/Payments";
   
 
 function App() {
@@ -75,6 +78,12 @@ function App() {
           path="/Ratings"
           render={(props) => <Ratings {...props} />}
         />
+
+        <Route
+          path="/Contact"
+          render={(props) => <Contact {...props} />}
+        />
+
         <Route
           path="/Facilities"
           render={(props) => <Facilities {...props} />}
@@ -154,6 +163,15 @@ function App() {
           path="/Outdoocheckout"
           render={(props) => <Outdoocheckout {...props} />}
         />
+        {/* <Route
+          path="/Forgot"
+          render={(props) => <Forgot {...props} />}
+        /> */}
+
+        {/* <Route
+          path="/Payments"
+          render={(props) => <Payments {...props} />}
+        /> */}
 
          {/* eND NO NEED CAN REMOVE */}
 

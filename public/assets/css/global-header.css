@@ -35,7 +35,7 @@ body {
 .header-nav-link {
 	text-decoration: none;
 	color: #241e09;
-	font-size: 20px;
+	font-size: 19px;
 }
 
 .header-active {
@@ -43,7 +43,7 @@ body {
 }
 
 .header-nav-logo {
-	width: 80px;
+	width: 100px;
 	position: relative;
 	z-index: 11;
 }

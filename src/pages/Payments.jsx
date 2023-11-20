@@ -22,12 +22,15 @@ const BookNow = () => {
               </div>
               <ul className="header-nav-lists">
                 <li className="header-nav-list"><Link className="header-nav-link" to="/">HOME</Link></li>
-                <li className="header-nav-list"><Link className="header-nav-link" to="/AboutUs">ABOUT US</Link></li>
-                <li className="header-nav-list"><Link className="header-nav-link" to="/Rooms">ROOMS</Link></li>
-                <li className="header-nav-list"><Link className="header-nav-link" to="/Eventpackages">EVENT PACKAGES</Link></li>
-                <li className="header-nav-list"><Link className="header-nav-link" to="/Outdoor">OUTDOOR PACKAGES</Link></li>
+                <li className="header-nav-list"><Link className="header-nav-link" to="/RoomPage">ROOMS</Link></li>
                 <li className="header-nav-list"><Link className="header-nav-link" to="/Facilities">FACILITIES</Link></li>
-                <li className="header-nav-list"><Link className="header-btn header-btn-custom" to="/login">LOG IN</Link></li>
+                <li className="header-nav-list"><Link className="header-nav-link" to="/Eventpackages">EVENT PACKAGES</Link></li>
+                <li className="header-nav-list"><Link className="header-nav-link" to="/Outdoor">OUTDOOR</Link></li>
+                <li className="header-nav-list"><Link className="header-nav-link" to="/AboutUs">ABOUT US</Link></li>
+                <li className="header-nav-list"><Link className="header-nav-link" to="/Blog">BLOGS</Link></li>
+                <li className="header-nav-list"><Link className="header-nav-link" to="/Ratings">RATINGS</Link></li>
+                <li className="header-nav-list"><Link className="header-nav-link" to="/Login">LOGIN</Link></li>
+                <li className="header-nav-list"><Link className="header-nav-link" to="/Register">REGISTER</Link></li>
               </ul>
               <div className="header-hamburger-icon">
                 <div className="header-hamburger-line-1" />

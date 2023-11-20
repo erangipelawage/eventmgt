@@ -7,16 +7,30 @@ export default class Hourcheck extends React.Component {
   constructor(props) {
     super(props);
 
+    // this.state = {
+    //   FullName: "",
+    //   Email: "",
+    //   ContactNo: "",
+    //   Package: "",
+    //   ArrivalTime: "",
+    //   DepartureTime: "",
+    //   Price: "",
+    // };
     this.state = {
       FullName: "",
       Email: "",
       ContactNo: "",
-      Package: "",
+      Package: props.location.state ? props.location.state.package : "",
       ArrivalTime: "",
       DepartureTime: "",
-      Price: "",
-    };
-  }
+      CardHolderName: "",
+      CardNO: "",
+      CVVNO: "",
+      TypeOfCard: "",
+      Price: props.location.state ? props.location.state.price : "",
+      successMessage: "",
+    }
+  };
 
   handleChange = (event) => {
     const { name, value } = event.target;
@@ -27,7 +41,7 @@ export default class Hourcheck extends React.Component {
 
   handleSubmit = (event) => {
     event.preventDefault();
-    const { FullName, Email, ContactNo, Package, ArrivalTime, DepartureTime, Price } =
+    const { FullName, Email, ContactNo, Package, ArrivalTime, DepartureTime, CardHolderName, CardNO, CVVNO, TypeOfCard, Price } =
       this.state;
 
     const formData = new FormData();
@@ -37,6 +51,10 @@ export default class Hourcheck extends React.Component {
     formData.append("Package", Package);
     formData.append("ArrivalTime", ArrivalTime);
     formData.append("DepartureTime", DepartureTime);
+    formData.append("CardHolderName", CardHolderName);
+    formData.append("CardNO", CardNO);
+    formData.append("CVVNO", CVVNO);
+    formData.append("TypeOfCard", TypeOfCard);
     formData.append("Price", Price);
     const apiEndpoint = "http://127.0.0.1:8000/api/outdoorbookings/";
 
@@ -51,11 +69,15 @@ export default class Hourcheck extends React.Component {
           Package: "",
           ArrivalTime: "",
           DepartureTime: "",
+          CardHolderName: "",
+          CardNO: "",
+          CVVNO: "",
+          TypeOfCard: "",
           Price: "",
           successMessage: "Event Booking successful!",
         });
       })
-      .catch((error) => {});
+      .catch((error) => { });
     console.error("Error booking:");
     this.setState({
       successMessage: "",
@@ -112,13 +134,13 @@ export default class Hourcheck extends React.Component {
                 </div>
                 <div className="inputbox">
                   <span> Package:</span>
-                  <input
-                    type="text"
-                    placeholder="Package"
-                    name="Package"
-                    onChange={this.handleChange}
-                  />
+                  <select name="Package" id="Package" onChange={this.handleChange}>
+                    <option value="p1"> POOL SIDE LOCATION </option>
+                    <option value="p2"> CATTAGE SIDE L </option>
+                    <option value="p3"> GARDEN SIDE PACKAGE </option>
+                  </select>
                 </div>
+
                 <div className="inputbox">
                   <span> Arrival Time:</span>
                   <input
@@ -128,6 +150,7 @@ export default class Hourcheck extends React.Component {
                     onChange={this.handleChange}
                   />
                 </div>
+
                 <div className="inputbox">
                   <span> Departure Time:</span>
                   <input
@@ -138,35 +161,74 @@ export default class Hourcheck extends React.Component {
                   />
                 </div>
                 <div className="inputbox">
-                  <span> Price:</span>
+                  <span> Card Holder Name:</span>
                   <input
+                    type="text"
+                    placeholder="Card Holder name"
+                    name="CardHolderName"
+                    onChange={this.handleChange}
+                  />
+                </div>
+
+                <div className="inputbox">
+                  <span> Card NO:</span>
+                  <input
+                    type="number"
+                    placeholder="Enter Card No"
+                    name="CardNO"
+                    onChange={this.handleChange}
+                  />
+                </div>
+                <div className="inputbox">
+                  <span> CVV NO:</span>
+                  <input
+                    type="number"
+                    placeholder="Enter CVV No"
+                    name="CVVNO"
+                    onChange={this.handleChange}
+                  />
+                </div>
+                <div className="inputbox">
+                  <span> Type Of Card</span>
+                  <select name="Package" id="Package" onChange={this.handleChange}>
+                    <option value="p1"> Master</option>
+                    <option value="p2"> Visa</option>
+                    <option value="p3"> American Express</option>
+                  </select>
+                  <div className="inputbox">
+                    <span> Price:</span>
+                    <select name="Package" id="Package" onChange={this.handleChange}>
+                      <option value="p1"> LKR 10,000.00</option>
+                      <option value="p2"> LKR 12,000.00</option>
+                      <option value="p3"> LKR 15,000.00</option>
+                    </select>
+                    {/* <input
                     type="number"
                     placeholder="price"
                     name="Price"
                     onChange={this.handleChange}
-                  />
-                  {/* <select name="Price" id="cars" onChange={this.handleChange}>
-                    <option value="p1">Rs.2000.00</option>
-                    <option value="p2">Rs.3000.00</option>
-                    <option value="p3">Rs.5000.00</option>
-                    <option value="p4">Rs.10000.00</option>
-                  </select> */}
-                </div>
-                <center>
-                  <input
-                    type="submit"
-                    defaultValue="RESERVE"
-                    className="submit-btn"
-                  />
-                </center>
-              </div>
-            </div>
+                  /> */}
 
-            {this.state.successMessage && (
-                    <div className="success-message">
+                  </div>
+                  {/* <center>
+                    <a href="/Checkout" className="submit-btn">SUBMIT</a>
+                  </center> */}
+                  <button
+                    type='submit'
+                    id='popupButton'
+                    className='btn btn-primary'
+                  >
+                    SUBMIT
+                  </button>
+                  
+                  {this.state.successMessage && (
+                    <div className='success-message'>
                       <p>{this.state.successMessage}</p>
                     </div>
                   )}
+                </div>
+              </div>
+              </div>
           </form>
         </div>
       </div>

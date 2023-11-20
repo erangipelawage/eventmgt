@@ -1,8 +1,9 @@
 .success-message {
     margin-top: 10px;
-    padding: 10px;
-    background-color: #dff0d8; /* Green background color for success */
-    border: 1px solid #3c763d; /* Green border color for success */
-    color: #3c763d; /* Green text color for success */
+    padding: 1px;
+    width: 230px;
+    background-color: #dff0d8; 
+    border: 0px solid #3c763d; 
+    color: #3c763d; 
   }
   

@@ -16,6 +16,7 @@ const DinnerOutC = () => {
           <link rel="stylesheet" href="./assets/css/styles.css" />
           <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.5.0/font/bootstrap-icons.css" rel="stylesheet" />
           <link rel="shortcut icon" href="./assets/img/favicon.webp" type="image/x-icon" />
+          
 
               <section className="py-5">
                 <div className="container px-4 px-lg-5 my-5">
