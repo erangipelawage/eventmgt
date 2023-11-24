@@ -202,6 +202,15 @@ export default class Hourcheck extends React.Component {
                       <option value="p2"> LKR 12,000.00</option>
                       <option value="p3"> LKR 15,000.00</option>
                     </select>
+{/* 
+                    &nbsp;
+                    &nbsp; */}
+                    <div>
+                      <h4 className="title">Fully refundable before your booking date. If you cannot cancel or change the date before the booking date, we will refund half of your payment
+                        <pre></pre>
+                        <strong>I agree to SEEBREEZEE HOTEL terms and policies </strong></h4>
+                    </div>
+
                     {/* <input
                     type="number"
                     placeholder="price"
@@ -220,7 +229,7 @@ export default class Hourcheck extends React.Component {
                   >
                     SUBMIT
                   </button>
-                  
+
                   {this.state.successMessage && (
                     <div className='success-message'>
                       <p>{this.state.successMessage}</p>
@@ -228,7 +237,7 @@ export default class Hourcheck extends React.Component {
                   )}
                 </div>
               </div>
-              </div>
+            </div>
           </form>
         </div>
       </div>
