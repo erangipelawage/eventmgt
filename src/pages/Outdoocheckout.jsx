@@ -131,7 +131,6 @@ export default class Outdoocheckout extends React.Component {
   };
 
   render() {
-    // ##
     const { errors } = this.state;
 
     return (
@@ -152,11 +151,11 @@ export default class Outdoocheckout extends React.Component {
           <form ref={(form) => (this.form = form)} onSubmit={this.handleSubmit}>
             <div>
               <h2 className="title">Event Online Booking</h2>
+              <br />
             </div>
             <div className="raw">
-              <div className="col">
                 <div className="inputbox">
-                  <span> Full Name:</span>
+                  <span> Full Name: </span>
                   <input
                     type="text"
                     placeholder="Enter Your name"
@@ -165,9 +164,9 @@ export default class Outdoocheckout extends React.Component {
                   />
                   {errors.FullName && <div className="error-message">{errors.FullName}</div>}
                 </div>
-              </div>
+          
               <div className="inputbox">
-                <span> Email:</span>
+                <span> Email: </span>
                 <input
                   type="email"
                   placeholder="Enter Your email"
@@ -177,7 +176,7 @@ export default class Outdoocheckout extends React.Component {
                 {errors.Email && <div className="error-message">{errors.Email}</div>}
               </div>
               <div className="inputbox">
-                <span> Contact No:</span>
+                <span> Contact No: </span>
                 <input
                   type="number"
                   placeholder="Enter Your ConNo"
@@ -187,7 +186,7 @@ export default class Outdoocheckout extends React.Component {
                 {errors.ContactNo && <div className="error-message">{errors.ContactNo}</div>}
               </div>
               <div className="inputbox">
-                <span> Package:</span>
+                <span> Package: </span>
                 <input
                   type="text"
                   placeholder="Package"
@@ -197,7 +196,7 @@ export default class Outdoocheckout extends React.Component {
                 {errors.Package && <div className="error-message">{errors.Package}</div>}
               </div>
               <div className="inputbox">
-                <span> Arrival Date:</span>
+                <span> Arrival Date: </span>
                 <input
                   type="date"
                   placeholder="16/07/2023"
@@ -207,7 +206,7 @@ export default class Outdoocheckout extends React.Component {
                 {errors.ArrivalDate && <div className="error-message">{errors.ArrivalDate}</div>}
               </div>
               <div className="inputbox">
-                <span> Departure Date:</span>
+                <span> Departure Date: </span>
                 <input
                   type="date"
                   placeholder="16/07/2023"
@@ -217,7 +216,7 @@ export default class Outdoocheckout extends React.Component {
                 {errors.DepartureDate && <div className="error-message">{errors.DepartureDate}</div>}
               </div>
               <div className="inputbox">
-                <span> Price:</span>
+                <span> Price: </span>
                 <input
                   type="number"
                   placeholder="price"
@@ -227,9 +226,9 @@ export default class Outdoocheckout extends React.Component {
                 {errors.Price && <div className="error-message">{errors.Price}</div>}
               </div>
               <div>
-                <h4 className="title">Fully refundable before your booking date. If you cannot cancel or change the date before the booking date, we will refund half of your payment
+                <h6 className="title"><b>Fully refundable before your booking date. If you cannot cancel or change the date before the booking date, we will refund half of your payment</b>
                   <pre></pre>
-                  <strong>I agree to SEEBREEZEE HOTEL terms and policies </strong></h4>
+                  <strong><a href='/Policy'>I agree to SEEBREEZEE HOTEL terms and policies</a> </strong></h6>
               </div>
               {/* <select name="Price" id="cars" onChange={this.handleChange}>
                     <option value="p1">Rs.2000.00</option>
