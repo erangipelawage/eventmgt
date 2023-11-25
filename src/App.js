@@ -31,6 +31,7 @@ import Outdoor from "./pages/Outdoor";
 import Ratings from "./pages/Ratings";
 import Eventpackages from "./pages/Eventpackages";
 import Blog from "./pages/Blog";
+import Policy from "./pages/Policy"; 
 
 import Footer from "./components/Footer";
 
@@ -157,6 +158,11 @@ function App() {
         <Route
           path="/PlatinumPackage"
           render={(props) => <PlatinumPackage {...props} />}
+        />
+
+        <Route
+          path="/Policy"
+          render={(props) => <Policy {...props} />}
         />
 
         <Route
