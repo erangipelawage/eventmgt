@@ -13,7 +13,7 @@ export default class Outdoocheckout extends React.Component {
       Email: "",
       ContactNo: "",
       Package: "",
-      ArrivalDate: "",
+      ArrivalDate: "",                                                                                                 
       DepartureDate: "",
       Price: "",
       // ##
