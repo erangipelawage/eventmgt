@@ -273,10 +273,3 @@ export default class Outdoocheckout extends React.Component {
     );
   }
 }
-
- {/* {this.state.successMessage && (
-              <div className="success-message">
-                <p>{this.state.successMessage}</p>
-              </div>
-            )} */}
-
