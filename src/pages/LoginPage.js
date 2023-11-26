@@ -56,9 +56,17 @@ export default function LoginPage({ history }) {
         </div>
         <div className="row">
           <div className="col-md-6 m-auto">
-            <a href="/Home" button type="submit" className="btn btn-primary px-4 m">Login</a>
-           &nbsp;
-            <a href="/Forgot" class="btn btn-success px-3 my-3" role="button">Forget Password</a>
+            <button type="submit" className="btn btn-primary px-5 my-3">
+              Login
+            </button>
+            <p>
+              Forgot Password
+              <Link to="/Forgot" className="text-decoration-none">
+                {" "}
+                Forgot{" "}
+              </Link>
+              first
+            </p>
             <p>
               If you have not created an account yet
               <Link to="/register" className="text-decoration-none">
