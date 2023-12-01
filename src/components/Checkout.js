@@ -34,7 +34,6 @@ const Checkout = () => {
 
   const redirectToCheckout = async () => {
     setLoading(true);
-    // @@
 
     const stripe = await getStripe();
     const { error } = await stripe.redirectToCheckout (checkoutOptions)

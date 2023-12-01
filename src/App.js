@@ -31,7 +31,7 @@ import Outdoor from "./pages/Outdoor";
 import Ratings from "./pages/Ratings";
 import Eventpackages from "./pages/Eventpackages";
 import Blog from "./pages/Blog";
-import Policy from "./pages/Policy"; 
+import Policy from "./pages/Policy";
 
 import Footer from "./components/Footer";
 
@@ -45,7 +45,7 @@ import Hourcheck from "./pages/Hourcheck";
 import Contact from "./components/Contact";
 // import Forgot from "./pages/Forgot";
 // import Payments from "./pages/Payments";
-  
+
 
 function App() {
   return (
@@ -179,9 +179,9 @@ function App() {
           render={(props) => <Payments {...props} />}
         /> */}
 
-         {/* eND NO NEED CAN REMOVE */}
+        {/* eND NO NEED CAN REMOVE */}
 
-        <Route path="/dashboard" render={(props) => <Dashboard {...props}/>}/>
+        <Route path="/dashboard" render={(props) => <Dashboard {...props} />} />
         {/*<Route render={(props) => <ErrorPage {...props} />} />*/}
 
       </Switch>
