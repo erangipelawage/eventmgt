@@ -1,9 +1,8 @@
 import React, { useState } from "react";
-import Outdoocheckout from './pages/Outdoocheckout';
 import { Link } from "react-router-dom";
 
 const Eventpackages = () => {
-  const [pax, setPax] = useState(0); // State to store the Pax value
+  const [pax, setPax] = useState(); // State to store the Pax value
 
   const silverPlatePrice = 2500; // Replace with your actual silverPlatePrice
 
@@ -99,8 +98,6 @@ const Eventpackages = () => {
                     />{" "}
                     <br />
                     <b>Full Cost</b> &nbsp; {silverPlatePrice} * {pax} = Rs.{totalPrice}.00
-                    {/* Pass totalPrice as a prop to the OtherForm component */}
-                    <Outdoocheckout totalPrice={totalPrice} />
                   </div>
                 </p>
                 <p>

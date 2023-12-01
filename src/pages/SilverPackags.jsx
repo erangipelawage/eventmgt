@@ -25,66 +25,71 @@ const SilverPackags = () => {
           href="./assets/img/favicon.webp"
           type="image/x-icon"
         />
-        
-            <section className="py-5">
-              <div className="container px-4 px-lg-5 my-5">
-                <div className="row gx-4 gx-lg-5 align-items-center">
-                  <div className="col-md-6">
-                    <img
-                      className="card-img-top mb-5 mb-md-0"
-                      src="assets/img/Hall1.jpg"/>
-                  </div>
-                  <div className="col-md-6">
-                    <h3>Silver Package</h3>
-                    <div className="fs-5 mb-5">
-                      <p><i><b>LKR 250 000</b></i></p>
-                    </div>
-                    <p className="lead">
-                      We are introducing Silver Package you to have your dream
-                      wedding at Sea Breeze to celibrate your special moments
-                      with small group of your loving ones.Our package includes
-                      everything you need to create a truly unforgettable event,
-                      from the venue to the catering
-                    </p>
-                    <div className="buttons-container">
-                      <a href="/Outdoocheckout" className="btn btn-success">BOOK NOW</a>
-                      <div className="Menu">
-                      <br />
-                        <h3>MENU</h3>
-                          <table class="table table-striped">
-                            <tbody>
-                              <tr>
-                               
-                                <td>Lunch</td>
-                                <td>Dessert</td>
-                                <td>Drinks</td>
-                              </tr>
-                              <tr>
-                                <td>Chicken Fried Rice</td>
-                                <td>Vanilla Ice Cream</td>
-                                <td>Soft Drinks</td>
-                              </tr>
-                              <tr>
-                                
-                                <td>Vegitable Fried Rice</td>
-                                <td>Chocolate Moose</td>
-                                <td>Iced Cofee</td>
-                              </tr>
-                            <tr>
-                              <td>Chili Paste</td>
-                            </tr>
-                            <tr>
-                              <td>Develed Chicken</td>
-                            </tr>
-                          </tbody>
-                        </table>
-                      </div>
-                    </div>
+
+        <section className="py-5">
+          <div className="container px-4 px-lg-5 my-5">
+            <div className="row gx-4 gx-lg-5 align-items-center">
+              <div className="col-md-6">
+                <img
+                  className="card-img-top mb-5 mb-md-0"
+                  src="assets/img/Hall1.jpg"
+                />
+              </div>
+              <div className="col-md-6">
+                <h3>Silver Package</h3>
+                <div className="fs-5 mb-5">
+                  <p>
+                    <i>
+                      <b>LKR 250 000</b>
+                    </i>
+                  </p>
+                </div>
+                <p className="lead">
+                  We are introducing Silver Package you to have your dream
+                  wedding at Sea Breeze to celibrate your special moments with
+                  small group of your loving ones.Our package includes
+                  everything you need to create a truly unforgettable event,
+                  from the venue to the catering
+                </p>
+                <div className="buttons-container">
+                  <a href="/Eventpackages" className="btn btn-success">
+                    Back
+                  </a>
+                  <div className="Menu">
+                    <br />
+                    <h3>MENU</h3>
+                    <table class="table table-striped">
+                      <tbody>
+                        <tr>
+                          <td>Lunch</td>
+                          <td>Dessert</td>
+                          <td>Drinks</td>
+                        </tr>
+                        <tr>
+                          <td>Chicken Fried Rice</td>
+                          <td>Vanilla Ice Cream</td>
+                          <td>Soft Drinks</td>
+                        </tr>
+                        <tr>
+                          <td>Vegitable Fried Rice</td>
+                          <td>Chocolate Moose</td>
+                          <td>Iced Cofee</td>
+                        </tr>
+                        <tr>
+                          <td>Chili Paste</td>
+                        </tr>
+                        <tr>
+                          <td>Develed Chicken</td>
+                        </tr>
+                      </tbody>
+                    </table>
                   </div>
                 </div>
               </div>
-            </section>
+            </div>
           </div>
+        </section>
+      </div>
     </>
   );
 };
