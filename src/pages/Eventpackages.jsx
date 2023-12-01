@@ -1,7 +1,19 @@
-import React from "react";
+import React, { useState } from "react";
+import Outdoocheckout from './pages/Outdoocheckout';
 import { Link } from "react-router-dom";
 
 const Eventpackages = () => {
+  const [pax, setPax] = useState(0); // State to store the Pax value
+
+  const silverPlatePrice = 2500; // Replace with your actual silverPlatePrice
+
+  const handlePaxChange = (event) => {
+    const newValue = parseInt(event.target.value, 10) || 0; // Convert input to integer, default to 0 if not a valid number
+    setPax(newValue);
+  };
+
+  const totalPrice = silverPlatePrice * pax;
+
   return (
     <>
       <div>
@@ -9,7 +21,9 @@ const Eventpackages = () => {
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
         <title>SEABREEZE Hotel - Event Packages</title>
         <link
-          href="https://fonts.googleapis.com/css2?family=Source+Sans+Pro:wght@400;600;700&display=swap" rel="stylesheet"/>
+          href="https://fonts.googleapis.com/css2?family=Source+Sans+Pro:wght@400;600;700&display=swap"
+          rel="stylesheet"
+        />
         <link rel="stylesheet" href="./assets/css/styles.css" />
         <link
           rel="shortcut icon"
@@ -43,15 +57,6 @@ const Eventpackages = () => {
                 <p>
                   <img
                     className="gallery-image"
-                    src="assets/img/sleeprs.png"
-                    width={18}
-                    height={20}
-                  />{" "}
-                  50 participants
-                </p>
-                <p>
-                  <img
-                    className="gallery-image"
                     src="assets/img/Hal.jpg"
                     width={18}
                     height={20}
@@ -77,10 +82,39 @@ const Eventpackages = () => {
                   Out 3 p.m
                 </p>
                 <p>
-                  <b>LKR 250,000</b> &nbsp;
+                  <div className="inputbox">
+                    <img
+                      className="gallery-image"
+                      src="assets/img/sleeprs.png"
+                      width={18}
+                      height={20}
+                    />{" "}
+                    <b>One plate price Rs.{silverPlatePrice}.00</b><br />
+                    <span> Pax &nbsp; </span>
+                    <input
+                      type="number"
+                      name="pax"
+                      value={pax}
+                      onChange={handlePaxChange}
+                    />{" "}
+                    <br />
+                    <b>Full Cost</b> &nbsp; {silverPlatePrice} * {pax} = Rs.{totalPrice}.00
+                    {/* Pass totalPrice as a prop to the OtherForm component */}
+                    <Outdoocheckout totalPrice={totalPrice} />
+                  </div>
+                </p>
+                <p>
                   <span style={{ textAlign: "left" }}>
-                    <a href="/SilverPackags" className="btn btn-warning"> SEE MORE</a> &nbsp;
-                    <a href="/Outdoocheckout" className="btn btn-success"> BOOK NOW</a></span>
+                    <a href="/SilverPackags" className="btn btn-warning">
+                      {" "}
+                      SEE MORE
+                    </a>{" "}
+                    &nbsp;
+                    <a href="/Outdoocheckout" className="btn btn-success">
+                      {" "}
+                      BOOK NOW
+                    </a>
+                  </span>
                 </p>
               </div>
             </div>
@@ -127,8 +161,15 @@ const Eventpackages = () => {
                 <p>
                   <b>LKR 500,000</b> &nbsp;
                   <span style={{ textAlign: "left" }}>
-                    <a href="GoldPackage" className="btn btn-warning"> SEE MORE</a> &nbsp;
-                    <a href="/Outdoocheckout" className="btn btn-success"> BOOK NOW</a>
+                    <a href="GoldPackage" className="btn btn-warning">
+                      {" "}
+                      SEE MORE
+                    </a>{" "}
+                    &nbsp;
+                    <a href="/Outdoocheckout" className="btn btn-success">
+                      {" "}
+                      BOOK NOW
+                    </a>
                   </span>
                 </p>
               </div>
@@ -175,10 +216,17 @@ const Eventpackages = () => {
                   Out 3 p.m
                 </p>
                 <p>
-                  <b>LKR 750,000</b> &nbsp; 
+                  <b>LKR 750,000</b> &nbsp;
                   <span style={{ textAlign: "left" }}>
-                    <a href="/" className="btn btn-warning"> SEE MORE</a> &nbsp;
-                    <a href="/Outdoocheckout" className="btn btn-success"> BOOK NOW</a>
+                    <a href="/" className="btn btn-warning">
+                      {" "}
+                      SEE MORE
+                    </a>{" "}
+                    &nbsp;
+                    <a href="/Outdoocheckout" className="btn btn-success">
+                      {" "}
+                      BOOK NOW
+                    </a>
                   </span>
                 </p>
               </div>
@@ -230,8 +278,15 @@ const Eventpackages = () => {
                 <p>
                   <b>LKR 10,000</b> &nbsp;
                   <span style={{ textAlign: "left" }}>
-                    <a href="DinnerOutC" className="btn btn-warning"> SEE MORE</a> &nbsp;
-                    <a href="/Outdoocheckout" className="btn btn-success"> BOOK NOW</a>
+                    <a href="DinnerOutC" className="btn btn-warning">
+                      {" "}
+                      SEE MORE
+                    </a>{" "}
+                    &nbsp;
+                    <a href="/Outdoocheckout" className="btn btn-success">
+                      {" "}
+                      BOOK NOW
+                    </a>
                   </span>
                 </p>
               </div>
@@ -282,8 +337,15 @@ const Eventpackages = () => {
                 <p>
                   <b>LKR 25,000</b> &nbsp;
                   <span style={{ textAlign: "left" }}>
-                    <a href="DinnerOutF" className="btn btn-warning"> SEE MORE</a> &nbsp;
-                    <a href="/Outdoocheckout" className="btn btn-success"> BOOK NOW</a>
+                    <a href="DinnerOutF" className="btn btn-warning">
+                      {" "}
+                      SEE MORE
+                    </a>{" "}
+                    &nbsp;
+                    <a href="/Outdoocheckout" className="btn btn-success">
+                      {" "}
+                      BOOK NOW
+                    </a>
                   </span>
                 </p>
               </div>
@@ -331,8 +393,15 @@ const Eventpackages = () => {
                 <p>
                   <b>LKR 100,000</b> &nbsp;
                   <span style={{ textAlign: "left" }}>
-                    <a href="JumboPackage" className="btn btn-warning"> SEE MORE</a> &nbsp;
-                    <a href="/Outdoocheckout" className="btn btn-success"> BOOK NOW</a>
+                    <a href="JumboPackage" className="btn btn-warning">
+                      {" "}
+                      SEE MORE
+                    </a>{" "}
+                    &nbsp;
+                    <a href="/Outdoocheckout" className="btn btn-success">
+                      {" "}
+                      BOOK NOW
+                    </a>
                   </span>
                 </p>
               </div>
