@@ -4,9 +4,7 @@ const CancellationPage = () => {
   const [cancellationReason, setCancellationReason] = useState('');
 
   const handleCancellation = () => {
-    // Implement cancellation logic here
     console.log('Booking canceled with reason:', cancellationReason);
-    // You may want to redirect the user or show a confirmation message
   };
 
   return (
