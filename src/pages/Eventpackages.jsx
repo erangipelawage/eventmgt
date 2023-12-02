@@ -4,22 +4,14 @@ import { Link } from "react-router-dom";
 const Eventpackages = () => {
   const [pax, setPax] = useState(); // State to store the Pax value
 
-  const silverPlatePrice = 2500;
-  const goldPlatePrice = 5000;
-  const platinumPlatePrice = 7000;
-  const jumboPlatePrice = 4000;
-  const DOfamilyPlatePrice = 3500;
+  const silverPlatePrice = 2500; // Replace with your actual silverPlatePrice
 
   const handlePaxChange = (event) => {
     const newValue = parseInt(event.target.value, 10) || 0; // Convert input to integer, default to 0 if not a valid number
     setPax(newValue);
   };
 
-  const silvertotalPrice = silverPlatePrice * pax;
-  const goldtotalPrice = goldPlatePrice * pax;
-  const platinumtotalPrice = platinumPlatePrice * pax;
-  const jumbototalPrice = jumboPlatePrice * pax;
-  const DOfamilytotalPrice = DOfamilyPlatePrice * pax;
+  const totalPrice = silverPlatePrice * pax;
 
   return (
     <>
@@ -105,7 +97,7 @@ const Eventpackages = () => {
                       onChange={handlePaxChange}
                     />{" "}
                     <br />
-                    <b>Full Cost</b> &nbsp; {silverPlatePrice} * {pax} = Rs.{silvertotalPrice}.00
+                    <b>Full Cost</b> &nbsp; {silverPlatePrice} * {pax} = Rs.{totalPrice}.00
                   </div>
                 </p>
                 <p>
@@ -164,24 +156,7 @@ const Eventpackages = () => {
                   Out 3 p.m
                 </p>
                 <p>
-                  <div className="inputbox">
-                    <img
-                      className="gallery-image"
-                      src="assets/img/sleeprs.png"
-                      width={18}
-                      height={20}
-                    />{" "}
-                    <b>One plate price Rs.{goldPlatePrice}.00 </b><br />
-                    <span> Pax &nbsp; </span>
-                    <input
-                      type="number"
-                      name="pax"
-                      value={pax}
-                      onChange={handlePaxChange}
-                    />{" "}
-                    <br />
-                    <b>Full Cost</b> &nbsp; {goldPlatePrice} * {pax} = Rs.{goldtotalPrice}.00
-                  </div>
+                  <b>LKR 500,000</b> &nbsp;
                   <span style={{ textAlign: "left" }}>
                     <a href="GoldPackage" className="btn btn-warning">
                       {" "}
@@ -238,24 +213,7 @@ const Eventpackages = () => {
                   Out 3 p.m
                 </p>
                 <p>
-                  <div className="inputbox">
-                    <img
-                      className="gallery-image"
-                      src="assets/img/sleeprs.png"
-                      width={18}
-                      height={20}
-                    />{" "}
-                    <b>One plate price Rs.{platinumPlatePrice}.00</b><br />
-                    <span> Pax &nbsp; </span>
-                    <input
-                      type="number"
-                      name="pax"
-                      value={pax}
-                      onChange={handlePaxChange}
-                    />{" "}
-                    <br />
-                    <b>Full Cost</b> &nbsp; {platinumPlatePrice} * {pax} = Rs.{platinumtotalPrice}.00
-                  </div>
+                  <b>LKR 750,000</b> &nbsp;
                   <span style={{ textAlign: "left" }}>
                     <a href="/" className="btn btn-warning">
                       {" "}
@@ -374,24 +332,7 @@ const Eventpackages = () => {
                   Out 12 p.m
                 </p>
                 <p>
-                <div className="inputbox">
-                    <img
-                      className="gallery-image"
-                      src="assets/img/sleeprs.png"
-                      width={18}
-                      height={20}
-                    />{" "}
-                    <b>One plate price Rs.{DOfamilyPlatePrice}.00 </b><br />
-                    <span> Pax &nbsp; </span>
-                    <input
-                      type="number"
-                      name="pax"
-                      value={pax}
-                      onChange={handlePaxChange}
-                    />{" "}
-                    <br />
-                    <b>Full Cost</b> &nbsp; {DOfamilyPlatePrice} * {pax} = Rs.{DOfamilytotalPrice}.00
-                  </div>
+                  <b>LKR 25,000</b> &nbsp;
                   <span style={{ textAlign: "left" }}>
                     <a href="DinnerOutF" className="btn btn-warning">
                       {" "}
@@ -447,24 +388,7 @@ const Eventpackages = () => {
                   Out 12 p.m
                 </p>
                 <p>
-                <div className="inputbox">
-                    <img
-                      className="gallery-image"
-                      src="assets/img/sleeprs.png"
-                      width={18}
-                      height={20}
-                    />{" "}
-                    <b>One plate price Rs.{jumboPlatePrice}.00</b><br />
-                    <span> Pax &nbsp; </span>
-                    <input
-                      type="number"
-                      name="pax"
-                      value={pax}
-                      onChange={handlePaxChange}
-                    />{" "}
-                    <br />
-                    <b>Full Cost</b> &nbsp; {jumboPlatePrice} * {pax} = Rs.{jumbototalPrice}.00
-                  </div>
+                  <b>LKR 100,000</b> &nbsp;
                   <span style={{ textAlign: "left" }}>
                     <a href="JumboPackage" className="btn btn-warning">
                       {" "}
