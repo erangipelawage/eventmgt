@@ -13,8 +13,8 @@ export default class Outdoocheckout extends React.Component {
       Email: "",
       ContactNo: "",
       Package: "",
-      ArrivalDate: "",                                                                                                 
-      DepartureDate: "",
+      BookingDate: "",                                                                                                 
+      // DepartureDate: "",
       Price: "",
       // ##
       errors: {},
@@ -88,7 +88,7 @@ export default class Outdoocheckout extends React.Component {
     // ##
     if (this.validateForm()) {
       // ##
-      const { FullName, Email, ContactNo, Package, ArrivalDate, DepartureDate, Price } =
+      const { FullName, Email, ContactNo, Package, BookingDate, Price } =
         this.state;
 
       const formData = new FormData();
@@ -96,8 +96,8 @@ export default class Outdoocheckout extends React.Component {
       formData.append("Email", Email);
       formData.append("ContactNo", ContactNo);
       formData.append("Package", Package);
-      formData.append("ArrivalDate", ArrivalDate);
-      formData.append("DepartureDate", DepartureDate);
+      formData.append("BookingDate", BookingDate);
+      // formData.append("DepartureDate", DepartureDate);
       formData.append("Price", Price);
       const apiEndpoint = "http://127.0.0.1:8000/api/eventbookings/";
       this.sendEmail(event);
@@ -111,8 +111,8 @@ export default class Outdoocheckout extends React.Component {
             Email: "",
             ContactNo: "",
             Package: "",
-            ArrivalDate: "",
-            DepartureDate: "",
+            BookingDate: "",
+            // DepartureDate: "",
             Price: "",
             successMessage: "Event Booking successful!",
           });
@@ -158,13 +158,14 @@ export default class Outdoocheckout extends React.Component {
                   <span> Full Name: </span>
                   <input
                     type="text"
+                    style={{ width: '70%' }}
                     placeholder="Enter Your name"
                     name="FullName"
                     onChange={this.handleChange}
                   />
                   {errors.FullName && <div className="error-message">{errors.FullName}</div>}
                 </div>
-          
+                
               <div className="inputbox">
                 <span> Email: </span>
                 <input
@@ -196,7 +197,7 @@ export default class Outdoocheckout extends React.Component {
                 {errors.Package && <div className="error-message">{errors.Package}</div>}
               </div>
               <div className="inputbox">
-                <span> Arrival Date: </span>
+                <span> Booking Date: </span>
                 <input
                   type="date"
                   placeholder="16/07/2023"
@@ -205,7 +206,7 @@ export default class Outdoocheckout extends React.Component {
                 />
                 {errors.ArrivalDate && <div className="error-message">{errors.ArrivalDate}</div>}
               </div>
-              <div className="inputbox">
+              {/* <div className="inputbox">
                 <span> Departure Date: </span>
                 <input
                   type="date"
@@ -214,7 +215,7 @@ export default class Outdoocheckout extends React.Component {
                   onChange={this.handleChange}
                 />
                 {errors.DepartureDate && <div className="error-message">{errors.DepartureDate}</div>}
-              </div>
+              </div> */}
               <div className="inputbox">
                 <span> Price: </span>
                 <input
