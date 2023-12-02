@@ -13,7 +13,7 @@ export default class Outdoocheckout extends React.Component {
       Email: "",
       ContactNo: "",
       Package: "",
-      BookingDate: "",                                                                                                 
+      BookingDate: "",
       // DepartureDate: "",
       Price: "",
       // ##
@@ -154,18 +154,18 @@ export default class Outdoocheckout extends React.Component {
               <br />
             </div>
             <div className="raw">
-                <div className="inputbox">
-                  <span> Full Name: </span>
-                  <input
-                    type="text"
-                    style={{ width: '70%' }}
-                    placeholder="Enter Your name"
-                    name="FullName"
-                    onChange={this.handleChange}
-                  />
-                  {errors.FullName && <div className="error-message">{errors.FullName}</div>}
-                </div>
-                
+              <div className="inputbox">
+                <span> Full Name: </span>
+                <input
+                  type="text"
+                  style={{ width: '70%' }}
+                  placeholder="Enter Your name"
+                  name="FullName"
+                  onChange={this.handleChange}
+                />
+                {errors.FullName && <div className="error-message">{errors.FullName}</div>}
+              </div>
+
               <div className="inputbox">
                 <span> Email: </span>
                 <input
@@ -254,12 +254,15 @@ export default class Outdoocheckout extends React.Component {
 
             <div>
               <center>
-                <input
-                  type="submit"
+                {/* <input
+                  type="button"
                   defaultValue="PAY NOW"
                   className="submit-btn"
-                  onClick={this.handlePayment} // Assuming you have a function to handle the payment
-                />
+                  onClick="/Checkout" // Assuming you have a function to handle the payment
+                /> */}
+
+                <a href="/Checkout" class="btn btn-info" role="button">Pay Now</a>
+
               </center>
             </div>
 

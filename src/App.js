@@ -23,6 +23,9 @@ import RegisterPage from "./pages/RegisterPage";
 import ErrorPage from "./pages/ErrorPage";
 import Dashboard from './pages/Dashboard';
 import Outdoocheckout from './pages/Outdoocheckout';
+import UDashboard from './pages/UDashboard';
+import CancellationPage from './pages/CancellationPage';
+import CancellationMSG from './pages/CancellationMSG';
 
 import Home from "./pages/Home";
 import AboutUs from "./pages/AboutUs";
@@ -169,6 +172,22 @@ function App() {
           path="/Outdoocheckout"
           render={(props) => <Outdoocheckout {...props} />}
         />
+
+        <Route
+          path="/UDashboard"
+          render={(props) => <UDashboard {...props} />}
+        />
+
+        <Route
+          path="/CancellationPage"
+          render={(props) => <CancellationPage {...props} />}
+        />
+
+        <Route
+          path="/CancellationMSG"
+          render={(props) => <CancellationMSG {...props} />}
+        />
+
         {/* <Route
           path="/Forgot"
           render={(props) => <Forgot {...props} />}
