@@ -1,40 +1,48 @@
 import React, { useRef } from 'react'
 import emailjs from '@emailjs/browser';
 import axios from "axios";
-// import { useState } from "react";
-// import { useEffect } from "react";
+import { useState, useEffect } from "react";
 
-export default class Outdoocheckout extends React.Component {
-  constructor(props) {
-    super(props);
+// export default class Outdoocheckout extends React.Component {
 
-    this.state = {
-      FullName: "",
-      Email: "",
-      ContactNo: "",
-      Package: "",
-      BookingDate: "",
-      // DepartureDate: "",
-      Price: "",
-      // ##
-      errors: {},
-      successMessage: '',
-    };
-  }
+// const Outdoocheckout = ()
+const Outdoocheckout = (props) => {
+  // const {Price,FullName,Email,ContactNo,Package,BookingDate,ArrivalDate,DepartureDate} = props;
+  const [Errors, setErrors] = useState({});
+  const [SuccessMessage, setSuccessMessage] = useState('');
+  const [FormData, setFormData] = useState({
+    FullName: "",
+    Email: "",
+    ContactNo: "",
+    Package: "",
+    BookingDate: "",
+    Price: props.Price,
+  });
+  // constructor(props) {
+  //   super(props);
 
-  handleChange = (event) => {
+  //   this.state = {
+  //     FullName: props.FullName,
+  //     Email: props.Email,
+  //     ContactNo: props.ContactNo,
+  //     Package: props.Package,
+  //     BookingDate: props.BookingDate,
+  //     // DepartureDate: "",
+  //     Price: props.Price,
+  //     // ##
+  //     errors: {},
+  //     successMessage: '',
+  //   };
+
+
+  const handleChange = (event) => {
     const { name, value } = event.target;
-    this.setState({
-      [name]: value,
-
-      // ##
-      errors: { ...this.state.errors, [name]: '' },
-    });
+    setFormData(values => ({ ...values, [name]: value }));
+    setErrors({ ...Errors, [name]: '' });
   };
 
-  validateForm = () => {
-    const { FullName, Email, ContactNo, Package, ArrivalDate, DepartureDate, Price } =
-      this.state;
+  const validateForm = () => {
+    const { FullName, Email, ContactNo } = FormData;
     const errors = {};
 
     if (!FullName.trim()) {
@@ -54,8 +62,7 @@ export default class Outdoocheckout extends React.Component {
     }
 
     // Add validations for other fields as needed
-
-    this.setState({ errors });
+    setErrors(errors);
 
     // Return true if there are no errors
     return Object.keys(errors).length === 0;
@@ -63,14 +70,14 @@ export default class Outdoocheckout extends React.Component {
 
   // ###
 
-  sendEmail = (e) => {
+  const sendEmail = (e) => {
     e.preventDefault();
 
     emailjs
       .sendForm(
         "service_f81inr1",
         "template_lnbkryk",
-        this.form,
+        FormData,
         "Mb2vbzM7IvtcsNyP0"
       )
       .then(
@@ -83,197 +90,177 @@ export default class Outdoocheckout extends React.Component {
       );
   };
 
-  handleSubmit = (event) => {
+  const handleSubmit = (event) => {
     event.preventDefault();
     // ##
-    if (this.validateForm()) {
+    if (validateForm()) {
       // ##
-      const { FullName, Email, ContactNo, Package, BookingDate, Price } =
-        this.state;
+      // const { FullName, Email, ContactNo, Package, BookingDate, Price } =
+      //   this.state;
 
-      const formData = new FormData();
-      formData.append("FullName", FullName);
-      formData.append("Email", Email);
-      formData.append("ContactNo", ContactNo);
-      formData.append("Package", Package);
-      formData.append("BookingDate", BookingDate);
-      // formData.append("DepartureDate", DepartureDate);
-      formData.append("Price", Price);
+      // const formData = new FormData();
+      // formData.append("FullName", FullName);
+      // formData.append("Email", Email);
+      // formData.append("ContactNo", ContactNo);
+      // formData.append("Package", Package);
+      // formData.append("BookingDate", BookingDate);
+      // formData.append("Price", Price);
+
       const apiEndpoint = "http://127.0.0.1:8000/api/eventbookings/";
-      this.sendEmail(event);
+      sendEmail(event);
 
       axios
-        .post(apiEndpoint, formData)
+        .post(apiEndpoint, FormData)
         .then((response) => {
           console.log("Event Booking successful!:", response.data);
-          this.setState({
+          setFormData({
             FullName: "",
             Email: "",
             ContactNo: "",
             Package: "",
             BookingDate: "",
-            // DepartureDate: "",
-            Price: "",
-            successMessage: "Event Booking successful!",
+            Price: 0,
           });
 
-        })
+          setSuccessMessage("Event Booking successful!");
 
-        .catch((error) => {
+        }).catch((error) => {
           console.error('Error booking:', error);
         });
-      //   .catch((error) => { });
-      // console.error("Error booking:");
-      this.setState({
-        successMessage: "",
-      });
+
+      setSuccessMessage("");
     }
   };
+  useEffect(() => {
 
-  render() {
-    const { errors } = this.state;
+    setFormData(data => ({
+      ...data,
+      Price: props.Price,
+    }));
 
-    return (
-      <div>
-        <meta charSet="UTF-8" />
-        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-        <title>SEABREEZE Hotel - Event Booking Page</title>
-        <link
-          rel="shortcut icon"
-          href="./assets/img/favicon.webp"
-          type="image/x-icon"
-        />
-        <link rel="stylesheet" href="./assets/css/style1.css" />
-        <link rel="stylesheet" href="./assets/css/global-header.css" />
+  }, [props.Price])
+
+  return (
+    <div>
+      <meta charSet="UTF-8" />
+      <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+      <title>SEABREEZE Hotel - Event Booking Page</title>
+      <link
+        rel="shortcut icon"
+        href="./assets/img/favicon.webp"
+        type="image/x-icon"
+      />
+      <link rel="stylesheet" href="./assets/css/style1.css" />
+      <link rel="stylesheet" href="./assets/css/global-header.css" />
 
 
-        <div className="container">
-          <form ref={(form) => (this.form = form)} onSubmit={this.handleSubmit}>
+      <div className="container">
+        <form onSubmit={handleSubmit}>
+          <div>
+            <h2 className="title">Event Online Booking</h2>
+            <br />
+          </div>
+          <div className="raw">
+            <div className="inputbox">
+              <span> Full Name: </span>
+              <input
+                type="text"
+                style={{ width: '70%' }}
+                placeholder="Enter Your name"
+                name="FullName"
+                value={FormData.FullName}
+                onChange={handleChange}
+              />
+              {Errors.FullName && <div className="error-message">{Errors.FullName}</div>}
+            </div>
+
+            <div className="inputbox">
+              <span> Email: </span>
+              <input
+                type="email"
+                placeholder="Enter Your email"
+                name="Email"
+                value={FormData.Email}
+                onChange={handleChange}
+              />
+              {Errors.Email && <div className="error-message">{Errors.Email}</div>}
+            </div>
+            <div className="inputbox">
+              <span> Contact No: </span>
+              <input
+                type="number"
+                placeholder="Enter Your ConNo"
+                name="ContactNo"
+                value={FormData.ContactNo}
+                onChange={handleChange}
+              />
+              {Errors.ContactNo && <div className="error-message">{Errors.ContactNo}</div>}
+            </div>
+            <div className="inputbox">
+              <span> Package: </span>
+              <input
+                type="text"
+                placeholder="Package"
+                name="Package"
+                value={FormData.Package}
+                onChange={handleChange}
+              />
+              {Errors.Package && <div className="error-message">{Errors.Package}</div>}
+            </div>
+            <div className="inputbox">
+              <span> Booking Date: </span>
+              <input
+                type="date"
+                placeholder="16/07/2023"
+                name="ArrivalDate"
+                value={FormData.ArrivalDate}
+                onChange={handleChange}
+              />
+              {Errors.ArrivalDate && <div className="error-message">{Errors.ArrivalDate}</div>}
+            </div>
+
+            <div className="inputbox">
+              <span> Price: </span>
+              <input
+                value={FormData.Price}
+                type="number"
+                placeholder="price"
+                name="Price"
+                readOnly
+                onChange={handleChange}
+              />
+              {Errors.Price && <div className="error-message">{Errors.Price}</div>}
+            </div>
             <div>
-              <h2 className="title">Event Online Booking</h2>
-              <br />
+              <h6 className="title"><b>Fully refundable before your booking date. If you cannot cancel or change the date before the booking date, we will refund half of your payment</b>
+                <pre></pre>
+                <strong><a href='/Policy'>I agree to SEEBREEZEE HOTEL terms and policies</a> </strong></h6>
             </div>
-            <div className="raw">
-              <div className="inputbox">
-                <span> Full Name: </span>
-                <input
-                  type="text"
-                  style={{ width: '70%' }}
-                  placeholder="Enter Your name"
-                  name="FullName"
-                  onChange={this.handleChange}
-                />
-                {errors.FullName && <div className="error-message">{errors.FullName}</div>}
-              </div>
-
-              <div className="inputbox">
-                <span> Email: </span>
-                <input
-                  type="email"
-                  placeholder="Enter Your email"
-                  name="Email"
-                  onChange={this.handleChange}
-                />
-                {errors.Email && <div className="error-message">{errors.Email}</div>}
-              </div>
-              <div className="inputbox">
-                <span> Contact No: </span>
-                <input
-                  type="number"
-                  placeholder="Enter Your ConNo"
-                  name="ContactNo"
-                  onChange={this.handleChange}
-                />
-                {errors.ContactNo && <div className="error-message">{errors.ContactNo}</div>}
-              </div>
-              <div className="inputbox">
-                <span> Package: </span>
-                <input
-                  type="text"
-                  placeholder="Package"
-                  name="Package"
-                  onChange={this.handleChange}
-                />
-                {errors.Package && <div className="error-message">{errors.Package}</div>}
-              </div>
-              <div className="inputbox">
-                <span> Booking Date: </span>
-                <input
-                  type="date"
-                  placeholder="16/07/2023"
-                  name="ArrivalDate"
-                  onChange={this.handleChange}
-                />
-                {errors.ArrivalDate && <div className="error-message">{errors.ArrivalDate}</div>}
-              </div>
-              {/* <div className="inputbox">
-                <span> Departure Date: </span>
-                <input
-                  type="date"
-                  placeholder="16/07/2023"
-                  name="DepartureDate"
-                  onChange={this.handleChange}
-                />
-                {errors.DepartureDate && <div className="error-message">{errors.DepartureDate}</div>}
-              </div> */}
-              <div className="inputbox">
-                <span> Price: </span>
-                <input
-                  type="number"
-                  placeholder="price"
-                  name="Price"
-                  onChange={this.handleChange}
-                />
-                {errors.Price && <div className="error-message">{errors.Price}</div>}
-              </div>
-              <div>
-                <h6 className="title"><b>Fully refundable before your booking date. If you cannot cancel or change the date before the booking date, we will refund half of your payment</b>
-                  <pre></pre>
-                  <strong><a href='/Policy'>I agree to SEEBREEZEE HOTEL terms and policies</a> </strong></h6>
-              </div>
-              {/* <select name="Price" id="cars" onChange={this.handleChange}>
-                    <option value="p1">Rs.2000.00</option>
-                    <option value="p2">Rs.3000.00</option>
-                    <option value="p3">Rs.5000.00</option>
-                    <option value="p4">Rs.10000.00</option>
-                  </select> */}
-            </div>
-            {/* <center>
-                <a href="/Checkout" className="submit-btn">SUBMIT</a>
-                </center> */}
-
-            {/* <center>
-                  <input
-                    type="submit"
-                    defaultValue="RESERVE"
-                    className="submit-btn"
-                  />
-                </center> */}
-
-            {/* @@@@@@@ chatgpt */}
 
             <div>
               <center>
-                {/* <input
-                  type="button"
+                <input
+                  type="submit"
                   defaultValue="PAY NOW"
                   className="submit-btn"
                   onClick="/Checkout" // Assuming you have a function to handle the payment
-                /> */}
+                />
 
-                <a href="/Checkout" class="btn btn-info" role="button">Pay Now</a>
+                {/* <a href="/Checkout" class="btn btn-info" role="button">Pay Now</a> */}
 
               </center>
             </div>
-
-            {this.state.successMessage && (
-              <div className="success-message">
-                <p>{this.state.successMessage}</p>
-              </div>
-            )}
-          </form>
-        </div>
+          </div>
+          {SuccessMessage && (
+            <div className="success-message">
+              <p>{SuccessMessage}</p>
+            </div>
+          )}
+        </form>
       </div>
-    );
-  }
+    </div>
+  );
 }
+
+export default Outdoocheckout;
+

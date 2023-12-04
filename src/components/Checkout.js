@@ -5,8 +5,6 @@ import { loadStripe } from "@stripe/stripe-js";
 import CardIcon from "../images/credit-card.svg";
 import ProductImage from "../images/product-image.jpg";
 
-import "../stylep.css";
-
 let stripePromise;
 
 const getStripe = () => {
@@ -48,17 +46,18 @@ const Checkout = () => {
 
   return (
     <div className="checkout">
-      <h1>Stripe Checkout</h1>
-      <p className="checkout-title">Design+Code React Hooks Course</p>
+      
       <p className="checkout-description">
-        Learn how to build a website with React Hooks
-      </p>
-      <h1 className="checkout-price">$19</h1>
+        
+      <h1>Pay Online</h1>
+      <p className="checkout-title">Pay Online - Rs.3000.00</p>
+      <br/>
       <img
         className="checkout-product-image"
         src={ProductImage}
         alt="Product"
       />
+      </p>
       <button
         className="checkout-button"
         onClick={redirectToCheckout}
@@ -70,9 +69,10 @@ const Checkout = () => {
           </div>
         </div>
         <div className="text-container">
-          <p className="text">{isLoading ? "Loading..." : "Buy"}</p>
+          <p className="text">{isLoading ? "Loading..." : "Pay Now"}</p>
         </div>
       </button>
+      <br />
     </div>
   );
 };

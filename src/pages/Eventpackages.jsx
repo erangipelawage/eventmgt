@@ -1,25 +1,74 @@
-import React, { useState } from "react";
-import { Link } from "react-router-dom";
+import React, { useState, useEffect } from "react";
+import { useHistory } from "react-router-dom";
 
-const Eventpackages = () => {
-  const [pax, setPax] = useState(); // State to store the Pax value
+// export default class Eventpackages extends React.Component {
+//   constructor(props) {
+//   super(props);
+
+//   this.state = {
+//     handleAnyPriceUpdate: props.handleAnyPriceUpdate,
+//   };
+// }
+
+const Eventpackages = ({ handleAnyPriceUpdate }) => {
+  // const Eventpackages = () => {
+  const [silverPax, setSilverPax] = useState(0);
+  const [goldPax, setGoldPax] = useState(0);
+  const [platinumPax, setPlatinumPax] = useState(0);
+  const [jumboPax, setJumboPax] = useState(0);
+  const [dinnerOutPax, setDinnerOutPax] = useState(0);
 
   const silverPlatePrice = 2500;
   const goldPlatePrice = 5000;
   const platinumPlatePrice = 7000;
   const jumboPlatePrice = 4000;
-  const DOfamilyPlatePrice = 3500;
+  const dinnerOutPlatePrice = 3500;
 
-  const handlePaxChange = (event) => {
-    const newValue = parseInt(event.target.value, 10) || 0; // Convert input to integer, default to 0 if not a valid number
-    setPax(newValue);
+  const [silverTotalPrice, setSilverTotalPrice] = useState(0);
+  const [goldTotalPrice, setGoldTotalPrice] = useState(0);
+  const [platinumTotalPrice, setPlatinumTotalPrice] = useState(0);
+  const [jumboTotalPrice, setJumboTotalPrice] = useState(0);
+  const [dinnerOutTotalPrice, setDinnerOutTotalPrice] = useState(0);
+
+  const history = useHistory ();
+
+  const handleSilverPaxChange = (event) => {
+    const newValue = parseInt(event.target.value, 10) || 0;// Convert input to integer, default to 0 if not a valid number
+    setSilverPax(newValue);
   };
 
-  const silvertotalPrice = silverPlatePrice * pax;
-  const goldtotalPrice = goldPlatePrice * pax;
-  const platinumtotalPrice = platinumPlatePrice * pax;
-  const jumbototalPrice = jumboPlatePrice * pax;
-  const DOfamilytotalPrice = DOfamilyPlatePrice * pax;
+  useEffect(() => {
+    const Tot = silverPlatePrice * silverPax;
+    setSilverTotalPrice(Tot);
+
+    handleAnyPriceUpdate(Tot || 0);
+
+    console.log("After: " + Tot);
+  }, [silverPax]);
+
+  const handleGoldPaxChange = (event) => {
+    const newValue = parseInt(event.target.value, 10) || 0; // Convert input to integer, default to 0 if not a valid number
+    setGoldPax(newValue);
+    setGoldTotalPrice(silverPlatePrice * silverPax);
+  };
+
+  const handlePlatinumPaxChange = (event) => {
+    const newValue = parseInt(event.target.value, 10) || 0; // Convert input to integer, default to 0 if not a valid number
+    setPlatinumPax(newValue);
+    setPlatinumTotalPrice(platinumPlatePrice * platinumPax);
+  };
+
+  const handleJumboPaxChange = (event) => {
+    const newValue = parseInt(event.target.value, 10) || 0; // Convert input to integer, default to 0 if not a valid number
+    setJumboPax(newValue);
+    setJumboTotalPrice(jumboPlatePrice * jumboPax);
+  };
+
+  const handleDinnerOutPaxChange = (event) => {
+    const newValue = parseInt(event.target.value, 10) || 0; // Convert input to integer, default to 0 if not a valid number
+    setDinnerOutPax(newValue);
+    setDinnerOutTotalPrice(dinnerOutPlatePrice * dinnerOutPax);
+  };
 
   return (
     <>
@@ -96,16 +145,16 @@ const Eventpackages = () => {
                       width={18}
                       height={20}
                     />{" "}
-                    <b>One plate price Rs.{silverPlatePrice}.00</b><br />
+                    <b>Plate price Rs.{silverPlatePrice}</b><br />
                     <span> Pax &nbsp; </span>
                     <input
                       type="number"
                       name="pax"
-                      value={pax}
-                      onChange={handlePaxChange}
+                      value={silverPax}
+                      onChange={handleSilverPaxChange}
                     />{" "}
                     <br />
-                    <b>Full Cost</b> &nbsp; {silverPlatePrice} * {pax} = Rs.{silvertotalPrice}.00
+                    <b>Full Cost: </b> &nbsp; {silverPlatePrice} x {silverPax} = Rs.{silverTotalPrice}
                   </div>
                 </p>
                 <p>
@@ -115,7 +164,7 @@ const Eventpackages = () => {
                       SEE MORE
                     </a>{" "}
                     &nbsp;
-                    <a href="/Outdoocheckout" className="btn btn-success">
+                    <a onClick={()=>history.push("/Outdoocheckout")} className="btn btn-success">
                       {" "}
                       BOOK NOW
                     </a>
@@ -171,16 +220,16 @@ const Eventpackages = () => {
                       width={18}
                       height={20}
                     />{" "}
-                    <b>One plate price Rs.{goldPlatePrice}.00 </b><br />
+                    <b>Plate price Rs.{goldPlatePrice} </b><br />
                     <span> Pax &nbsp; </span>
                     <input
                       type="number"
                       name="pax"
-                      value={pax}
-                      onChange={handlePaxChange}
+                      value={goldPax}
+                      onChange={handleGoldPaxChange}
                     />{" "}
                     <br />
-                    <b>Full Cost</b> &nbsp; {goldPlatePrice} * {pax} = Rs.{goldtotalPrice}.00
+                    <b>Full Cost</b> &nbsp; {goldPlatePrice} * {goldPax} = Rs.{goldTotalPrice}
                   </div>
                   <span style={{ textAlign: "left" }}>
                     <a href="GoldPackage" className="btn btn-warning">
@@ -245,16 +294,16 @@ const Eventpackages = () => {
                       width={18}
                       height={20}
                     />{" "}
-                    <b>One plate price Rs.{platinumPlatePrice}.00</b><br />
+                    <b>Plate price Rs.{platinumPlatePrice}</b><br />
                     <span> Pax &nbsp; </span>
                     <input
                       type="number"
                       name="pax"
-                      value={pax}
-                      onChange={handlePaxChange}
+                      value={platinumPax}
+                      onChange={handlePlatinumPaxChange}
                     />{" "}
                     <br />
-                    <b>Full Cost</b> &nbsp; {platinumPlatePrice} * {pax} = Rs.{platinumtotalPrice}.00
+                    <b>Full Cost</b> &nbsp; {platinumPlatePrice} * {platinumPax} = Rs.{platinumTotalPrice}
                   </div>
                   <span style={{ textAlign: "left" }}>
                     <a href="/" className="btn btn-warning">
@@ -374,23 +423,23 @@ const Eventpackages = () => {
                   Out 12 p.m
                 </p>
                 <p>
-                <div className="inputbox">
+                  <div className="inputbox">
                     <img
                       className="gallery-image"
                       src="assets/img/sleeprs.png"
                       width={18}
                       height={20}
                     />{" "}
-                    <b>One plate price Rs.{DOfamilyPlatePrice}.00 </b><br />
+                    <b>Plate price Rs.{dinnerOutPlatePrice}</b><br />
                     <span> Pax &nbsp; </span>
                     <input
                       type="number"
                       name="pax"
-                      value={pax}
-                      onChange={handlePaxChange}
+                      value={dinnerOutPax} dinnerOutPax
+                      onChange={handleDinnerOutPaxChange}
                     />{" "}
                     <br />
-                    <b>Full Cost</b> &nbsp; {DOfamilyPlatePrice} * {pax} = Rs.{DOfamilytotalPrice}.00
+                    <b>Full Cost</b> &nbsp; {dinnerOutPlatePrice} * {dinnerOutPax} = Rs.{dinnerOutTotalPrice}
                   </div>
                   <span style={{ textAlign: "left" }}>
                     <a href="DinnerOutF" className="btn btn-warning">
@@ -447,23 +496,23 @@ const Eventpackages = () => {
                   Out 12 p.m
                 </p>
                 <p>
-                <div className="inputbox">
+                  <div className="inputbox">
                     <img
                       className="gallery-image"
                       src="assets/img/sleeprs.png"
                       width={18}
                       height={20}
                     />{" "}
-                    <b>One plate price Rs.{jumboPlatePrice}.00</b><br />
+                    <b>Plate price Rs.{jumboPlatePrice}</b><br />
                     <span> Pax &nbsp; </span>
                     <input
                       type="number"
                       name="pax"
-                      value={pax}
-                      onChange={handlePaxChange}
+                      value={jumboPax}
+                      onChange={handleJumboPaxChange}
                     />{" "}
                     <br />
-                    <b>Full Cost</b> &nbsp; {jumboPlatePrice} * {pax} = Rs.{jumbototalPrice}.00
+                    <b>Full Cost</b> &nbsp; {jumboPlatePrice} * {jumboPax} = Rs.{jumboTotalPrice}
                   </div>
                   <span style={{ textAlign: "left" }}>
                     <a href="JumboPackage" className="btn btn-warning">

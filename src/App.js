@@ -48,9 +48,18 @@ import Hourcheck from "./pages/Hourcheck";
 import Contact from "./components/Contact";
 // import Forgot from "./pages/Forgot";
 // import Payments from "./pages/Payments";
-
+import { useState } from "react";
 
 function App() {
+
+  const [totalPrice, setTotalPrice] = useState(0);
+
+  const handleAnyPriceUpdate = (incomingPrice) => {
+    setTotalPrice(incomingPrice);
+    console.log("2 after"+incomingPrice);
+  };
+
+
   return (
     <div className="container-fluid">
       <NavbarComponent />
@@ -92,10 +101,31 @@ function App() {
           path="/Facilities"
           render={(props) => <Facilities {...props} />}
         />
-        <Route
+
+        {/* <Route
+          path="/Outdoocheckout"
+          render={(props) => <Outdoocheckout {...props} />}
+        /> */}
+
+        {/* <Route
           path="/Eventpackages"
           render={(props) => <Eventpackages {...props} />}
+        /> */}
+
+        <Route
+          path="/Outdoocheckout"
+          render={(props) => (
+            <Outdoocheckout {...props} Price={totalPrice} />
+          )}
         />
+
+        <Route
+          path="/Eventpackages"
+          render={(props) => (
+            <Eventpackages {...props} handleAnyPriceUpdate={handleAnyPriceUpdate} />
+          )}
+        />
+
         <Route
           path="/Outdoor"
           render={(props) => <Outdoor {...props} />}
@@ -166,11 +196,6 @@ function App() {
         <Route
           path="/Policy"
           render={(props) => <Policy {...props} />}
-        />
-
-        <Route
-          path="/Outdoocheckout"
-          render={(props) => <Outdoocheckout {...props} />}
         />
 
         <Route
