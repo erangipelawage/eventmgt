@@ -60,7 +60,6 @@ export default class Ratings extends React.Component {
       <div>
         <meta charSet='UTF-8' />
         <meta name='viewport' content='width=device-width, initial-scale=1.0' />
-        <title>SEABREEZE Hotel - Ratings</title>
         <link
           href='https://fonts.googleapis.com/css2?family=Source+Sans+Pro:wght@400;600;700&display=swap'
           rel='stylesheet'

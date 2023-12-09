@@ -9,7 +9,7 @@ export default function LoginPage({ history }) {
   });
 
   if (context.isUserAuthenticated) {
-    return <Redirect to="/" />;
+    return <Redirect to="/home" />;
   }
   return (
     <div className="container m-auto align-items-center justify-content-center">

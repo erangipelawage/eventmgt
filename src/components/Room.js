@@ -1,7 +1,7 @@
 import React from "react";
-import {Link} from 'react-router-dom';
+import { Link } from 'react-router-dom';
 export default function Room({ room }) {
-    const {cover_image, title, price_per_night, room_slug} = room
+  const { cover_image, title, price_per_night, room_slug } = room
   return (
     <div className="card room">
       <Link to={`/single-room/${room_slug}`}>

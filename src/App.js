@@ -26,6 +26,7 @@ import Outdoocheckout from './pages/Outdoocheckout';
 import UDashboard from './pages/UDashboard';
 import CancellationPage from './pages/CancellationPage';
 import CancellationMSG from './pages/CancellationMSG';
+import ForgotPassword from "./pages/ForgotPassword";
 
 import Home from "./pages/Home";
 import AboutUs from "./pages/AboutUs";
@@ -33,7 +34,6 @@ import Facilities from "./pages/Facilities";
 import Outdoor from "./pages/Outdoor";
 import Ratings from "./pages/Ratings";
 import Eventpackages from "./pages/Eventpackages";
-import Blog from "./pages/Blog";
 import Policy from "./pages/Policy";
 
 import Footer from "./components/Footer";
@@ -56,7 +56,7 @@ function App() {
 
   const handleAnyPriceUpdate = (incomingPrice) => {
     setTotalPrice(incomingPrice);
-    console.log("2 after"+incomingPrice);
+    console.log("2 after" + incomingPrice);
   };
 
 
@@ -132,11 +132,6 @@ function App() {
         />
 
         <Route
-          path="/Blog"
-          render={(props) => <Blog {...props} />}
-        />
-
-        <Route
           path="/Checkout"
           render={(props) => <Checkout {...props} />}
         />
@@ -196,6 +191,11 @@ function App() {
         <Route
           path="/Policy"
           render={(props) => <Policy {...props} />}
+        />
+
+        <Route
+          path="/ForgotPassword"
+          render={(props) => <ForgotPassword {...props} />}
         />
 
         <Route

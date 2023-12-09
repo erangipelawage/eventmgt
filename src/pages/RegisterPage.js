@@ -12,7 +12,7 @@ export default function RegisterPage({ history }) {
   });
   const { username, email, password1, password2 } = data;
   if (context.isUserAuthenticated) {
-    return <Redirect to="/" />;
+    return <Redirect to="/home" />;
   }
 
   return (

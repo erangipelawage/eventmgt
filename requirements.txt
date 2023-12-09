@@ -3,7 +3,9 @@ Django==4.2.3
 django-bootstrap5==23.3
 django-cors-headers==4.3.1
 djangorestframework==3.14.0
+djangorestframework-simplejwt==5.3.1
 Pillow==10.0.0
+PyJWT==2.8.0
 PyMySQL==1.1.0
 python-decouple==3.8
 pytz==2023.3.post1

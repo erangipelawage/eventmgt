@@ -14,7 +14,7 @@ const Footer = () => {
               <nav className="footer-nav">
                 <div className="footer-description">
                   <h3 className="footer-description-title">SEABREEZE Hotel</h3>
-                  <pre>LAGOON VILLA</pre>
+                  <h6>LAGOON VILLA</h6>
                 </div>
                 <div className="footer-contact-us">
                   <h3 className="footer-description-title">Contact Us</h3>
@@ -28,7 +28,7 @@ const Footer = () => {
                   </p>
                   <p className="footer-description-detail">
                     <img src="./assets/img/mail.svg" className="footer-description-icon" alt="star hotels email" />
-                    <span>alkorbi144@gmail.com</span>
+                    <span>seabreezehotelproject@gmail.com</span>
                   </p>
                 </div>
                 <div className="footer-follow-us">

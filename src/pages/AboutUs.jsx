@@ -1,5 +1,4 @@
 import React from 'react';
-import { Link } from 'react-router-dom';
 
 const AboutUs = () => {
   return (
@@ -7,10 +6,8 @@ const AboutUs = () => {
       <div>
         <meta charSet="UTF-8" />
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-        <title>SEABREEZE Hotel - About US</title>
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" />
         <link href="https://fonts.googleapis.com/css2?family=Source+Sans+Pro:wght@400;700&display=swap" rel="stylesheet" />
-        <link rel="stylesheet" href="./assets/css/accesibility.css" />
         <link rel="stylesheet" href="./assets/css/contact-page.css" />
         <link rel="shortcut icon" href="./assets/img/favicon.webp" type="image/x-icon" />
         <link href="https://fonts.googleapis.com/css2?family=Source+Sans+Pro:wght@400;700&display=swap" rel="stylesheet" />
@@ -18,33 +15,48 @@ const AboutUs = () => {
 
         <div className="container">
           <div className="header">
-            <h2>About Us</h2>
+            <h2>We Are ...</h2>
             <hr />
-            <p><b>
-              We are Sea Breeze located in mannar.We are providing Deluxe rooms,villa as pre-defined packages and
-              event packages.You can customize your event packages as your preference.As well as we are providing
-              our enamored outdoor locations for your pre-shoots. </b>
+            <p style={{ maxWidth: '800px', margin: '0 auto', textAlign: 'justify' }}>
+              <b>
+                We are Sea Breeze located in Mannar. We provide deluxe rooms, villas as pre-defined packages, and
+                event packages. You can customize your event packages to your preference. Additionally, we offer
+                enamored outdoor locations for your pre-shoots.
+              </b>
             </p>
           </div>
+
           &nbsp;
           &nbsp;
 
-          <div className="col-md-5">
-            <div className="full slider_cont_section">
-              <h3>Hi Fodies..</h3>
-              <h4><b>WELCOME TO SEA BREEZE !</b></h4>
-              <p>
-                Sea Breeze Hotel is a charming boutique hotel located in the heart
-                of Mannar, Sri Lanka. The hotel is just a short walk from the
-                beach, making it the perfect place to relax and enjoy the stunning
-                views of the Indian Ocean.The hotel offers a variety of
-                accommodation options, including spacious villas with private
-                terraces. All rooms are equipped with air conditioning,
-                flat-screen TVs, and en suite bathrooms.You can enjoy a delicious
-                breakfast buffet each morning at the hotel's restaurant.{" "}
-              </p>
+          <div className="row">
+            <div className="col-md-5">
+              <div className="full slider_cont_section">
+                <h3>Hi Fodies..</h3>
+                <h4><b>WELCOME TO SEA BREEZE !</b></h4>
+                <p>
+                  Sea Breeze Hotel is a charming boutique hotel located in the heart
+                  of Mannar, Sri Lanka. The hotel is just a short walk from the
+                  beach, making it the perfect place to relax and enjoy the stunning
+                  views of the Indian Ocean. The hotel offers a variety of
+                  accommodation options, including spacious villas with private
+                  terraces. All rooms are equipped with air conditioning,
+                  flat-screen TVs, and en suite bathrooms. You can enjoy a delicious
+                  breakfast buffet each morning at the hotel's restaurant.
+                </p>
+              </div>
+            </div>
+            <div className="col-md-7">
+              <img
+                src="assets/img/double.jpg"
+                alt="Hotel Image"
+                className="img-fluid"
+                width={500}
+                height={500}
+              />
             </div>
           </div>
+
           <div className="section layout_padding">
             <div className="container">
               <div className="row">
@@ -90,7 +102,7 @@ const AboutUs = () => {
             </div>
           </div>
         </div>
-        </div>
+      </div>
     </>
   )
 }

@@ -1,17 +1,7 @@
 import React, { useState, useEffect } from "react";
 import { useHistory } from "react-router-dom";
 
-// export default class Eventpackages extends React.Component {
-//   constructor(props) {
-//   super(props);
-
-//   this.state = {
-//     handleAnyPriceUpdate: props.handleAnyPriceUpdate,
-//   };
-// }
-
 const Eventpackages = ({ handleAnyPriceUpdate }) => {
-  // const Eventpackages = () => {
   const [silverPax, setSilverPax] = useState(0);
   const [goldPax, setGoldPax] = useState(0);
   const [platinumPax, setPlatinumPax] = useState(0);
