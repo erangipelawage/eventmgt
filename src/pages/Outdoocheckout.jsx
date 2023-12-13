@@ -16,7 +16,7 @@ const Outdoocheckout = (props) => {
     FullName: "",
     Email: "",
     ContactNo: "",
-    Package: "",
+    Package: props.Package,
     BookingDate: "",
     Price: props.Price,
   });

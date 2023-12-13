@@ -2,6 +2,7 @@ import React, { useState, useEffect } from "react";
 import { useHistory } from "react-router-dom";
 
 const Eventpackages = ({ handleAnyPriceUpdate }) => {
+  const [packageName, setPackageName] = useState("");
   const [silverPax, setSilverPax] = useState(0);
   const [goldPax, setGoldPax] = useState(0);
   const [platinumPax, setPlatinumPax] = useState(0);
@@ -25,49 +26,81 @@ const Eventpackages = ({ handleAnyPriceUpdate }) => {
   const handleSilverPaxChange = (event) => {
     const newValue = parseInt(event.target.value, 10) || 0;// Convert input to integer, default to 0 if not a valid number
     setSilverPax(newValue);
+    setSilverTotalPrice(silverPlatePrice * silverPax);
+    setPackageName("Silver Package");
   };
-
-  useEffect(() => {
-    const Tot = silverPlatePrice * silverPax;
-    setSilverTotalPrice(Tot);
-
-    handleAnyPriceUpdate(Tot || 0);
-
-    console.log("After: " + Tot);
-  }, [silverPax]);
 
   const handleGoldPaxChange = (event) => {
     const newValue = parseInt(event.target.value, 10) || 0; // Convert input to integer, default to 0 if not a valid number
     setGoldPax(newValue);
     setGoldTotalPrice(goldPlatePrice * goldPax);
+    setPackageName("Gold Package");
   };
-
-  useEffect(() => {
-    const Tot = goldPlatePrice * goldPax;
-    setGoldTotalPrice(Tot);
-
-    handleAnyPriceUpdate(Tot || 0);
-
-    console.log("After: " + Tot);
-  }, [goldPax]);
 
   const handlePlatinumPaxChange = (event) => {
     const newValue = parseInt(event.target.value, 10) || 0; // Convert input to integer, default to 0 if not a valid number
     setPlatinumPax(newValue);
     setPlatinumTotalPrice(platinumPlatePrice * platinumPax);
+    setPackageName("Platinum Package");
   };
 
   const handleJumboPaxChange = (event) => {
     const newValue = parseInt(event.target.value, 10) || 0; // Convert input to integer, default to 0 if not a valid number
     setJumboPax(newValue);
     setJumboTotalPrice(jumboPlatePrice * jumboPax);
+    setPackageName("Jumbo Package");
   };
 
   const handleDinnerOutPaxChange = (event) => {
     const newValue = parseInt(event.target.value, 10) || 0; // Convert input to integer, default to 0 if not a valid number
     setDinnerOutPax(newValue);
     setDinnerOutTotalPrice(dinnerOutPlatePrice * dinnerOutPax);
+    setPackageName("Dinner Out Package");
   };
+  
+  useEffect(() => {
+    const Tot = silverPlatePrice * silverPax;
+    setSilverTotalPrice(Tot);
+    setPackageName("Silver Package");
+    handleAnyPriceUpdate(Tot || 0, packageName);
+    console.log("After: " + packageName);
+  }, [silverPax]);
+  
+  useEffect(() => {
+    const Tot = goldPlatePrice * goldPax;
+    setGoldTotalPrice(Tot);
+    setPackageName("Gold Package");
+    handleAnyPriceUpdate(Tot || 0, packageName);
+    console.log("After: " + packageName);
+  }, [goldPax]);
+  
+  useEffect(() => {
+    const Tot = platinumPlatePrice * platinumPax;
+    setPlatinumTotalPrice(Tot);
+    setPackageName("Platinum Package");
+    handleAnyPriceUpdate(Tot || 0, packageName);
+    console.log("After: " + packageName);
+  }, [platinumPax]);
+  
+  useEffect(() => {
+    const Tot = jumboPlatePrice * jumboPax;
+    setJumboTotalPrice(Tot);
+    setPackageName("Jumbo Package");
+    handleAnyPriceUpdate(Tot || 0, packageName);
+    console.log("After: " + packageName);
+  }, [jumboPax]);
+  
+  useEffect(() => {
+    const Tot = dinnerOutPlatePrice * dinnerOutPax;
+    setDinnerOutTotalPrice(Tot);
+    setPackageName("Dinner Out Package");
+    handleAnyPriceUpdate(Tot || 0, packageName);
+    console.log("After: " + packageName);
+  }, [dinnerOutPax]);
+  
+  // useEffect(() => {
+  //   setPackageName(packageName);
+  // }, [packageName]);
 
   return (
     <>

@@ -53,9 +53,11 @@ import { useState } from "react";
 function App() {
 
   const [totalPrice, setTotalPrice] = useState(0);
+  const [packageName, setPackageName] = useState("");
 
-  const handleAnyPriceUpdate = (incomingPrice) => {
+  const handleAnyPriceUpdate = (incomingPrice, incomingPackage) => {
     setTotalPrice(incomingPrice);
+    setPackageName(incomingPackage);
     console.log("2 after" + incomingPrice);
   };
 
@@ -115,7 +117,7 @@ function App() {
         <Route
           path="/Outdoocheckout"
           render={(props) => (
-            <Outdoocheckout {...props} Price={totalPrice} />
+            <Outdoocheckout {...props} Price={totalPrice} Package={packageName}/>
           )}
         />
 
@@ -128,7 +130,7 @@ function App() {
 
         <Route
           path="/Outdoor"
-          render={(props) => <Outdoor {...props} />}
+          render={(props) => <Outdoor {...props} handleAnyPriceUpdate={handleAnyPriceUpdate} />}
         />
 
         <Route

@@ -1,66 +1,69 @@
+import { useEffect, useState } from "react";
+import { useHistory } from "react-router-dom";
 import React from 'react';
 import { Link } from "react-router-dom";
 
 
 const Outdoor = ({handleAnyPriceUpdate}) => {
+  const [packageName, setPackageName] = useState("");
+  const [poolHours, setpoolPax] = useState(0);
+  const [cottageHours, setcottagePax] = useState(0);
+  const [gardenHours, setgardenPax] = useState(0);
 
-  // const [poolPax, setpoolPax] = useState(0);
-  // const [cattagePax, setcattagePax] = useState(0);
-  // const [gardenPax, setgardenPax] = useState(0);
+  const poolSidePrice = 2500;
+  const cottageSidePrice = 5000;
+  const gardenSidePrice = 7000;
 
-  // const poolSidePrice = 2500;
-  // const cattageSideLPrice = 5000;
-  // const gardenSidePrice = 7000;
+  const [poolTotalPrice, setPoolTotalPrice] = useState(0);
+  const [cottageTotalPrice, setCottageTotalPrice] = useState(0);
+  const [gardenTotalPrice, setGardenTotalPrice] = useState(0);
 
-  // const [poolTotalPrice, setPoolTotalPrice] = useState(0);
-  // const [cattageTotalPrice, setCattageTotalPrice] = useState(0);
-  // const [gardenTotalPrice, setGardenTotalPrice] = useState(0);
+  const history = useHistory ();
 
-  // const history = useHistory ();
+  const handlePoolHourChange = (event) => {
+    const newValue = parseInt(event.target.value, 10) || 0;// Convert input to integer, default to 0 if not a valid number
+    setpoolPax(newValue);
+    setPoolTotalPrice(poolSidePrice * poolHours);
+    setPackageName("Pool Side Package");
+  };
 
-  // const handlePoolPaxChange = (event) => {
-  //   const newValue = parseInt(event.target.value, 10) || 0;// Convert input to integer, default to 0 if not a valid number
-  //   setpoolPax(newValue);
-  // };
+  const handleCottageHourChange = (event) => {
+    const newValue = parseInt(event.target.value, 10) || 0; // Convert input to integer, default to 0 if not a valid number
+    setcottagePax(newValue);
+    setCottageTotalPrice(cottageSidePrice * cottageHours);
+    setPackageName("Cottage Side Package");
+  };
+  
+  const handleGardenHourChange = (event) => {
+    const newValue = parseInt(event.target.value, 10) || 0; // Convert input to integer, default to 0 if not a valid number
+    setgardenPax(newValue);
+    setGardenTotalPrice(gardenSidePrice * gardenHours);
+    setPackageName("Garden Side Package");
+  };
+  
+  useEffect(() => {
+    const Tot = poolSidePrice * poolHours;
+    setPoolTotalPrice(Tot);
+    setPackageName("Pool Side Package");
+    handleAnyPriceUpdate(Tot || 0, packageName);
+    console.log("After: " + Tot);
+  }, [poolHours]);
 
-  // useEffect(() => {
-  //   const Tot = poolSidePrice * poolPax;
-  //   setPoolTotalPrice(Tot);
-
-  //   handleAnyPriceUpdate(Tot || 0);
-
-  //   console.log("After: " + Tot);
-  // }, [poolPax]);
-
-  // const handleCattagePaxChange = (event) => {
-  //   const newValue = parseInt(event.target.value, 10) || 0; // Convert input to integer, default to 0 if not a valid number
-  //   setcattagePax(newValue);
-  //   setCattageTotalPrice(cattageSideLPrice * cattagePax);
-  // };
-
-  // useEffect(() => {
-  //   const Tot = cattageSideLPrice * cattagePax;
-  //   setCattageTotalPrice(Tot);
-
-  //   handleAnyPriceUpdate(Tot || 0);
-
-  //   console.log("After: " + Tot);
-  // }, [cattagePax]);
-
-  // useEffect(() => {
-  //   const Tot = gardenSidePrice * gardenPax;
-  //   setGardenTotalPrice(Tot);
-
-  //   handleAnyPriceUpdate(Tot || 0);
-
-  //   console.log("After: " + Tot);
-  // }, [gardenPax]);
-
-  // const handleGardenPaxChange = (event) => {
-  //   const newValue = parseInt(event.target.value, 10) || 0; // Convert input to integer, default to 0 if not a valid number
-  //   setgardenPax(newValue);
-  //   setGardenTotalPrice(gardenSidePrice * gardenPax);
-  // };
+  useEffect(() => {
+    const Tot = cottageSidePrice * cottageHours;
+    setCottageTotalPrice(Tot);
+    setPackageName("Cottage Side Package");
+    handleAnyPriceUpdate(Tot || 0, packageName);
+    console.log("After: " + Tot);
+  }, [cottageHours]);
+  
+  useEffect(() => {
+    const Tot = gardenSidePrice * gardenHours;
+    setGardenTotalPrice(Tot);
+    setPackageName("Garden Side Package");
+    handleAnyPriceUpdate(Tot || 0, packageName);
+    console.log("After: " + Tot);
+  }, [gardenHours]);
 
   return (
     <>
@@ -93,7 +96,7 @@ const Outdoor = ({handleAnyPriceUpdate}) => {
                 </div>
               </div>
               <div className="col align-self-start">
-                <div className="rooms col col-2">
+                <div className="intro col col-2">
                   <img src="assets/img/pool.jpg" className="rooms-img" />
                   <h3 className="room-title">POOL SIDE LOCATION</h3>
                   <p className="room-text">We have a pool side with picturesque veiws</p>
@@ -120,6 +123,13 @@ const Outdoor = ({handleAnyPriceUpdate}) => {
                 </p> */}
 
                   <p className="amount-text">LKR 10,000 Per Hour</p>
+                  <input
+                      type="number"
+                      name="hours"
+                      value={poolHours}
+                      onChange={handlePoolHourChange}
+                    />{" "}
+                    <p><b>Full Cost: </b> &nbsp; {poolSidePrice} x {poolHours} = Rs.{poolTotalPrice}</p>
                   <div className="buttons-container">
                     <Link to="/Hourcheck" className="btn btn-fill btn-large">BOOK NOW</Link>
                   </div>
@@ -128,7 +138,7 @@ const Outdoor = ({handleAnyPriceUpdate}) => {
 
               <div className="rooms col col-2">
                 <img src="assets/img/cott.jpg" alt="" className="rooms-img" />
-                <h3 className="room-title">CATTAGE SIDE L</h3>
+                <h3 className="room-title">COTTAGE SIDE L</h3>
                 <p className="room-text">We have Luxury cottages with pleasant sceneries</p>
                 <div>
                   <div className="details-container">
@@ -153,6 +163,13 @@ const Outdoor = ({handleAnyPriceUpdate}) => {
                 </p> */}
 
                 <p className="amount-text">LKR 12,000 Per Hour</p>
+                <input
+                      type="number"
+                      name="hours"
+                      value={cottageHours}
+                      onChange={handleCottageHourChange}
+                    />{" "}
+                    <p><b>Full Cost: </b> &nbsp; {cottageSidePrice} x {cottageHours} = Rs.{cottageTotalPrice}</p>
                 <div className="buttons-container">
                   <Link to="/Hourcheck" className="btn btn-fill btn-large">BOOK NOW</Link>
                 </div>
@@ -184,6 +201,13 @@ const Outdoor = ({handleAnyPriceUpdate}) => {
                 </p> */}
 
                 <p className="amount-text">LKR 15,000 Per Hour</p>
+                <input
+                  type="number"
+                  name="hours"
+                  value={gardenHours}
+                  onChange={handleGardenHourChange}
+                />{" "}
+                <p><b>Full Cost: </b> &nbsp; {gardenSidePrice} x {gardenHours} = Rs.{gardenTotalPrice}</p>
                 <div className="buttons-container">
                   <Link to="/Hourcheck" className="btn btn-fill btn-large">BOOK NOW</Link>
                 </div>
