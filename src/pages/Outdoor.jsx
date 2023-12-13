@@ -2,7 +2,66 @@ import React from 'react';
 import { Link } from "react-router-dom";
 
 
-const Outdoor = () => {
+const Outdoor = ({handleAnyPriceUpdate}) => {
+
+  // const [poolPax, setpoolPax] = useState(0);
+  // const [cattagePax, setcattagePax] = useState(0);
+  // const [gardenPax, setgardenPax] = useState(0);
+
+  // const poolSidePrice = 2500;
+  // const cattageSideLPrice = 5000;
+  // const gardenSidePrice = 7000;
+
+  // const [poolTotalPrice, setPoolTotalPrice] = useState(0);
+  // const [cattageTotalPrice, setCattageTotalPrice] = useState(0);
+  // const [gardenTotalPrice, setGardenTotalPrice] = useState(0);
+
+  // const history = useHistory ();
+
+  // const handlePoolPaxChange = (event) => {
+  //   const newValue = parseInt(event.target.value, 10) || 0;// Convert input to integer, default to 0 if not a valid number
+  //   setpoolPax(newValue);
+  // };
+
+  // useEffect(() => {
+  //   const Tot = poolSidePrice * poolPax;
+  //   setPoolTotalPrice(Tot);
+
+  //   handleAnyPriceUpdate(Tot || 0);
+
+  //   console.log("After: " + Tot);
+  // }, [poolPax]);
+
+  // const handleCattagePaxChange = (event) => {
+  //   const newValue = parseInt(event.target.value, 10) || 0; // Convert input to integer, default to 0 if not a valid number
+  //   setcattagePax(newValue);
+  //   setCattageTotalPrice(cattageSideLPrice * cattagePax);
+  // };
+
+  // useEffect(() => {
+  //   const Tot = cattageSideLPrice * cattagePax;
+  //   setCattageTotalPrice(Tot);
+
+  //   handleAnyPriceUpdate(Tot || 0);
+
+  //   console.log("After: " + Tot);
+  // }, [cattagePax]);
+
+  // useEffect(() => {
+  //   const Tot = gardenSidePrice * gardenPax;
+  //   setGardenTotalPrice(Tot);
+
+  //   handleAnyPriceUpdate(Tot || 0);
+
+  //   console.log("After: " + Tot);
+  // }, [gardenPax]);
+
+  // const handleGardenPaxChange = (event) => {
+  //   const newValue = parseInt(event.target.value, 10) || 0; // Convert input to integer, default to 0 if not a valid number
+  //   setgardenPax(newValue);
+  //   setGardenTotalPrice(gardenSidePrice * gardenPax);
+  // };
+
   return (
     <>
       <div>
@@ -44,6 +103,22 @@ const Outdoor = () => {
                       <pre><img className="gallery-image" src="assets/img/parking.png" width={17} height={17} /> Self Parking</pre>
                     </div>
                   </div>
+
+                  {/* <p>
+                  <div className="inputbox">
+                    <b>Price Per Hour Rs.{poolSidePrice}</b><br />
+                    <span> Pax &nbsp; </span>
+                    <input
+                      type="number"
+                      name="pax"
+                      value={poolPax}
+                      onChange={handlePoolPaxChange}
+                    />{" "}
+                    <br />
+                    <b>Full Cost: </b> &nbsp; {poolSidePrice} x {poolPax} = Rs.{poolTotalPrice}
+                  </div>
+                </p> */}
+
                   <p className="amount-text">LKR 10,000 Per Hour</p>
                   <div className="buttons-container">
                     <Link to="/Hourcheck" className="btn btn-fill btn-large">BOOK NOW</Link>
@@ -61,6 +136,22 @@ const Outdoor = () => {
                     <pre><img className="gallery-image" src="assets/img/parking.png" width={17} height={17} /> Self Parking</pre>
                   </div>
                 </div>
+
+                {/* <p>
+                  <div className="inputbox">
+                    <b>Price Per Hour Rs.{cattageSideLPrice}</b><br />
+                    <span> Pax &nbsp; </span>
+                    <input
+                      type="number"
+                      name="pax"
+                      value={cattagePax}
+                      onChange={handleCattagePaxChange}
+                    />{" "}
+                    <br />
+                    <b>Full Cost: </b> &nbsp; {cattageSideLPrice} x {cattagePax} = Rs.{cattageSideLPrice}
+                  </div>
+                </p> */}
+
                 <p className="amount-text">LKR 12,000 Per Hour</p>
                 <div className="buttons-container">
                   <Link to="/Hourcheck" className="btn btn-fill btn-large">BOOK NOW</Link>
@@ -76,6 +167,22 @@ const Outdoor = () => {
                     <pre><img className="gallery-image" src="assets/img/parking.png" width={17} height={17} /> Self Parking</pre>
                   </div>
                 </div>
+
+                {/* <p>
+                  <div className="inputbox">
+                    <b>Price Per Hour Rs.{gardenSidePrice}</b><br />
+                    <span> Pax &nbsp; </span>
+                    <input
+                      type="number"
+                      name="pax"
+                      value={gardenPax}
+                      onChange={handleGardenPaxChange}
+                    />{" "}
+                    <br />
+                    <b>Full Cost: </b> &nbsp; {gardenSidePrice} x {gardenPax} = Rs.{gardenTotalPrice}
+                  </div>
+                </p> */}
+
                 <p className="amount-text">LKR 15,000 Per Hour</p>
                 <div className="buttons-container">
                   <Link to="/Hourcheck" className="btn btn-fill btn-large">BOOK NOW</Link>

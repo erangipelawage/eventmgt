@@ -39,8 +39,17 @@ const Eventpackages = ({ handleAnyPriceUpdate }) => {
   const handleGoldPaxChange = (event) => {
     const newValue = parseInt(event.target.value, 10) || 0; // Convert input to integer, default to 0 if not a valid number
     setGoldPax(newValue);
-    setGoldTotalPrice(silverPlatePrice * silverPax);
+    setGoldTotalPrice(goldPlatePrice * goldPax);
   };
+
+  useEffect(() => {
+    const Tot = goldPlatePrice * goldPax;
+    setGoldTotalPrice(Tot);
+
+    handleAnyPriceUpdate(Tot || 0);
+
+    console.log("After: " + Tot);
+  }, [goldPax]);
 
   const handlePlatinumPaxChange = (event) => {
     const newValue = parseInt(event.target.value, 10) || 0; // Convert input to integer, default to 0 if not a valid number
@@ -296,7 +305,7 @@ const Eventpackages = ({ handleAnyPriceUpdate }) => {
                     <b>Full Cost</b> &nbsp; {platinumPlatePrice} * {platinumPax} = Rs.{platinumTotalPrice}
                   </div>
                   <span style={{ textAlign: "left" }}>
-                    <a href="/" className="btn btn-warning">
+                    <a href="/PlatinumPackage" className="btn btn-warning">
                       {" "}
                       SEE MORE
                     </a>{" "}

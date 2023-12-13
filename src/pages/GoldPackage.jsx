@@ -28,13 +28,13 @@ const GoldPackage = () => {
                     <div className="col-md-6">
                       <h3>GOLD PACKAGE</h3>
                       <div className="fs-5 mb-5">
-                        <span><i><b>LKR 500 000</b></i></span>
+                        {/* <span><i><b>LKR 500 000</b></i></span> */}
                       </div>
                       <p className="lead">We are introducing Gold Package you to have your dream wedding at Sea Breeze
                         to celibrate your special moments with your loving ones.Our package includes everything
                         you need to create a truly unforgettable event, from the venue to the catering</p>
                       <div className="buttons-container">
-                      <a href="/Outdoocheckout" className="btn btn-warning">BOOK NOW</a>
+                      <a href="/Eventpackages" className="btn btn-warning">BACK</a>
                         <div className="Menu">
                           <br />
                           <h3>MENU</h3>

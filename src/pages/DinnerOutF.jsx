@@ -27,14 +27,14 @@ const DinnerOutF = () => {
                     <div className="col-md-6">
                       <h3>DINNER OUT PACKAGE (FAMILY)</h3>
                       <div className="fs-5 mb-5">
-                        <span><b><i>LKR 25 000</i></b></span>
+                        {/* <span><b><i>LKR 25 000</i></b></span> */}
                       </div>
                       <p className="lead">Treat your loved ones to a night out with us. Our menu features a variety of
                         delicious and innovative dishes, all made with fresh, seasonal ingredients. This is the
                         perfect way to show your loved ones how much you care. So book your reservation today
                         and experience a truly unforgettable night out. </p>
                       <div className="buttons-container">
-                        <a href="/Outdoocheckout" className="btn btn-warning">BOOK NOW</a>
+                        <a href="/Eventpackages" className="btn btn-warning">BACK</a>
                         
                         <div className="Menu">
                         <br />

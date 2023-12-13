@@ -34,7 +34,7 @@ const DinnerOutC = () => {
                         perfect way to show your loved one how much you care. So book your reservation today and
                         experience a truly unforgettable night out.</p>
                       <div className="buttons-container">
-                        <a href="/Outdoocheckout" className="btn btn-warning">BOOK NOW</a>
+                        <a href="/Eventpackages" className="btn btn-warning">BACK</a>
                         <div className="Menu">
                           <br />
                           <h3>MENU</h3>

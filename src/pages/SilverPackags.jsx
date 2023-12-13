@@ -37,13 +37,7 @@ const SilverPackags = () => {
               </div>
               <div className="col-md-6">
                 <h3>Silver Package</h3>
-                <div className="fs-5 mb-5">
-                  <p>
-                    <i>
-                      <b>LKR 250 000</b>
-                    </i>
-                  </p>
-                </div>
+
                 <p className="lead">
                   We are introducing Silver Package you to have your dream
                   wedding at Sea Breeze to celibrate your special moments with
@@ -53,7 +47,7 @@ const SilverPackags = () => {
                 </p>
                 <div className="buttons-container">
                   <a href="/Eventpackages" className="btn btn-success">
-                    Back
+                    BACK
                   </a>
                   <div className="Menu">
                     <br />

@@ -27,11 +27,10 @@ const JumboPackage = () => {
                     <div className="col-md-6">
                       <h3>JUMBO PACKAGE (FAMILY)</h3>
                       <div className="fs-5 mb-5">
-                        <p><i><b>LKR 100 000</b></i></p>
                       </div>
                       <p className="lead">WE are introducing Jumbo Package to you for celibrabrate your special occations. You can use jumbo package for the occations like <b>Fairwell parties, Birth day Parties, Special meetings </b>etc. Then book your reservation today and experience a truly unforgettable day. </p>
                       <div className="buttons-container">
-                      <a href="/Outdoocheckout" className="btn btn-warning">BOOK NOW</a>
+                      <a href="/Eventpackages" className="btn btn-warning">BACK</a>
                         <div className="Menu">
                           <br />
                           <h3>MENU</h3>

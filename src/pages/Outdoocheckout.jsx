@@ -2,11 +2,13 @@ import React, { useRef } from 'react'
 import emailjs from '@emailjs/browser';
 import axios from "axios";
 import { useState, useEffect } from "react";
+import { useHistory } from 'react-router-dom';
 
 // export default class Outdoocheckout extends React.Component {
 
 // const Outdoocheckout = ()
 const Outdoocheckout = (props) => {
+  const history = useHistory();
   // const {Price,FullName,Email,ContactNo,Package,BookingDate,ArrivalDate,DepartureDate} = props;
   const [Errors, setErrors] = useState({});
   const [SuccessMessage, setSuccessMessage] = useState('');
@@ -123,6 +125,7 @@ const Outdoocheckout = (props) => {
           });
 
           setSuccessMessage("Event Booking successful!");
+          history.push('/Checkout');
 
         }).catch((error) => {
           console.error('Error booking:', error);
@@ -161,105 +164,115 @@ const Outdoocheckout = (props) => {
             <br />
           </div>
           <div className="raw">
-            <div className="inputbox">
-              <span> Full Name: </span>
-              <input
-                type="text"
-                style={{ width: '70%' }}
-                placeholder="Enter Your name"
-                name="FullName"
-                value={FormData.FullName}
-                onChange={handleChange}
-              />
-              {Errors.FullName && <div className="error-message">{Errors.FullName}</div>}
-            </div>
-
-            <div className="inputbox">
-              <span> Email: </span>
-              <input
-                type="email"
-                placeholder="Enter Your email"
-                name="Email"
-                value={FormData.Email}
-                onChange={handleChange}
-              />
-              {Errors.Email && <div className="error-message">{Errors.Email}</div>}
-            </div>
-            <div className="inputbox">
-              <span> Contact No: </span>
-              <input
-                type="number"
-                placeholder="Enter Your ConNo"
-                name="ContactNo"
-                value={FormData.ContactNo}
-                onChange={handleChange}
-              />
-              {Errors.ContactNo && <div className="error-message">{Errors.ContactNo}</div>}
-            </div>
-            <div className="inputbox">
-              <span> Package: </span>
-              <input
-                type="text"
-                placeholder="Package"
-                name="Package"
-                value={FormData.Package}
-                onChange={handleChange}
-              />
-              {Errors.Package && <div className="error-message">{Errors.Package}</div>}
-            </div>
-            <div className="inputbox">
-              <span> Booking Date: </span>
-              <input
-                type="date"
-                placeholder="16/07/2023"
-                name="ArrivalDate"
-                value={FormData.ArrivalDate}
-                onChange={handleChange}
-              />
-              {Errors.ArrivalDate && <div className="error-message">{Errors.ArrivalDate}</div>}
-            </div>
-
-            <div className="inputbox">
-              <span> Price: </span>
-              <input
-                value={FormData.Price}
-                type="number"
-                placeholder="price"
-                name="Price"
-                readOnly
-                onChange={handleChange}
-              />
-              {Errors.Price && <div className="error-message">{Errors.Price}</div>}
-            </div>
-            <div>
-              <h6 className="title"><b>Fully refundable before your booking date. If you cannot cancel or change the date before the booking date, we will refund half of your payment</b>
-                <pre></pre>
-                <strong><a href='/Policy'>I agree to SEEBREEZEE HOTEL terms and policies</a> </strong></h6>
-            </div>
-
-            <div>
-              <center>
+            <div className="col">
+              <div className="inputbox">
+                <span> Full Name: </span>
                 <input
-                  type="submit"
-                  defaultValue="PAY NOW"
-                  className="submit-btn"
-                  onClick="/Checkout" // Assuming you have a function to handle the payment
+                  type="text"
+                  style={{ width: '100%' }}
+                  placeholder="Enter Your name"
+                  name="FullName"
+                  value={FormData.FullName}
+                  onChange={handleChange}
+                  required // Add the required attribute
                 />
+                {Errors.FullName && <div className="error-message">{Errors.FullName}</div>}
+              </div>
+              <div className="inputbox">
+                <span> Email: </span>
+                <input
+                  type="email"
+                  style={{ width: '100%' }}
+                  placeholder="Enter Your email"
+                  name="Email"
+                  value={FormData.Email}
+                  onChange={handleChange}
+                  required // Add the required attribute
+                />
+                {Errors.Email && <div className="error-message">{Errors.Email}</div>}
+              </div>
+              <div className="inputbox">
+                <span> Contact No: </span>
+                <input
+                  type="number"
+                  placeholder="Enter Your ConNo"
+                  name="ContactNo"
+                  value={FormData.ContactNo}
+                  onChange={handleChange}
+                  required // Add the required attribute
+                />
+                {Errors.ContactNo && <div className="error-message">{Errors.ContactNo}</div>}
+              </div>
+              <div className="inputbox">
+                <span> Package: </span>
+                <input
+                  type="text"
+                  placeholder="Package"
+                  name="Package"
+                  value={FormData.Package}
+                  onChange={handleChange}
+                  require
+                />
+                {Errors.Package && <div className="error-message">{Errors.Package}</div>}
+              </div>
+              <div className="inputbox">
+                <span> Booking Date: </span>
+                <input
+                  type="date"
+                  placeholder="16/07/2023"
+                  name="ArrivalDate"
+                  value={FormData.ArrivalDate}
+                  onChange={handleChange}
+                  require
+                />
+                {Errors.ArrivalDate && <div className="error-message">{Errors.ArrivalDate}</div>}
+              </div>
 
-                {/* <a href="/Checkout" class="btn btn-info" role="button">Pay Now</a> */}
+              <div className="inputbox">
+                <span> Price Rs: </span>
+                <input
+                  value={FormData.Price}
+                  type="number"
+                  placeholder="price"
+                  name="Price"
+                  readOnly
+                  onChange={handleChange}
+                  require
+                />
+                {Errors.Price && <div className="error-message">{Errors.Price}</div>}
+              </div>
 
-              </center>
+              <div>
+                <h6 className="title"><b>If you want to cancel your booking you can contact our hotline <br />+94 23 2223510 or send via E-mail seabreezehotelproject@gmail.com. <br /></b>
+                  <pre></pre>
+                  <strong><a href='/Policy'>I agree to SEEBREEZEE HOTEL terms and policies</a> </strong></h6>
+              </div>
+
+              <div>
+                <center>
+                  <input
+                    type="submit"
+                    defaultValue="PAY NOW"
+                    className="submit-btn"
+                    onClick="/Checkout" 
+                  />
+                  &nbsp;
+                  <a href="/Checkout" class="btn btn-info" role="button">PAY NOW</a>
+
+                </center>
+              </div>
             </div>
-          </div>
-          {SuccessMessage && (
-            <div className="success-message">
-              <p>{SuccessMessage}</p>
+            {SuccessMessage && (
+              <div className="success-message">
+                <p>{SuccessMessage}</p>
+              </div>
+            )}
             </div>
-          )}
         </form>
       </div>
     </div>
   );
+
 }
 
 export default Outdoocheckout;

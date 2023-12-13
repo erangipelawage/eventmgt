@@ -23,9 +23,9 @@ export default function NavbarComponent() {
             <Link to="/home" className="nav-link">
               <li className="nav-item active">Home</li>
             </Link>
-            <Link to="/roombooking" className="nav-link">
+            {/* <Link to="/roombooking" className="nav-link">
               <li className="nav-item">Room-Features</li>
-            </Link>
+            </Link> */}
             <Link to="/rooms" className="nav-link">
               <li className="nav-item">Rooms</li>
             </Link>

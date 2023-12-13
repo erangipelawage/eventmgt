@@ -127,18 +127,18 @@ export default class Hourcheck extends React.Component {
                   <span> Contact No:</span>
                   <input
                     type="number"
-                    placeholder="Enter Your ConNo"
+                    placeholder="Enter Your Contact No"
                     name="ContactNo"
                     onChange={this.handleChange}
                   />
                 </div>
                 <div className="inputbox">
                   <span> Package:</span>
-                  <select name="Package" id="Package" onChange={this.handleChange}>
-                    <option value="p1"> POOL SIDE LOCATION </option>
-                    <option value="p2"> CATTAGE SIDE L </option>
-                    <option value="p3"> GARDEN SIDE PACKAGE </option>
-                  </select>
+                  <input
+                    type="number"
+                    placeholder="Package"
+                    onChange={this.handleChange}
+                  />
                 </div>
 
                 <div className="inputbox">
@@ -197,18 +197,18 @@ export default class Hourcheck extends React.Component {
                   </select>
                   <div className="inputbox">
                     <span> Price:</span>
-                    <select name="Package" id="Package" onChange={this.handleChange}>
-                      <option value="p1"> LKR 10,000.00</option>
-                      <option value="p2"> LKR 12,000.00</option>
-                      <option value="p3"> LKR 15,000.00</option>
-                    </select>
-{/* 
+                    <input
+                      type="number"
+                      placeholder="Price"
+                      name="CVVNO"
+                      onChange={this.handleChange}
+                    />
                     &nbsp;
-                    &nbsp; */}
+                    &nbsp;
                     <div>
-                      <h4 className="title">Fully refundable before your booking date. If you cannot cancel or change the date before the booking date, we will refund half of your payment
+                      <h6 className="title"><b>If you want to cancel your booking you can contact our hotline <br />+94 23 2223510 or send via E-mail seabreezehotelproject@gmail.com. <br /></b>
                         <pre></pre>
-                        <strong>I agree to SEEBREEZEE HOTEL terms and policies </strong></h4>
+                        <strong><a href='/Policy'>I agree to SEEBREEZEE HOTEL terms and policies</a> </strong></h6>
                     </div>
 
                     {/* <input

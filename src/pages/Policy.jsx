@@ -35,7 +35,7 @@ const Policy = () => {
               packages for <b>Photoshoots</b> and event packages for{" "}
               <b>Weddings, Night functions</b> and specialy we having a package
               called<b>Jumbo Package</b> Which can use for meetings,celebrated
-              b'day parties and all.
+              birth day parties and all.
             </p>
             <p>The hotel's restaurant offers a wide variety of delicious and
               beautifully presented dishes, all made with fresh, seasonal
@@ -46,6 +46,9 @@ const Policy = () => {
               dishes to tantalize your taste buds.Whether you're looking for a
               romantic dinner for two or a casual meal with friends, the hotel's
               restaurant is the perfect place to enjoy a delicious meal.
+            </p><b>If you cancel or change the date before your booking date, We 
+              will fully refund your payment. If unable we will refund half of your payment.We will refund your money within 24 hours.
+            </b><p>
             </p>
           </div>
           <a href="/Outdoocheckout" class="btn btn-success" role="button">Agree</a>
