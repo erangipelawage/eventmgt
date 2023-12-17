@@ -21,11 +21,11 @@ import BookingPage from "./pages/BookingPage";
 import LoginPage from "./pages/LoginPage";
 import RegisterPage from "./pages/RegisterPage";
 import ErrorPage from "./pages/ErrorPage";
-import Dashboard from './pages/Dashboard';
-import Outdoocheckout from './pages/Outdoocheckout';
-import UDashboard from './pages/UDashboard';
-import CancellationPage from './pages/CancellationPage';
-import CancellationMSG from './pages/CancellationMSG';
+import Dashboard from "./pages/Dashboard";
+import Outdoocheckout from "./pages/Outdoocheckout";
+import UDashboard from "./pages/UDashboard";
+import CancellationPage from "./pages/CancellationPage";
+import CancellationMSG from "./pages/CancellationMSG";
 import ForgotPassword from "./pages/ForgotPassword";
 
 import Home from "./pages/Home";
@@ -47,11 +47,9 @@ import PlatinumPackage from "./pages/PlatinumPackage";
 import Hourcheck from "./pages/Hourcheck";
 import Contact from "./components/Contact";
 // import Forgot from "./pages/Forgot";
-// import Payments from "./pages/Payments";
 import { useState } from "react";
 
 function App() {
-
   const [totalPrice, setTotalPrice] = useState(0);
   const [packageName, setPackageName] = useState("");
 
@@ -61,16 +59,15 @@ function App() {
     console.log("2 after" + incomingPrice);
   };
 
-
   return (
     <div className="container-fluid">
       <NavbarComponent />
       <Switch>
+        <Route path="/home" render={(props) => <Home {...props} />} />
         <Route
-          path="/home"
-          render={(props) => <Home {...props} />}
+          path="/Roombooking"
+          render={(props) => <Roombooking {...props} />}
         />
-        <Route path="/Roombooking" render={(props) => <Roombooking {...props} />} />
         <Route path="/rooms" render={(props) => <RoomPage {...props} />} />
         <Route
           path="/single-room/:room_slug"
@@ -85,80 +82,64 @@ function App() {
           path="/register"
           render={(props) => <RegisterPage {...props} />}
         />
-        <Route
-          path="/AboutUs"
-          render={(props) => <AboutUs {...props} />}
-        />
-        <Route
-          path="/Ratings"
-          render={(props) => <Ratings {...props} />}
-        />
+        <Route path="/AboutUs" render={(props) => <AboutUs {...props} />} />
+        <Route path="/Ratings" render={(props) => <Ratings {...props} />} />
 
-        <Route
-          path="/Contact"
-          render={(props) => <Contact {...props} />}
-        />
+        <Route path="/Contact" render={(props) => <Contact {...props} />} />
 
         <Route
           path="/Facilities"
           render={(props) => <Facilities {...props} />}
         />
 
-        {/* <Route
-          path="/Outdoocheckout"
-          render={(props) => <Outdoocheckout {...props} />}
-        /> */}
-
-        {/* <Route
-          path="/Eventpackages"
-          render={(props) => <Eventpackages {...props} />}
-        /> */}
-
-        <Route
-          path="/Outdoocheckout"
-          render={(props) => (
-            <Outdoocheckout {...props} Price={totalPrice} Package={packageName}/>
-          )}
-        />
+        {/* Event & Booking */}
 
         <Route
           path="/Eventpackages"
           render={(props) => (
-            <Eventpackages {...props} handleAnyPriceUpdate={handleAnyPriceUpdate} />
+            <Eventpackages
+              {...props}
+              handleAnyPriceUpdate={handleAnyPriceUpdate}
+            />
           )}
         />
+
+        <Route
+          path="/Outdoocheckout"
+          render={(props) => (
+            <Outdoocheckout
+              {...props}
+              Price={totalPrice}
+              Package={packageName}
+            />
+          )}
+        />
+
+        {/* Outdoor & Booking */}
 
         <Route
           path="/Outdoor"
-          render={(props) => <Outdoor {...props} handleAnyPriceUpdate={handleAnyPriceUpdate} />}
-        />
-
-        <Route
-          path="/Checkout"
-          render={(props) => <Checkout {...props} />}
+          render={(props) => (
+            <Outdoor {...props} handleAnyPriceUpdate={handleAnyPriceUpdate} />
+          )}
         />
 
         <Route
           path="/Hourcheck"
-          render={(props) => <Hourcheck {...props} />}
+          render={(props) => (
+            <Hourcheck {...props} Price={totalPrice} Package={packageName} />
+          )}
         />
 
-        <Route
-          path="/success"
-          render={(props) => <Success {...props} />}
-        />
+        <Route path="/Checkout" render={(props) => <Checkout {...props} />} />
 
-        <Route
-          path="/cancel"
-          render={(props) => <Cancel {...props} />}
-        />
+        <Route path="/success" render={(props) => <Success {...props} />} />
+
+        <Route path="/cancel" render={(props) => <Cancel {...props} />} />
 
         {/* keep for ref after delete */}
 
-        <Route
-          path="/ErrorPage"
-          render={(props) => <ErrorPage {...props} />}
-        />
+        <Route path="/ErrorPage" render={(props) => <ErrorPage {...props} />} />
 
         <Route
           path="/GoldPackage"
@@ -190,10 +171,7 @@ function App() {
           render={(props) => <PlatinumPackage {...props} />}
         />
 
-        <Route
-          path="/Policy"
-          render={(props) => <Policy {...props} />}
-        />
+        <Route path="/Policy" render={(props) => <Policy {...props} />} />
 
         <Route
           path="/ForgotPassword"
@@ -215,25 +193,12 @@ function App() {
           render={(props) => <CancellationMSG {...props} />}
         />
 
-        {/* <Route
-          path="/Forgot"
-          render={(props) => <Forgot {...props} />}
-        /> */}
-
-        {/* <Route
-          path="/Payments"
-          render={(props) => <Payments {...props} />}
-        /> */}
-
-        {/* eND NO NEED CAN REMOVE */}
+        {/* <Route path="/Forgot" render={(props) => <forgot {...props} />} /> */}
 
         <Route path="/dashboard" render={(props) => <Dashboard {...props} />} />
-        {/*<Route render={(props) => <ErrorPage {...props} />} />*/}
-
       </Switch>
       <Footer />
     </div>
-
   );
 }
 

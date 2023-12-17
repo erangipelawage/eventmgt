@@ -6,7 +6,7 @@ class outdoorbooking(models.Model):
     ContactNo= models.CharField(max_length=200)
     Package = models.CharField(max_length=200)
     ArrivalTime = models.TimeField()
-    DepartureTime = models.TimeField()
+    ArrivalDate = models.DateField()
     Price = models.FloatField()
 
 

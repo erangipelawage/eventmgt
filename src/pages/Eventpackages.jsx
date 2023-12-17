@@ -24,35 +24,35 @@ const Eventpackages = ({ handleAnyPriceUpdate }) => {
   const history = useHistory ();
 
   const handleSilverPaxChange = (event) => {
-    const newValue = parseInt(event.target.value, 10) || 0;// Convert input to integer, default to 0 if not a valid number
+    const newValue = parseInt(event.target.value, 10) || 0;
     setSilverPax(newValue);
     setSilverTotalPrice(silverPlatePrice * silverPax);
     setPackageName("Silver Package");
   };
 
   const handleGoldPaxChange = (event) => {
-    const newValue = parseInt(event.target.value, 10) || 0; // Convert input to integer, default to 0 if not a valid number
+    const newValue = parseInt(event.target.value, 10) || 0;
     setGoldPax(newValue);
     setGoldTotalPrice(goldPlatePrice * goldPax);
     setPackageName("Gold Package");
   };
 
   const handlePlatinumPaxChange = (event) => {
-    const newValue = parseInt(event.target.value, 10) || 0; // Convert input to integer, default to 0 if not a valid number
+    const newValue = parseInt(event.target.value, 10) || 0;
     setPlatinumPax(newValue);
     setPlatinumTotalPrice(platinumPlatePrice * platinumPax);
     setPackageName("Platinum Package");
   };
 
   const handleJumboPaxChange = (event) => {
-    const newValue = parseInt(event.target.value, 10) || 0; // Convert input to integer, default to 0 if not a valid number
+    const newValue = parseInt(event.target.value, 10) || 0;
     setJumboPax(newValue);
     setJumboTotalPrice(jumboPlatePrice * jumboPax);
     setPackageName("Jumbo Package");
   };
 
   const handleDinnerOutPaxChange = (event) => {
-    const newValue = parseInt(event.target.value, 10) || 0; // Convert input to integer, default to 0 if not a valid number
+    const newValue = parseInt(event.target.value, 10) || 0;
     setDinnerOutPax(newValue);
     setDinnerOutTotalPrice(dinnerOutPlatePrice * dinnerOutPax);
     setPackageName("Dinner Out Package");
@@ -98,10 +98,6 @@ const Eventpackages = ({ handleAnyPriceUpdate }) => {
     console.log("After: " + packageName);
   }, [dinnerOutPax]);
   
-  // useEffect(() => {
-  //   setPackageName(packageName);
-  // }, [packageName]);
-
   return (
     <>
       <div>
@@ -142,6 +138,15 @@ const Eventpackages = ({ handleAnyPriceUpdate }) => {
               <img src="./assets/img/Hall1.jpg" width="600" height="350" />
               <div className="intro">
                 <h3>SILVER PACKAGE</h3>
+                <p>
+                  <img
+                    className="gallery-image"
+                    src="assets/img/sleeprs.png"
+                    width={18}
+                    height={20}
+                  />{" "}
+                  Participants 30-100
+                </p>
                 <p>
                   <img
                     className="gallery-image"
@@ -215,7 +220,7 @@ const Eventpackages = ({ handleAnyPriceUpdate }) => {
                     width={18}
                     height={20}
                   />{" "}
-                  100 participants
+                  Participants 30-150
                 </p>
                 <p>
                   <img
@@ -269,7 +274,7 @@ const Eventpackages = ({ handleAnyPriceUpdate }) => {
                       SEE MORE
                     </a>{" "}
                     &nbsp;
-                    <a href="/Outdoocheckout" className="btn btn-success">
+                    <a onClick={()=>history.push("/Outdoocheckout")} className="btn btn-success">
                       {" "}
                       BOOK NOW
                     </a>
@@ -289,7 +294,7 @@ const Eventpackages = ({ handleAnyPriceUpdate }) => {
                     width={18}
                     height={20}
                   />{" "}
-                  150 participants
+                  Participants 100-200
                 </p>
                 <p>
                   <img
@@ -343,7 +348,7 @@ const Eventpackages = ({ handleAnyPriceUpdate }) => {
                       SEE MORE
                     </a>{" "}
                     &nbsp;
-                    <a href="/Outdoocheckout" className="btn btn-success">
+                    <a onClick={()=>history.push("/Outdoocheckout")} className="btn btn-success">
                       {" "}
                       BOOK NOW
                     </a>
@@ -403,7 +408,7 @@ const Eventpackages = ({ handleAnyPriceUpdate }) => {
                       SEE MORE
                     </a>{" "}
                     &nbsp;
-                    <a href="/Outdoocheckout" className="btn btn-success">
+                    <a onClick={()=>history.push("/Outdoocheckout")} className="btn btn-success">
                       {" "}
                       BOOK NOW
                     </a>
@@ -425,7 +430,7 @@ const Eventpackages = ({ handleAnyPriceUpdate }) => {
                     width={18}
                     height={20}
                   />{" "}
-                  6 participants
+                  Participants 2-10
                 </p>
                 <p>
                   <img
@@ -479,7 +484,7 @@ const Eventpackages = ({ handleAnyPriceUpdate }) => {
                       SEE MORE
                     </a>{" "}
                     &nbsp;
-                    <a href="/Outdoocheckout" className="btn btn-success">
+                    <a onClick={()=>history.push("/Outdoocheckout")} className="btn btn-success">
                       {" "}
                       BOOK NOW
                     </a>
@@ -498,7 +503,7 @@ const Eventpackages = ({ handleAnyPriceUpdate }) => {
                     width={18}
                     height={20}
                   />{" "}
-                  30 participants
+                  Participants 20-50
                 </p>
                 <p>
                   <img
@@ -552,7 +557,7 @@ const Eventpackages = ({ handleAnyPriceUpdate }) => {
                       SEE MORE
                     </a>{" "}
                     &nbsp;
-                    <a href="/Outdoocheckout" className="btn btn-success">
+                    <a onClick={()=>history.push("/Outdoocheckout")} className="btn btn-success">
                       {" "}
                       BOOK NOW
                     </a>

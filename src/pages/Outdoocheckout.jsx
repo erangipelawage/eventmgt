@@ -4,12 +4,8 @@ import axios from "axios";
 import { useState, useEffect } from "react";
 import { useHistory } from 'react-router-dom';
 
-// export default class Outdoocheckout extends React.Component {
-
-// const Outdoocheckout = ()
 const Outdoocheckout = (props) => {
   const history = useHistory();
-  // const {Price,FullName,Email,ContactNo,Package,BookingDate,ArrivalDate,DepartureDate} = props;
   const [Errors, setErrors] = useState({});
   const [SuccessMessage, setSuccessMessage] = useState('');
   const [FormData, setFormData] = useState({
@@ -20,22 +16,6 @@ const Outdoocheckout = (props) => {
     BookingDate: "",
     Price: props.Price,
   });
-  // constructor(props) {
-  //   super(props);
-
-  //   this.state = {
-  //     FullName: props.FullName,
-  //     Email: props.Email,
-  //     ContactNo: props.ContactNo,
-  //     Package: props.Package,
-  //     BookingDate: props.BookingDate,
-  //     // DepartureDate: "",
-  //     Price: props.Price,
-  //     // ##
-  //     errors: {},
-  //     successMessage: '',
-  //   };
-
 
   const handleChange = (event) => {
     const { name, value } = event.target;
@@ -48,29 +28,29 @@ const Outdoocheckout = (props) => {
     const errors = {};
 
     if (!FullName.trim()) {
+      console.log("a");
       errors.FullName = 'Full Name is required';
     }
 
     if (!Email.trim()) {
+      console.log("b");
       errors.Email = 'Email is required';
     } else if (!/\S+@\S+\.\S+/.test(Email)) {
+      console.log("b.2");
       errors.Email = 'Invalid email address';
     }
 
     if (!ContactNo.trim()) {
+      console.log("c");
       errors.ContactNo = 'Contact No is required';
     } else if (isNaN(ContactNo)) {
+      console.log("d");
       errors.ContactNo = 'Contact No must be a number';
     }
-
-    // Add validations for other fields as needed
+    console.log("e");
     setErrors(errors);
-
-    // Return true if there are no errors
     return Object.keys(errors).length === 0;
   };
-
-  // ###
 
   const sendEmail = (e) => {
     e.preventDefault();
@@ -79,7 +59,7 @@ const Outdoocheckout = (props) => {
       .sendForm(
         "service_f81inr1",
         "template_lnbkryk",
-        FormData,
+        e.target,
         "Mb2vbzM7IvtcsNyP0"
       )
       .then(
@@ -94,46 +74,43 @@ const Outdoocheckout = (props) => {
 
   const handleSubmit = (event) => {
     event.preventDefault();
-    // ##
     if (validateForm()) {
-      // ##
-      // const { FullName, Email, ContactNo, Package, BookingDate, Price } =
-      //   this.state;
-
-      // const formData = new FormData();
-      // formData.append("FullName", FullName);
-      // formData.append("Email", Email);
-      // formData.append("ContactNo", ContactNo);
-      // formData.append("Package", Package);
-      // formData.append("BookingDate", BookingDate);
-      // formData.append("Price", Price);
 
       const apiEndpoint = "http://127.0.0.1:8000/api/eventbookings/";
+      
+      console.log("FullName: "+FormData.FullName
+                +", Email: "+FormData.Email
+                +", ContactNo: "+FormData.ContactNo
+                +", Package: "+FormData.Package
+                +", ArrivalDate: "+FormData.ArrivalDate
+                +", Price: "+FormData.Price
+                );
       sendEmail(event);
-
       axios
         .post(apiEndpoint, FormData)
         .then((response) => {
           console.log("Event Booking successful!:", response.data);
-          setFormData({
-            FullName: "",
-            Email: "",
-            ContactNo: "",
-            Package: "",
-            BookingDate: "",
-            Price: 0,
-          });
+          // setFormData({
+          //   FullName: "",
+          //   Email: "",
+          //   ContactNo: "",
+          //   Package: "",
+          //   BookingDate: "",
+          //   Price: 0,
+          // });
 
           setSuccessMessage("Event Booking successful!");
           history.push('/Checkout');
 
         }).catch((error) => {
+          console.log("Error: ", error);
           console.error('Error booking:', error);
         });
-
+      // history.push('/Checkout');
       setSuccessMessage("");
     }
   };
+
   useEffect(() => {
 
     setFormData(data => ({
@@ -156,7 +133,6 @@ const Outdoocheckout = (props) => {
       <link rel="stylesheet" href="./assets/css/style1.css" />
       <link rel="stylesheet" href="./assets/css/global-header.css" />
 
-
       <div className="container">
         <form onSubmit={handleSubmit}>
           <div>
@@ -174,7 +150,7 @@ const Outdoocheckout = (props) => {
                   name="FullName"
                   value={FormData.FullName}
                   onChange={handleChange}
-                  required // Add the required attribute
+                  required
                 />
                 {Errors.FullName && <div className="error-message">{Errors.FullName}</div>}
               </div>
@@ -187,7 +163,7 @@ const Outdoocheckout = (props) => {
                   name="Email"
                   value={FormData.Email}
                   onChange={handleChange}
-                  required // Add the required attribute
+                  required
                 />
                 {Errors.Email && <div className="error-message">{Errors.Email}</div>}
               </div>
@@ -195,11 +171,11 @@ const Outdoocheckout = (props) => {
                 <span> Contact No: </span>
                 <input
                   type="number"
-                  placeholder="Enter Your ConNo"
+                  placeholder="Enter Your Contact No"
                   name="ContactNo"
                   value={FormData.ContactNo}
                   onChange={handleChange}
-                  required // Add the required attribute
+                  required
                 />
                 {Errors.ContactNo && <div className="error-message">{Errors.ContactNo}</div>}
               </div>
@@ -209,6 +185,7 @@ const Outdoocheckout = (props) => {
                   type="text"
                   placeholder="Package"
                   name="Package"
+                  readOnly
                   value={FormData.Package}
                   onChange={handleChange}
                   require
@@ -243,21 +220,29 @@ const Outdoocheckout = (props) => {
               </div>
 
               <div>
-                <h6 className="title"><b>If you want to cancel your booking you can contact our hotline <br />+94 23 2223510 or send via E-mail seabreezehotelproject@gmail.com. <br /></b>
-                  <pre></pre>
-                  <strong><a href='/Policy'>I agree to SEEBREEZEE HOTEL terms and policies</a> </strong></h6>
-              </div>
+                <h6 className="title">
+                  <b>
+                    If you want to cancel your booking you can contact our hotline
 
+                    <span style={{ color: 'blue' }}><br />+94 23 2223510</span> or send via E-mail
+                    <span style={{ color: 'blue' }}>seabreezehotelproject@gmail.com</span>
+                    <br />
+                  </b>
+                  <strong>
+                    <a href='/Policy'>I agree to SEEBREEZEE HOTEL terms and policies</a>{' '}
+                  </strong>
+                </h6>
+              </div>
               <div>
                 <center>
                   <input
                     type="submit"
                     defaultValue="PAY NOW"
-                    className="submit-btn"
-                    onClick="/Checkout" 
+                    className="btn btn-info"
+                    onClick="/Checkout"
                   />
                   &nbsp;
-                  <a href="/Checkout" class="btn btn-info" role="button">PAY NOW</a>
+                  {/* <a href="/Checkout" class="btn btn-info" role="button">PAY NOW</a> */}
 
                 </center>
               </div>
@@ -267,7 +252,7 @@ const Outdoocheckout = (props) => {
                 <p>{SuccessMessage}</p>
               </div>
             )}
-            </div>
+          </div>
         </form>
       </div>
     </div>

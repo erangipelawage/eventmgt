@@ -1,67 +1,74 @@
-import React, { useContext, useState } from "react";
-import TextInput from "../components/TextInput";
-import { MyContext } from "../Context";
-import { Redirect, Link } from "react-router-dom";
-export default function forgot({ history }) {
-  const context = useContext(MyContext);
-  const [data, setData] = useState({
-    username: "",
-    email: "",
-  });
-  const { username, email } = data;
-  if (context.isUserAuthenticated) {
-    return <Redirect to="/" />;
-  }
+import React from "react";
+import { Link } from "react-router-dom";
+import emailjs from '@emailjs/browser';
 
+const sendEmail = (e) => {
+  e.preventDefault();
+
+  emailjs
+    .sendForm(
+      "service_ft0un7k",
+      "template_ts6r6nw",
+      e.target,
+      "kSdjFfE8Z4cggbvU3"
+    )
+    .then(
+      (result) => {
+        console.log(result.text);
+      },
+      (error) => {
+        console.log(error.text);
+      }
+    );
+};
+sendEmail();
+
+const handleSubmit = (event) => {
+  event.preventDefault();
+  sendEmail();
+}
+
+const Forgot = () => {
   return (
-    <div className="container m-auto align-items-center justify-content-center">
-      <form
-        onSubmit={(event) => context.register(event, data, history)}
-        className="mt-5"
-      >
+    <>
+      <meta charSet="UTF-8" />
+      <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+      <link
+        rel="stylesheet"
+        href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/css/bootstrap.min.css"
+        integrity="sha384-xOolHFLEh07PJGoPkLv1IbcEPTNtaed2xpHsD9ESMhqIYd0nLMwNLD69Npy4HI+N"
+        crossorigin="anonymous"
+      />
+
+      <div class1="login-wrapper py-5 home-wrapper-2">
         <div className="row">
-          <div className="form-group col-md-6 m-auto pb-3">
-            <p
-              className="text-uppercase text-danger font-weight-bold"
-              id="register-message"
-            ></p>
+          <div className="col-12">
+            <div className="auth-card">
+              <Link
+                to="/login"
+                className="d-flex align-items-center gap-10"
+              ></Link>
+              <h3 className="text-center mb-3">Reset Your Password</h3>
+              <p className="text-center mt-2 mb-3">
+                We will send you an email to reset your Password
+              </p>
+              <form onSubmit={handleSubmit} className="d-flex flex-column gap-30">
+                <input type="email" name="email" placeholder="Email" />
+                <div className="">
+                  <div className="mt-3 d-flex justify-content-center gap-30 align-item-center">
+                    <button className="button border-0">Submit</button>
+                    <Link to="/login" className="button text-white">
+                      Cancel
+                    </Link>
+                  </div>
+                </div>
+              </form>
+            </div>
           </div>
         </div>
-        <div className="row">
-          <TextInput
-            divClass="form-group col-md-6 m-auto"
-            htmlForLabel="inputForUsername"
-            labelName="Username"
-            inputClass="form-control"
-            inputType="text"
-            inputName="username"
-            inputValue={username}
-            inputPlaceHolder="Enter Username"
-            onChange={(event) =>
-              setData({ ...data, username: event.target.value })
-            }
-            required={true}
-          />
-        </div>
-
-        <div className="row">
-          <TextInput
-            divClass="form-group col-md-6 m-auto"
-            htmlForLabel="inputForEmail"
-            labelName="Email"
-            inputClass="form-control"
-            inputType="email"
-            inputName="email"
-            inputValue={email}
-            inputPlaceHolder="Enter Email"
-            onChange={(event) =>
-              setData({ ...data, email: event.target.value })
-            }
-            required={true}
-          />
-        </div>
-        <a href="/Home" className="btn btn-fill btn-large">Submit</a>
-      </form>
-    </div>
+      </div>
+    </>
   );
-}
+};
+
+export default Forgot;

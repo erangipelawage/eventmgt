@@ -161,6 +161,7 @@ export default function BookingComponent({ room }) {
           required={true}
         />
       </div>
+      &nbsp;
 
       <div className="row" id="checkoutID" style={{ display: "none" }}>
         <div className="form-group col-md-6 m-auto text-danger">
@@ -170,9 +171,10 @@ export default function BookingComponent({ room }) {
 
       <div className="row">
         <div className="col-md-6 m-auto text-center">
-          <button type="submit" className="btn btn-primary px-5 my-3">
+        <a href="/Checkout" class="btn btn-info" role="button">BOOK NOW</a>
+          {/* <button type="submit" className="btn btn-primary px-5 my-3">
             Book
-          </button>
+          </button> */}
         </div>
       </div>
     </form>

@@ -1,246 +1,274 @@
-import React from "react";
+import React, { useRef } from 'react'
+import emailjs from '@emailjs/browser';
 import axios from "axios";
-// import { useState } from "react";
-// import { useEffect } from "react";
+import { useState, useEffect } from "react";
+import { useHistory } from 'react-router-dom';
 
-export default class Hourcheck extends React.Component {
-  constructor(props) {
-    super(props);
+const Hourcheck = (props) => {
+  const history = useHistory();
+  const [Errors, setErrors] = useState({});
+  const [SuccessMessage, setSuccessMessage] = useState('');
+  const [FormData, setFormData] = useState({
+    FullName: "",
+    Email: "",
+    ContactNo: "",
+    Package: props.Package,
+    ArrivalTime: "",
+    ArrivalDate: "",
+    Price: props.Price,
+  });
 
-    // this.state = {
-    //   FullName: "",
-    //   Email: "",
-    //   ContactNo: "",
-    //   Package: "",
-    //   ArrivalTime: "",
-    //   DepartureTime: "",
-    //   Price: "",
-    // };
-    this.state = {
-      FullName: "",
-      Email: "",
-      ContactNo: "",
-      Package: props.location.state ? props.location.state.package : "",
-      ArrivalTime: "",
-      DepartureTime: "",
-      CardHolderName: "",
-      CardNO: "",
-      CVVNO: "",
-      TypeOfCard: "",
-      Price: props.location.state ? props.location.state.price : "",
-      successMessage: "",
+  const handleChange = (event) => {
+    const { name, value } = event.target;
+    setFormData(values => ({ ...values, [name]: value }));
+    setErrors({ ...Errors, [name]: '' });
+  };
+
+  const validateForm = () => {
+    const { FullName, Email, ContactNo } = FormData;
+    const errors = {};
+
+    if (!FullName.trim()) {
+      console.log("a");
+      errors.FullName = 'Full Name is required';
+    }
+
+    if (!Email.trim()) {
+      console.log("b");
+      errors.Email = 'Email is required';
+    } else if (!/\S+@\S+\.\S+/.test(Email)) {
+      console.log("b.2");
+      errors.Email = 'Invalid email address';
+    }
+
+    if (!ContactNo.trim()) {
+      console.log("c");
+      errors.ContactNo = 'Contact No is required';
+    } else if (isNaN(ContactNo)) {
+      console.log("d");
+      errors.ContactNo = 'Contact No must be a number';
+    }
+    console.log("e");
+    setErrors(errors);
+    return Object.keys(errors).length === 0;
+  };
+
+  const sendEmail = (e) => {
+    e.preventDefault();
+
+    emailjs
+      .sendForm(
+        "service_f81inr1",
+        "template_4vgos4n",
+        e.target,
+        "Mb2vbzM7IvtcsNyP0"
+      )
+      .then(
+        (result) => {
+          console.log(result.text);
+        },
+        (error) => {
+          console.log(error.text);
+        }
+      );
+  };
+
+  const handleSubmit = (event) => {
+    event.preventDefault();
+    if (validateForm()) {
+
+      const apiEndpoint = "http://127.0.0.1:8000/api/outdoorbookings/";
+      
+      console.log("FullName: " + FormData.FullName
+        +", Email: " + FormData.Email
+        +", ContactNo: " + FormData.ContactNo
+        +", Package: " + FormData.Package
+        +", ArrivalTime: " + FormData.ArrivalTime
+        +", ArrivalDate: " + FormData.ArrivalDate
+        +", Price: " + FormData.Price
+      );
+      sendEmail(event);
+
+      axios
+        .post(apiEndpoint, FormData)
+        .then((response) => {
+          console.log("Outdoor Booking successful!:", response.data);
+          // setFormData({
+          //   FullName: "",
+          //   Email: "",
+          //   ContactNo: "",
+          //   Package: "",
+          //   Booking Date: "",
+          //   ArrivalTime: "",
+          //   DepartureTime: "",
+          //   Price: 0,
+          // });
+
+          setSuccessMessage("Outdoor Booking successful!");
+          history.push('/Checkout');
+
+        }).catch((error) => {
+          console.log("Error: ", error);
+          console.error('Error booking:', error);
+        });
+
+      setSuccessMessage("");
     }
   };
+  useEffect(() => {
 
-  handleChange = (event) => {
-    const { name, value } = event.target;
-    this.setState({
-      [name]: value,
-    });
-  };
+    setFormData(data => ({
+      ...data,
+      Price: props.Price,
+    }));
 
-  handleSubmit = (event) => {
-    event.preventDefault();
-    const { FullName, Email, ContactNo, Package, ArrivalTime, DepartureTime, CardHolderName, CardNO, CVVNO, TypeOfCard, Price } =
-      this.state;
+  }, [props.Price])
 
-    const formData = new FormData();
-    formData.append("FullName", FullName);
-    formData.append("Email", Email);
-    formData.append("ContactNo", ContactNo);
-    formData.append("Package", Package);
-    formData.append("ArrivalTime", ArrivalTime);
-    formData.append("DepartureTime", DepartureTime);
-    formData.append("CardHolderName", CardHolderName);
-    formData.append("CardNO", CardNO);
-    formData.append("CVVNO", CVVNO);
-    formData.append("TypeOfCard", TypeOfCard);
-    formData.append("Price", Price);
-    const apiEndpoint = "http://127.0.0.1:8000/api/outdoorbookings/";
+  return (
+    <div>
+      <meta charSet="UTF-8" />
+      <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+      <title>SEABREEZE Hotel - Outdoor Booking Page</title>
+      <link
+        rel="shortcut icon"
+        href="./assets/img/favicon.webp"
+        type="image/x-icon"
+      />
+      <link rel="stylesheet" href="./assets/css/style1.css" />
+      <link rel="stylesheet" href="./assets/css/global-header.css" />
 
-    axios
-      .post(apiEndpoint, formData)
-      .then((response) => {
-        console.log("Event Booking successful!:", response.data);
-        this.setState({
-          FullName: "",
-          Email: "",
-          ContactNo: "",
-          Package: "",
-          ArrivalTime: "",
-          DepartureTime: "",
-          CardHolderName: "",
-          CardNO: "",
-          CVVNO: "",
-          TypeOfCard: "",
-          Price: "",
-          successMessage: "Event Booking successful!",
-        });
-      })
-      .catch((error) => { });
-    console.error("Error booking:");
-    this.setState({
-      successMessage: "",
-    });
-  };
+      <div className="container">
+        <form onSubmit={handleSubmit}>
+          <div>
+            <h2 className="title">Outdoor Online Booking</h2>
+          </div>
+          <div className="raw">
+            <div className="col">
+              <div className="inputbox">
+                <span> Full Name:</span>
+                <input
+                  type="text"
+                  placeholder="Enter Your name"
+                  name="FullName"
+                  value={FormData.FullName}
+                  onChange={handleChange}
+                  required
+                />
+                {Errors.FullName && <div className="error-message">{Errors.FullName}</div>}
+              </div>
+              <div className="inputbox">
+                <span> Email:</span>
+                <input
+                  type="email"
+                  placeholder="Enter Your email"
+                  name="Email"
+                  value={FormData.Email}
+                  onChange={handleChange}
+                  required
+                />
+                {Errors.Email && <div className="error-message">{Errors.Email}</div>}
+              </div>
+              <div className="inputbox">
+                <span> Contact No:</span>
+                <input
+                  type="number"
+                  placeholder="Enter Your Contact No"
+                  name="ContactNo"
+                  value={FormData.ContactNo}
+                  onChange={handleChange}
+                  required
+                />
+                {Errors.ContactNo && <div className="error-message">{Errors.ContactNo}</div>}
+              </div>
+              <div className="inputbox">
+                <span> Package:</span>
+                <input
+                  type="text"
+                  placeholder="Package"
+                  name="Package"
+                  readOnly
+                  value={FormData.Package}
+                  onChange={handleChange}
+                  require
+                />
+              </div>
+              <div className="inputbox">
+                <span> Arrival Time:</span>
+                <input
+                  type="time"
+                  placeholder="10.00 am"
+                  name="ArrivalTime"
+                  value={FormData.ArrivalTime}
+                  onChange={handleChange}
+                  required
+                />
+              </div>
 
-  render() {
-    return (
-      <div>
-        <meta charSet="UTF-8" />
-        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-        <title>SEABREEZE Hotel - Outdoor Booking Page</title>
-        <link
-          rel="shortcut icon"
-          href="./assets/img/favicon.webp"
-          type="image/x-icon"
-        />
-        <link rel="stylesheet" href="./assets/css/style1.css" />
-        <link rel="stylesheet" href="./assets/css/global-header.css" />
-
-        <div className="container">
-          <form onSubmit={this.handleSubmit}>
-            <div>
-              <h2 className="title">Outdoor Online Booking</h2>
-            </div>
-            <div className="raw">
-              <div className="col">
+              <div className="inputbox">
+                <span> Arival Date:</span>
+                <input
+                  type="date"
+                  placeholder="16/07/2023"
+                  name="ArrivalDate"
+                  value={FormData.ArrivalDate}
+                  onChange={handleChange}
+                  required
+                />
+              </div>
+              <div className="inputbox">
                 <div className="inputbox">
-                  <span> Full Name:</span>
-                  <input
-                    type="text"
-                    placeholder="Enter Your name"
-                    name="FullName"
-                    onChange={this.handleChange}
-                  />
-                </div>
-                <div className="inputbox">
-                  <span> Email:</span>
-                  <input
-                    type="email"
-                    placeholder="Enter Your email"
-                    name="Email"
-                    onChange={this.handleChange}
-                  />
-                </div>
-                <div className="inputbox">
-                  <span> Contact No:</span>
-                  <input
-                    type="number"
-                    placeholder="Enter Your Contact No"
-                    name="ContactNo"
-                    onChange={this.handleChange}
-                  />
-                </div>
-                <div className="inputbox">
-                  <span> Package:</span>
-                  <input
-                    type="number"
-                    placeholder="Package"
-                    onChange={this.handleChange}
-                  />
-                </div>
-
-                <div className="inputbox">
-                  <span> Arrival Time:</span>
-                  <input
-                    type="time"
-                    placeholder="16/07/2023"
-                    name="ArrivalTime"
-                    onChange={this.handleChange}
-                  />
-                </div>
-
-                <div className="inputbox">
-                  <span> Departure Time:</span>
-                  <input
-                    type="time"
-                    placeholder="16/07/2023"
-                    name="DepartureTime"
-                    onChange={this.handleChange}
-                  />
-                </div>
-                <div className="inputbox">
-                  <span> Card Holder Name:</span>
-                  <input
-                    type="text"
-                    placeholder="Card Holder name"
-                    name="CardHolderName"
-                    onChange={this.handleChange}
-                  />
-                </div>
-
-                <div className="inputbox">
-                  <span> Card NO:</span>
+                  <span> Price:</span>
                   <input
                     type="number"
-                    placeholder="Enter Card No"
-                    name="CardNO"
-                    onChange={this.handleChange}
+                    placeholder="Price"
+                    name="Price"
+                    readOnly
+                    value={FormData.Price}
+                    onChange={handleChange}
+                    required
                   />
                 </div>
-                <div className="inputbox">
-                  <span> CVV NO:</span>
-                  <input
-                    type="number"
-                    placeholder="Enter CVV No"
-                    name="CVVNO"
-                    onChange={this.handleChange}
-                  />
+
+                <div>
+                  <h6 className="title">
+                    <b>
+                      If you want to cancel your booking you can contact our hotline
+
+                      <span style={{ color: 'blue' }}><br />+94 23 2223510</span> or send via E-mail
+                      <span style={{ color: 'blue' }}>seabreezehotelproject@gmail.com</span>
+                      <br />
+                    </b>
+                    <strong>
+                      <a href='/Policy'>I agree to SEEBREEZEE HOTEL terms and policies</a>{' '}
+                    </strong>
+                  </h6>
                 </div>
-                <div className="inputbox">
-                  <span> Type Of Card</span>
-                  <select name="Package" id="Package" onChange={this.handleChange}>
-                    <option value="p1"> Master</option>
-                    <option value="p2"> Visa</option>
-                    <option value="p3"> American Express</option>
-                  </select>
-                  <div className="inputbox">
-                    <span> Price:</span>
+                <div>
+                  <center>
                     <input
-                      type="number"
-                      placeholder="Price"
-                      name="CVVNO"
-                      onChange={this.handleChange}
+                      type="submit"
+                      defaultValue="PAY NOW"
+                      className="btn btn-info"
+                      onClick="/Hourcheck"
                     />
                     &nbsp;
-                    &nbsp;
-                    <div>
-                      <h6 className="title"><b>If you want to cancel your booking you can contact our hotline <br />+94 23 2223510 or send via E-mail seabreezehotelproject@gmail.com. <br /></b>
-                        <pre></pre>
-                        <strong><a href='/Policy'>I agree to SEEBREEZEE HOTEL terms and policies</a> </strong></h6>
-                    </div>
+                    {/* <a href="/Checkout" class="btn btn-info" role="button">PAY NOW</a> */}
 
-                    {/* <input
-                    type="number"
-                    placeholder="price"
-                    name="Price"
-                    onChange={this.handleChange}
-                  /> */}
-
-                  </div>
-                  {/* <center>
-                    <a href="/Checkout" className="submit-btn">SUBMIT</a>
-                  </center> */}
-                  <button
-                    type='submit'
-                    id='popupButton'
-                    className='btn btn-primary'
-                  >
-                    SUBMIT
-                  </button>
-
-                  {this.state.successMessage && (
-                    <div className='success-message'>
-                      <p>{this.state.successMessage}</p>
-                    </div>
-                  )}
+                  </center>
                 </div>
               </div>
+              {SuccessMessage && (
+                <div className="success-message">
+                  <p>{SuccessMessage}</p>
+                </div>
+              )}
             </div>
-          </form>
-        </div>
+          </div>
+        </form>
       </div>
-    );
-  }
+    </div>
+  );
 }
+
+export default Hourcheck;
+
