@@ -32,7 +32,6 @@ const AboutUs = () => {
           <div className="row">
             <div className="col-md-5">
               <div className="full slider_cont_section">
-                <h3>Hi Fodies..</h3>
                 <h4><b>WELCOME TO SEA BREEZE !</b></h4>
                 <p>
                   Sea Breeze Hotel is a charming boutique hotel located in the heart
@@ -46,15 +45,15 @@ const AboutUs = () => {
                 </p>
               </div>
             </div>
-            <div className="col-md-7">
+            {/* <div className="col-md-7">
               <img
-                src="assets/img/double.jpg"
+                src="assets/img/food.jpg"
                 alt="Hotel Image"
                 className="img-fluid"
                 width={500}
                 height={500}
               />
-            </div>
+            </div> */}
           </div>
 
           <div className="section layout_padding">

@@ -21,14 +21,13 @@ const sendEmail = (e) => {
       }
     );
 };
-sendEmail();
 
 const handleSubmit = (event) => {
   event.preventDefault();
-  sendEmail();
-}
+  sendEmail(event); // Pass the event object to sendEmail
+};
 
-const Forgot = () => {
+const Forgotpw = () => {
   return (
     <>
       <meta charSet="UTF-8" />
@@ -40,7 +39,7 @@ const Forgot = () => {
         crossorigin="anonymous"
       />
 
-      <div class1="login-wrapper py-5 home-wrapper-2">
+      <div className="login-wrapper py-5 home-wrapper-2">
         <div className="row">
           <div className="col-12">
             <div className="auth-card">
@@ -53,10 +52,10 @@ const Forgot = () => {
                 We will send you an email to reset your Password
               </p>
               <form onSubmit={handleSubmit} className="d-flex flex-column gap-30">
-                <input type="email" name="email" placeholder="Email" />
+                <input type="email" name="Email" placeholder="Email" />
                 <div className="">
                   <div className="mt-3 d-flex justify-content-center gap-30 align-item-center">
-                    <button className="button border-0">Submit</button>
+                    <button type="submit" className="button border-0">Send Email</button>
                     <Link to="/login" className="button text-white">
                       Cancel
                     </Link>
@@ -71,4 +70,4 @@ const Forgot = () => {
   );
 };
 
-export default Forgot;
+export default Forgotpw;

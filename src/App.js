@@ -26,7 +26,7 @@ import Outdoocheckout from "./pages/Outdoocheckout";
 import UDashboard from "./pages/UDashboard";
 import CancellationPage from "./pages/CancellationPage";
 import CancellationMSG from "./pages/CancellationMSG";
-import ForgotPassword from "./pages/ForgotPassword";
+import Forgot from "./pages/Forgotpw";
 
 import Home from "./pages/Home";
 import AboutUs from "./pages/AboutUs";
@@ -46,7 +46,6 @@ import JumboPackage from "./pages/JumboPackage";
 import PlatinumPackage from "./pages/PlatinumPackage";
 import Hourcheck from "./pages/Hourcheck";
 import Contact from "./components/Contact";
-// import Forgot from "./pages/Forgot";
 import { useState } from "react";
 
 function App() {
@@ -173,10 +172,10 @@ function App() {
 
         <Route path="/Policy" render={(props) => <Policy {...props} />} />
 
-        <Route
+        {/* <Route
           path="/ForgotPassword"
           render={(props) => <ForgotPassword {...props} />}
-        />
+        /> */}
 
         <Route
           path="/UDashboard"
@@ -193,7 +192,7 @@ function App() {
           render={(props) => <CancellationMSG {...props} />}
         />
 
-        {/* <Route path="/Forgot" render={(props) => <forgot {...props} />} /> */}
+        <Route path="/Forgot" render={(props) => <Forgot {...props} />} />
 
         <Route path="/dashboard" render={(props) => <Dashboard {...props} />} />
       </Switch>
