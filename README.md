@@ -3,7 +3,7 @@ Event Management Project
 
 ![Diagram](Resources/architecture.png)
 
-### Screenshots.
+## Screenshots.
 
 ![1](Resources/1.png)
 
