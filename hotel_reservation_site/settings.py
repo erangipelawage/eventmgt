@@ -75,24 +75,13 @@ TEMPLATES = [
 
 WSGI_APPLICATION = 'hotel_reservation_site.wsgi.application'
 
-# DATABASES = {
-#     'default': {
-#         'ENGINE': 'django.db.backends.mysql',
-#         'NAME': 'eventmgt',
-#         'USER': 'root',
-#         'PASSWORD': 'Pa$$w0rd1234@#',
-#         'HOST':'localhost',
-#         'PORT':'3306',
-#     }
-# }
-
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.mysql',
         'NAME': 'eventmgt',
-        'USER': 'admin',
-        'PASSWORD': 'Pa$$w0rd',
-        'HOST':'eventmgt.cfvufltihmhv.us-east-2.rds.amazonaws.com',
+        'USER': 'root',
+        'PASSWORD': 'password',
+        'HOST':'localhost',
         'PORT':'3306',
     }
 }
