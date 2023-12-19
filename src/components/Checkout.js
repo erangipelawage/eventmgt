@@ -49,8 +49,8 @@ const Checkout = () => {
       
       <p className="checkout-description">
         
-      <h1>Pay Online</h1>
-      <p className="checkout-title">Pay Online - Rs.3000.00</p>
+      <h2>PAY ONLINE</h2>
+      {/* <p className="checkout-title">Pay Online</p> */}
       <br/>
       <img
         className="checkout-product-image"
